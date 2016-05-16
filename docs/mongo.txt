@@ -1,0 +1,5 @@
+ssh -L 27017:127.12.129.130:27017 57399fda0c1e66013700000b@shop-venkatvp.rhcloud.com -N
+ssh 57399fda0c1e66013700000b@shop-venkatvp.rhcloud.com
+Please make note of these MongoDB credentials:
+RockMongo User: admin
+RockMongo Password: 3-5KUWZlPnC4

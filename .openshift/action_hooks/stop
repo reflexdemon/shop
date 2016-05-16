@@ -9,5 +9,4 @@ source $OPENSHIFT_CARTRIDGE_SDK_BASH
 #     kill `ps -ef | grep testrubyserver.rb | grep -v grep | awk '{ print $2 }'` > /dev/null 2>&1
 # fi
 
-cd $OPENSHIFT_DATA_DIR/apache-tomcat-8.0.33/bin
-./shutdown.sh
+source $OPENSHIFT_DATA_DIR/apache-tomcat-8.0.33/bin/shutdown.sh

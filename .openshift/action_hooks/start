@@ -4,7 +4,23 @@
 # $OPENSHIFT_DIY_IP:8080
 # nohup $OPENSHIFT_REPO_DIR/diy/testrubyserver.rb $OPENSHIFT_DIY_IP $OPENSHIFT_REPO_DIR/diy |& /usr/bin/logshifter -tag diy &
 
-export JAVA_HOME="$OPENSHIFT_DATA_DIR/jdk1.8.0_65" 
-export PATH=$OPENSHIFT_DATA_DIR/jdk1.8.0_65/bin:$PATH
-cd $OPENSHIFT_DATA_DIR/apache-tomcat-8.0.33/bin
-./startup.sh
+export JAVA_HOME=/etc/alternatives/java_sdk_1.8.0
+export PATH=$JAVA_HOME/bin:$PATH
+
+cd $OPENSHIFT_DATA_DIR
+echo -e  "<settings>\n <localRepository>$OPENSHIFT_DATA_DIR</localRepository>\n</settings>\n" > settings.xml
+
+cd $OPENSHIFT_REPO_DIR
+$OPENSHIFT_DATA_DIR/apache-maven-3.3.3/bin/mvn -f $OPENSHIFT_REPO_DIR/pom.xml clean package -s $OPENSHIFT_DATA_DIR/settings.xml
+war=`ls target/*.war | awk -F'/' '{print $2}'`
+
+TOMCAT_DIR="$OPENSHIFT_DATA_DIR/apache-tomcat-8.0.33"
+
+#Deploy application
+source $TOMCAT_DIR/bin/shutdown.sh
+rm -rf  $TOMCAT_DIR/webapps
+mkdir $TOMCAT_DIR/webapps
+cp $war $TOMCAT_DIR/webapps/ROOT.war
+# nohup java -jar $OPENSHIFT_REPO_DIR/target/.jar > $LOG 2>&1 &
+
+source $TOMCAT_DIR/bin/startup.sh

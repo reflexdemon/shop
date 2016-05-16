@@ -1,0 +1,296 @@
+[
+  {
+    "id": 1,
+    "category": "SECUREMENT DEVICES",
+    "name": "E.T.HOLD",
+    "description": "E.T.Hold is used to secure the Endotracheal tube firmly in position and it avoids accidental extubation. It prevents the patient by getting the rashes and other infections caused by adhesive tapes. Thus facilitating the patient to get the oxygen uninterruptedly with much comfort",
+    "imageURL": "http://nanthinishealthcare.com/images/products.jpg"
+  },
+  {
+    "id": 2,
+    "category": "SECUREMENT DEVICES",
+    "name": "E.T. FIX",
+    "description": "E.T.Fix is the high quality cotton tape which is used to secure the E.T.Tube. It is perfect replacement of conventional gauze Material. Ready to use.",
+    "imageURL": "http://nanthinishealthcare.com/images/products1.jpg"
+  },
+  {
+    "id": 3,
+    "category": "SECUREMENT DEVICES",
+    "name": "T.T.HOLD",
+    "description": "T.T.Hold is used to secure the tracheostomy tube gently in position. It is made up of high quality soft material which enhances the comfort of the patient. It is designed so simply thus reducing the nursing labor.",
+    "imageURL": "http://nanthinishealthcare.com/images/products2.jpg"
+  },
+  {
+    "id": 4,
+    "category": "SECUREMENT DEVICES",
+    "name": "FOLEY FIX",
+    "description": "Comfy Foley Fix is designed to secure all types of Foley Catheters. The Leg band is made up of soft non-absorbent material with Velcro fasteners. The Tabs provided in the band secures the Foley catheters and it doesn't allow the catheter to slide down. It reduces the risk of urethral erosion. It can be rotated to minimize pressure points. It maintains position on the leg, whether ambulatory or bed-ridden. It eliminates skin irritation and enhances the patient comfort.",
+    "imageURL": "http://nanthinishealthcare.com/images/products3.jpg"
+  },
+  {
+    "id": 5,
+    "category": "SECUREMENT DEVICES",
+    "name": "TRANSDUCER BAND",
+    "description": "This band is designed to secure the transducers. It facilitates to hold two transducers at a time. In normal practice, they used to secure transducer with the help of adhesive tapes, It causes the pain and allergy to the patient. But with the help of Comfy Transducer Band it totally avoids all such pains and allergies and it enhances the comfort of the patient.",
+    "imageURL": "http://nanthinishealthcare.com/images/products4.jpg"
+  },
+  {
+    "id": 6,
+    "category": "LIMBS RESTRAINERS",
+    "name": "TIEPAD For Hands and Legs",
+    "description": "This product is used to restrict the movement of the restless patients admitted in the hospitals. By securing the limbs of the patients through these tiepads, it gently prevents the patient by disturbing the catheters and cannulas fitted to administer the medicine",
+    "imageURL": "http://nanthinishealthcare.com/images/products5.jpg"
+  },
+  {
+    "id": 7,
+    "category": "INFECTION CONTROL PRODUCTS",
+    "name": "POLY APRON",
+    "description": "Poly Apron for Infection Control",
+    "imageURL": "http://nanthinishealthcare.com/images/infection2.jpg"
+  },
+  {
+    "id": 8,
+    "category": "INFECTION CONTROL PRODUCTS",
+    "name": "POLY GOWN",
+    "description": "Poly Apron with full sleeves for Infection control",
+    "imageURL": "http://nanthinishealthcare.com/images/infection1.jpg"
+  },
+  {
+    "id": 9,
+    "category": "INFECTION CONTROL PRODUCTS",
+    "name": "ISOLATION GOWN",
+    "description": "Isolation Gowns are made from blue non woven fabric and it offers protection against heavy fluids.",
+    "imageURL": "http://nanthinishealthcare.com/images/infection17.jpg"
+  },
+  {
+    "id": 10,
+    "category": "INFECTION CONTROL PRODUCTS",
+    "name": "FOREARM SLEEVES",
+    "description": "Light weight, splash resistant sleeves with elastic ends to maintain a non slip fit",
+    "imageURL": "http://nanthinishealthcare.com/images/infection4.jpg"
+  },
+  {
+    "id": 11,
+    "category": "INFECTION CONTROL PRODUCTS",
+    "name": "EYE WEAR",
+    "description": "Wraparound Goggles & Plastic Eyeglasses with side shields",
+    "imageURL": "http://nanthinishealthcare.com/images/infection5.jpg"
+  },
+  {
+    "id": 12,
+    "category": "INFECTION CONTROL PRODUCTS",
+    "name": "SLEEVES FOR CABLES",
+    "description": "Clear Plastic Sleeves for the Catheters feature advanced infection control benefits that have redefined the standard of care by reducing the risk of cross-contamination.",
+    "imageURL": "http://nanthinishealthcare.com/images/infection16.jpg"
+  },
+  {
+    "id": 13,
+    "category": "INFECTION CONTROL PRODUCTS",
+    "name": "PLASTIC FORCEUPS",
+    "description": "These forceps are excellent for giving mouth care to the patients. Made from blue poly-propylene with interlocking teeth which holds firmly the gauze pieces.",
+    "imageURL": "http://nanthinishealthcare.com/images/infection6.jpg"
+  },
+  {
+    "id": 14,
+    "category": "INFECTION CONTROL PRODUCTS",
+    "name": "ALCOHOL  SWABS",
+    "description": "Swabs with Isopropyl Alcohol for cleaning purposes",
+    "imageURL": "http://nanthinishealthcare.com/images/infection7.jpg"
+  },
+  {
+    "id": 15,
+    "category": "INFECTION CONTROL PRODUCTS",
+    "name": "LINT FREE TOWELS",
+    "description": "Economical, highly absorbent, Latex-free and lint free towel used for spills and clean-ups",
+    "imageURL": "http://nanthinishealthcare.com/images/infection8.jpg"
+  },
+  {
+    "id": 16,
+    "category": "INFECTION CONTROL PRODUCTS",
+    "name": "SPILL CLEAN SWABS",
+    "description": "Presence of solidifying agent instantly turns liquid spills into a semi-gel for a quick and safe spill recovery and provides clean and Hygiene dry enviroment.",
+    "imageURL": "http://nanthinishealthcare.com/images/infection9.jpg"
+  },
+  {
+    "id": 17,
+    "category": "INFECTION CONTROL PRODUCTS",
+    "name": "BEDSHEET",
+    "description": "Disposable Bedspread made of soft & non absorbent material. It eliminates the infection caused by conventional reusable bed sheets and it also prevents the hospital beds.",
+    "imageURL": "http://nanthinishealthcare.com/images/infection10.jpg"
+  },
+  {
+    "id": 18,
+    "category": "INFECTION CONTROL PRODUCTS",
+    "name": "PILLOW COVERS",
+    "description": "Disposable pillow covers are made of soft & non absorbent material. It eliminates the infection caused by conventional reusable pillow covers.",
+    "imageURL": "http://nanthinishealthcare.com/images/infection11.jpg"
+  },
+  {
+    "id": 19,
+    "category": "INFECTION CONTROL PRODUCTS",
+    "name": "SURGEONS GOWN",
+    "description": "Surgeons Gown are made from non woven fabric with two layers in front and wrap around with tie closure to the surgeons convenience with knitted cuffs.",
+    "imageURL": "http://nanthinishealthcare.com/images/infection15.jpg"
+  },
+  {
+    "id": 20,
+    "category": "INFECTION CONTROL PRODUCTS",
+    "name": "PATIENT GOWN",
+    "description": "These gowns are made for patient's comfort & modesty. Easy for Doctors to examine the affected body part . Made up of opaque non woven fabric, half sleeves with Velcro fasteners.",
+    "imageURL": "http://nanthinishealthcare.com/images/infection12.jpg"
+  },
+  {
+    "id": 21,
+    "category": "INFECTION CONTROL PRODUCTS",
+    "name": "SHOE COVER",
+    "description": "The disposable polypropylene and non woven fabric shoe covers prevents infection caused by visitors shoes.",
+    "imageURL": "http://nanthinishealthcare.com/images/infection13.jpg"
+  },
+  {
+    "id": 22,
+    "category": "INCONTINENT PRODUCTS",
+    "name": "UNDERPADS",
+    "description": "Super absorbent material with non woven spun bond top sheet and polypropylene back sheet for incontinence protection of bedridden Patients.",
+    "imageURL": "http://nanthinishealthcare.com/images/incontinent2.jpg"
+  },
+  {
+    "id": 23,
+    "category": "INCONTINENT PRODUCTS",
+    "name": "COMFY SHEET",
+    "description": "The surface consists of a super soft, white non-woven fabric that is permanent penetrable to liquids and it always feels pleasantly dry It has filled with more cotton fluff in between and it ensures the softness and more absorbency of the liquid. The non skid baking sheet with two sides wings for tucking purpose under the bed. It is very useful to shift the patients from bed to trolley.",
+    "imageURL": "http://nanthinishealthcare.com/images/incontinent3.jpg"
+  },
+  {
+    "id": 24,
+    "category": "INCONTINENT PRODUCTS",
+    "name": "CUTES UNDERPADS",
+    "description": "Super absorbent material with non woven spun bond top sheet and polypropylene back sheet for incontinence protection of Infants",
+    "imageURL": "http://nanthinishealthcare.com/images/incontinent1.jpg"
+  },
+  {
+    "id": 25,
+    "category": "INCONTINENT PRODUCTS",
+    "name": "NAPPY PAD",
+    "description": "Disposable baby diaper with resealable tapes and elasticated leg cuffs",
+    "imageURL": "http://nanthinishealthcare.com/images/incontinent4.jpg"
+  },
+  {
+    "id": 26,
+    "category": "INCONTINENT PRODUCTS",
+    "name": "CUTES WIPES",
+    "description": "It is a dry wipe made of super soft microfab material and is also alcohol free to care for your baby's sensitive skin. Our Wipes are excellent for the use by the whole family also anytime and anywhere and can be sure of a quality product. Available in 25’s and 50’s pack.",
+    "imageURL": "http://nanthinishealthcare.com/images/incontinent5.jpg"
+  },
+  {
+    "id": 27,
+    "category": "THEATRE DISPOSABLE DRAPE SETS",
+    "name": "CATARACT KIT",
+    "description": "Cataract Kit",
+    "imageURL": "http://nanthinishealthcare.com/images/DRAPE-SETS.jpg"
+  },
+  {
+    "id": 28,
+    "category": "THEATRE DISPOSABLE DRAPE SETS",
+    "name": "GENERAL KIT",
+    "description": "General Kit",
+    "imageURL": "http://nanthinishealthcare.com/images/DRAPE-SETS.jpg"
+  },
+  {
+    "id": 29,
+    "category": "THEATRE DISPOSABLE DRAPE SETS",
+    "name": "HIV KIT",
+    "description": "Hiv Kit",
+    "imageURL": "http://nanthinishealthcare.com/images/DRAPE-SETS.jpg"
+  },
+  {
+    "id": 30,
+    "category": "THEATRE DISPOSABLE DRAPE SETS",
+    "name": "MATERNITY KIT",
+    "description": "Maternity Kit",
+    "imageURL": "http://nanthinishealthcare.com/images/DRAPE-SETS.jpg"
+  },
+  {
+    "id": 31,
+    "category": "THEATRE DISPOSABLE DRAPE SETS",
+    "name": "NEURO KIT",
+    "description": "Neuro Kit",
+    "imageURL": "http://nanthinishealthcare.com/images/DRAPE-SETS.jpg"
+  },
+  {
+    "id": 32,
+    "category": "THEATRE DISPOSABLE DRAPE SETS",
+    "name": "OPTHALMOLOGY KIT",
+    "description": "Opthalmology Kit",
+    "imageURL": "http://nanthinishealthcare.com/images/DRAPE-SETS.jpg"
+  },
+  {
+    "id": 33,
+    "category": "THEATRE DISPOSABLE DRAPE SETS",
+    "name": "ORTHO KIT",
+    "description": "Ortho Kit",
+    "imageURL": "http://nanthinishealthcare.com/images/DRAPE-SETS.jpg"
+  },
+  {
+    "id": 34,
+    "category": "RESPIRATORY DEVICES",
+    "name": "VENTILATOR CIRCUITS",
+    "description": 0,
+    "imageURL": "http://nanthinishealthcare.com/images/Ventilator-Circuits.jpg"
+  },
+  {
+    "id": 35,
+    "category": "RESPIRATORY DEVICES",
+    "name": "ANESTHEASIA CIRCUITS",
+    "description": 0,
+    "imageURL": "http://nanthinishealthcare.com/images/respiratory2.jpg"
+  },
+  {
+    "id": 36,
+    "category": "RESPIRATORY DEVICES",
+    "name": "BAIN CIRCUIT",
+    "description": 0,
+    "imageURL": "http://nanthinishealthcare.com/images/respiratory3.jpg"
+  },
+  {
+    "id": 37,
+    "category": "RESPIRATORY DEVICES",
+    "name": "BITE BLOCK",
+    "description": "Bite Block is used to prevent the patient biting the E.T.Tube and as well as his own tongue. Bite Block avoids airway occlusion and it facilitates easy suctioning of mucus in the esophagus",
+    "imageURL": "http://nanthinishealthcare.com/images/respiratory4.jpg"
+  },
+  {
+    "id": 38,
+    "category": "RESPIRATORY DEVICES",
+    "name": "INTUBATION STYLET",
+    "description": "Malleable stylet facilitates easy intubations",
+    "imageURL": "http://nanthinishealthcare.com/images/respiratory5.jpg"
+  },
+  {
+    "id": 39,
+    "category": "RESPIRATORY DEVICES",
+    "name": "ET CO2 CONNECTOR",
+    "description": "Measures the co2",
+    "imageURL": "http://nanthinishealthcare.com/images/respiratory6.jpg"
+  },
+  {
+    "id": 40,
+    "category": "GYNECOLOGY PRODUCTS",
+    "name": "MATERNITY MAT",
+    "description": "MATERNITY Mat is a perfect replacement for the conventional usage of Bedsheets and Rubber sheets. It is made out of pure cotton with non woven absorbent top sheet with non skid backing sheet. The bag attached to the mat collects the waste and the same can be easily disposed.",
+    "imageURL": "http://nanthinishealthcare.com/images/gynecology1.jpg"
+  },
+  {
+    "id": 41,
+    "category": "GYNECOLOGY PRODUCTS",
+    "name": "PERNIAL SHEET",
+    "description": "It is made out of 40” x 40” non woven fabric with the hole of 10” dia in the center. It is reinforced with highly absorbent material with adhesive tape all around.",
+    "imageURL": "http://nanthinishealthcare.com/images/gynecology2.jpg"
+  },
+  {
+    "id": 42,
+    "category": "GYNECOLOGY PRODUCTS",
+    "name": "CESEARIAN MAT",
+    "description": "The surface consists of a super soft, white non-woven fabric that is permanent penetrable to liquids and it always feels pleasantly dry It has filled with more cotton fluff in between and it ensures the softness and more absorbency of the liquid. The non skid baking sheet with two sides wings for tucking purpose under the bed. It is very useful to shift the patients from bed to trolley.",
+    "imageURL": "http://nanthinishealthcare.com/images/incontinent3.jpg"
+  }
+]
