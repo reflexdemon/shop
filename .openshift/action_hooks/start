@@ -21,7 +21,7 @@ cd  $TOMCAT_DIR/bin
 ./shutdown.sh
 rm -rf  $TOMCAT_DIR/webapps
 mkdir $TOMCAT_DIR/webapps
-cp $war $TOMCAT_DIR/webapps/ROOT.war
+cp target/$war $TOMCAT_DIR/webapps/ROOT.war
 # nohup java -jar $OPENSHIFT_REPO_DIR/target/.jar > $LOG 2>&1 &
 
 source $TOMCAT_DIR/bin/startup.sh
