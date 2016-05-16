@@ -17,7 +17,8 @@ war=`ls target/*.war | awk -F'/' '{print $2}'`
 TOMCAT_DIR="$OPENSHIFT_DATA_DIR/apache-tomcat-8.0.33"
 
 #Deploy application
-source $TOMCAT_DIR/bin/shutdown.sh
+cd  $TOMCAT_DIR/bin
+./shutdown.sh
 rm -rf  $TOMCAT_DIR/webapps
 mkdir $TOMCAT_DIR/webapps
 cp $war $TOMCAT_DIR/webapps/ROOT.war
