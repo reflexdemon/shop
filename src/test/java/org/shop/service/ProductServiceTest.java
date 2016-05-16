@@ -42,7 +42,7 @@ public class ProductServiceTest {
 
     @org.junit.Test
     public void testSearch() throws Exception {
-        SearchResponse response = productService.search("PRODUCT", 1);
+        SearchResponse response = productService.search("Dev", 1);
         assertTrue("Check if the search worked", response.getProducts().size() > 0);
         assertTrue("Check if the search worked", response.getLimit() > 0);
         assertTrue("Check if the search worked", response.getMaxCount() > 0);
