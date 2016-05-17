@@ -24,5 +24,4 @@ TOMCAT_DIR="$OPENSHIFT_DATA_DIR/apache-tomcat-8.0.33"
 #cp target/$war $TOMCAT_DIR/webapps/ROOT.war
 # nohup java -jar $OPENSHIFT_REPO_DIR/target/.jar > $LOG 2>&1 &
 
-cd $TOMCAT_DIR/bin
-./startup.sh
+source $TOMCAT_DIR/bin/startup.sh
