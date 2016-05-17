@@ -34,7 +34,10 @@ public class SearchImpl implements Search {
     public SearchResponse search(String keyword, int limit, int offset) {
         SearchResponse response = new SearchResponse();
         Criteria criteria = new Criteria();
-        criteria.orOperator(Criteria.where("name").regex(keyword, "i"), Criteria.where("description").regex(keyword, "i"), Criteria.where("category").regex(keyword, "i"));
+        if (null != keyword) {
+            criteria.orOperator(Criteria.where("name").regex(keyword, "i"), Criteria.where("description").regex(keyword, "i"), Criteria.where("category").regex(keyword, "i"));
+        }
+
         Query query = new Query(criteria);
         response.setMaxCount(getMaxCount(criteria));
         query.limit(limit).skip(offset);

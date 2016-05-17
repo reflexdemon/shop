@@ -23,9 +23,9 @@ public class RESTProductAPI {
     ProductService productService;
 
     @RequestMapping("/products")
-    public ResponseEntity<List<Product>> findAll() {
-        List<Product> list = productService.findAll();
-        return new ResponseEntity<>(list, HttpStatus.OK);
+    public ResponseEntity<SearchResponse> findAll(@RequestParam(required = false) Integer page) {
+        SearchResponse response = productService.search(null, page);
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     @RequestMapping("/categories")
