@@ -9,9 +9,8 @@ export PATH=$JAVA_HOME/bin:$PATH
 #Deploy application
 cd  $TOMCAT_DIR/bin
 ./shutdown.sh
-JAVA_VERSION=`java -version`
+
 JAVAC_VERSION=`javac -version`
-echo "java version : $JAVA_VERSION"
 echo "javac version : $JAVAC_VERSION"
 
 cd $OPENSHIFT_DATA_DIR
