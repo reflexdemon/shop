@@ -10,8 +10,9 @@ export PATH=$JAVA_HOME/bin:$PATH
 TOMCAT_DIR="$OPENSHIFT_DATA_DIR/apache-tomcat-8.0.33"
 
 #Deploy application
-cd  $TOMCAT_DIR/bin
-./shutdown.sh
+#Killing running process
+echo "Killing current java process"
+ps -ef | grep java| grep -v grep | awk '{print $2}' | xargs kill -9
 
 JAVAC_VERSION=`javac -version`
 echo "javac version : $JAVAC_VERSION"
@@ -24,8 +25,6 @@ $OPENSHIFT_DATA_DIR/apache-maven-3.3.3/bin/mvn -f $OPENSHIFT_REPO_DIR/pom.xml cl
 #war=`ls target/*.war | awk -F'/' '{print $2}'`
 
 
-
-#rm -rf  $TOMCAT_DIR/webapps
 #mkdir $TOMCAT_DIR/webapps
 #cp target/$war $TOMCAT_DIR/webapps/ROOT.war
 # nohup java -jar $OPENSHIFT_REPO_DIR/target/.jar > $LOG 2>&1 &
