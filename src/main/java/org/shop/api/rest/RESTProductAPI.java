@@ -3,6 +3,7 @@ package org.shop.api.rest;
 import org.shop.model.Product;
 import org.shop.model.SearchResponse;
 import org.shop.service.ProductService;
+import org.shop.spring.aop.ProfileExecution;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,30 +24,35 @@ public class RESTProductAPI {
     ProductService productService;
 
     @RequestMapping("/products")
+    @ProfileExecution
     public ResponseEntity<SearchResponse> findAll(@RequestParam(required = false) Integer page) {
         SearchResponse response = productService.search(null, page);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     @RequestMapping("/categories")
+    @ProfileExecution
     public ResponseEntity<List<String>> getCategories() {
         List<String> list = productService.getCategories();
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
     @RequestMapping("/product/{id}")
+    @ProfileExecution
     public ResponseEntity<Product> findById(@PathVariable String id) {
         Product item = productService.findById(id);
         return new ResponseEntity<>(item, HttpStatus.OK);
     }
 
     @RequestMapping("/category/{category}")
+    @ProfileExecution
     public ResponseEntity<List<Product>> findByCategory(@PathVariable String category) {
         List<Product> list = productService.findByCategory(category);
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
     @RequestMapping("/search")
+    @ProfileExecution
     public ResponseEntity<SearchResponse> search(@RequestParam String keyword, @RequestParam(required = false) Integer page) {
         SearchResponse response = productService.search(keyword, page);
         return new ResponseEntity<>(response, HttpStatus.OK);

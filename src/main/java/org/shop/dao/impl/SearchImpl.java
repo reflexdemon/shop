@@ -5,6 +5,7 @@ import org.apache.commons.logging.LogFactory;
 import org.shop.dao.Search;
 import org.shop.model.Product;
 import org.shop.model.SearchResponse;
+import org.shop.spring.aop.ProfileExecution;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -24,6 +25,7 @@ public class SearchImpl implements Search {
     private MongoTemplate mongoTemplate;
 
     @Override
+    @ProfileExecution
     public List<String> getCategories() {
         List<String> response = mongoTemplate.getCollection(COLLECTION).distinct("category");
         logger.info(String.format("Found %s records!", response.size()));
@@ -31,6 +33,7 @@ public class SearchImpl implements Search {
     }
 
     @Override
+    @ProfileExecution
     public SearchResponse search(String keyword, int limit, int offset) {
         SearchResponse response = new SearchResponse();
         Criteria criteria = new Criteria();
