@@ -25,7 +25,7 @@ $OPENSHIFT_DATA_DIR/apache-maven-3.3.3/bin/mvn -f $OPENSHIFT_REPO_DIR/pom.xml -s
 
 
 #mkdir $TOMCAT_DIR/webapps
-#cp target/$war $TOMCAT_DIR/webapps/ROOT.war
+cp target/$war $TOMCAT_DIR/webapps/ROOT.war
 # nohup java -jar $OPENSHIFT_REPO_DIR/target/.jar > $LOG 2>&1 &
 
 cd $TOMCAT_DIR/bin
