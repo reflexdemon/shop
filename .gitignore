@@ -115,3 +115,4 @@ fabric.properties
 # Created by .ignore support plugin (hsz.mobi)
 
 /webapps/
+/OPENSHIFT_DIY_LOG_DIR_IS_UNDEFINED/
