@@ -8,13 +8,15 @@ import org.shop.spring.aop.ProfileExecution;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-
-import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
-import static org.springframework.web.bind.annotation.RequestMethod.*;
-
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+
+import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
+import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
 /**
  * Created by vprasanna on 5/15/2016.
@@ -104,7 +106,7 @@ public class RESTProductAPI {
     @ProfileExecution
     @ApiOperation(value = "findByCategory", nickname = "findByCategory")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "category", value = "Category name", required = false, dataType = "string", paramType = "path", defaultValue="")
+            @ApiImplicitParam(name = "category", value = "Category name", required = false, dataType = "string", paramType = "path", defaultValue = "INFECTION CONTROL PRODUCTS")
     })
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Success", response = Product.class),
