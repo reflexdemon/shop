@@ -1,5 +1,6 @@
 package org.shop.api.rest;
 
+import io.swagger.annotations.*;
 import org.shop.model.Product;
 import org.shop.model.SearchResponse;
 import org.shop.service.ProductService;
@@ -7,10 +8,11 @@ import org.shop.spring.aop.ProfileExecution;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
+import static org.springframework.web.bind.annotation.RequestMethod.*;
+
 
 import java.util.List;
 
@@ -33,23 +35,21 @@ public class RESTProductAPI {
      * @param page the page
      * @return the response entity
      */
-    @RequestMapping("/products")
+    @RequestMapping(value = "/product", method = GET, produces = APPLICATION_JSON_VALUE)
     @ProfileExecution
+    @ApiOperation(value = "findAll", nickname = "findAll")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "page", value = "Page number", required = false, dataType = "string", paramType = "query", defaultValue="1")
+    })
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Success", response = SearchResponse.class),
+            @ApiResponse(code = 401, message = "Unauthorized"),
+            @ApiResponse(code = 403, message = "Forbidden"),
+            @ApiResponse(code = 404, message = "Not Found"),
+            @ApiResponse(code = 500, message = "Failure")})
     public ResponseEntity<SearchResponse> findAll(@RequestParam(required = false) Integer page) {
         SearchResponse response = productService.search(null, page);
         return new ResponseEntity<>(response, HttpStatus.OK);
-    }
-
-    /**
-     * Gets categories.
-     *
-     * @return the categories
-     */
-    @RequestMapping("/categories")
-    @ProfileExecution
-    public ResponseEntity<List<String>> getCategories() {
-        List<String> list = productService.getCategories();
-        return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
     /**
@@ -58,11 +58,40 @@ public class RESTProductAPI {
      * @param id the id
      * @return the response entity
      */
-    @RequestMapping("/product/{id}")
+    @RequestMapping(value = "/product/{id}", method = GET, produces = APPLICATION_JSON_VALUE)
     @ProfileExecution
+    @ApiOperation(value = "findById", nickname = "findById")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "id", value = "Record Identifier", required = false, dataType = "string", paramType = "path", defaultValue="1")
+    })
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Success", response = Product.class),
+            @ApiResponse(code = 401, message = "Unauthorized"),
+            @ApiResponse(code = 403, message = "Forbidden"),
+            @ApiResponse(code = 404, message = "Not Found"),
+            @ApiResponse(code = 500, message = "Failure")})
     public ResponseEntity<Product> findById(@PathVariable String id) {
         Product item = productService.findById(id);
         return new ResponseEntity<>(item, HttpStatus.OK);
+    }
+
+    /**
+     * Gets categories.
+     *
+     * @return the categories
+     */
+    @RequestMapping(value = "/category", method = GET, produces = APPLICATION_JSON_VALUE)
+    @ProfileExecution
+    @ApiOperation(value = "getCategories", nickname = "getCategories")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Success", response = List.class),
+            @ApiResponse(code = 401, message = "Unauthorized"),
+            @ApiResponse(code = 403, message = "Forbidden"),
+            @ApiResponse(code = 404, message = "Not Found"),
+            @ApiResponse(code = 500, message = "Failure")})
+    public ResponseEntity<List<String>> getCategories() {
+        List<String> list = productService.getCategories();
+        return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
     /**
@@ -71,8 +100,18 @@ public class RESTProductAPI {
      * @param category the category
      * @return the response entity
      */
-    @RequestMapping("/category/{category}")
+    @RequestMapping(value = "/category/{category}", method = GET, produces = APPLICATION_JSON_VALUE)
     @ProfileExecution
+    @ApiOperation(value = "findByCategory", nickname = "findByCategory")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "category", value = "Category name", required = false, dataType = "string", paramType = "path", defaultValue="")
+    })
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Success", response = Product.class),
+            @ApiResponse(code = 401, message = "Unauthorized"),
+            @ApiResponse(code = 403, message = "Forbidden"),
+            @ApiResponse(code = 404, message = "Not Found"),
+            @ApiResponse(code = 500, message = "Failure")})
     public ResponseEntity<List<Product>> findByCategory(@PathVariable String category) {
         List<Product> list = productService.findByCategory(category);
         return new ResponseEntity<>(list, HttpStatus.OK);
@@ -85,11 +124,21 @@ public class RESTProductAPI {
      * @param page    the page
      * @return the response entity
      */
-    @RequestMapping("/search")
+    @RequestMapping(value = "/search", method = GET, produces = APPLICATION_JSON_VALUE)
     @ProfileExecution
+    @ApiOperation(value = "search", nickname = "search")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "keyword", value = "Search keyword", required = false, dataType = "string", paramType = "query", defaultValue="device"),
+            @ApiImplicitParam(name = "page", value = "Page number", required = false, dataType = "string", paramType = "query", defaultValue="1")
+    })
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Success", response = Product.class),
+            @ApiResponse(code = 401, message = "Unauthorized"),
+            @ApiResponse(code = 403, message = "Forbidden"),
+            @ApiResponse(code = 404, message = "Not Found"),
+            @ApiResponse(code = 500, message = "Failure")})
     public ResponseEntity<SearchResponse> search(@RequestParam String keyword, @RequestParam(required = false) Integer page) {
         SearchResponse response = productService.search(keyword, page);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
-
 }

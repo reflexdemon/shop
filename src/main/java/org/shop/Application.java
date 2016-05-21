@@ -7,9 +7,16 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import springfox.documentation.builders.ApiInfoBuilder;
+import springfox.documentation.service.ApiInfo;
+import springfox.documentation.spi.DocumentationType;
+import springfox.documentation.spring.web.plugins.Docket;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.util.Arrays;
+import static springfox.documentation.builders.PathSelectors.regex;
 
 /**
  * Created by vprasanna on 5/15/2016.
@@ -17,6 +24,8 @@ import java.util.Arrays;
  */
 @SpringBootApplication
 @EnableAspectJAutoProxy
+@ComponentScan
+@EnableSwagger2
 public class Application extends SpringBootServletInitializer {
     private static Class<Application> applicationClass = Application.class;
 
@@ -64,5 +73,25 @@ public class Application extends SpringBootServletInitializer {
         return  advisor;
     }
 
+    @Bean
+    public Docket newsApi() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .groupName("rest")
+                .apiInfo(apiInfo())
+                .select()
+                .paths(regex("/.*"))
+                .build();
+    }
 
+    private ApiInfo apiInfo() {
+        return new ApiInfoBuilder()
+                .title("Spring REST Shop")
+                .description("Shopping Cart REST API Swagger")
+                .termsOfServiceUrl("http://nanthinishealthcare.com/")
+                .contact("Venkat")
+                .license("Nanthinis Healthcare")
+                .licenseUrl("http://nanthinishealthcare.com/")
+                .version("2.0")
+                .build();
+    }
 }

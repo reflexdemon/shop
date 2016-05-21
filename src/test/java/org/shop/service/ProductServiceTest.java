@@ -1,11 +1,8 @@
 package org.shop.service;
 
-import org.shop.Application;
 import org.shop.model.Product;
 import org.shop.model.SearchResponse;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
 
@@ -15,9 +12,7 @@ import static org.junit.Assert.assertTrue;
 /**
  * Created by vprasanna on 5/15/2016.
  */
-@org.junit.runner.RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(value = {Application.class})
-public class ProductServiceTest {
+public class ProductServiceTest extends AbstractTest {
 
     @Autowired
     ProductService productService;
