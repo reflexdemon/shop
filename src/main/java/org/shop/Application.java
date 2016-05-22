@@ -16,6 +16,7 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.util.Arrays;
+
 import static springfox.documentation.builders.PathSelectors.regex;
 
 /**
@@ -70,7 +71,7 @@ public class Application extends SpringBootServletInitializer {
         DefaultAdvisorAutoProxyCreator advisor = new DefaultAdvisorAutoProxyCreator();
         advisor.setUsePrefix(true);
         advisor.setProxyTargetClass(true);
-        return  advisor;
+        return advisor;
     }
 
     @Bean
@@ -85,7 +86,7 @@ public class Application extends SpringBootServletInitializer {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("Spring REST Shop")
+                .title("REST Shop")
                 .description("Shopping Cart REST API Swagger")
                 .termsOfServiceUrl("http://nanthinishealthcare.com/")
                 .contact("Venkat")
