@@ -1,10 +1,16 @@
 package org.shop.service;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.shop.dao.ProductRepository;
 import org.shop.dao.Search;
 import org.shop.model.Product;
 import org.shop.model.SearchResponse;
+import org.shop.utils.DebugUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -16,6 +22,8 @@ import java.util.List;
  */
 @Component
 public class ProductService {
+
+    private static final Log logger = LogFactory.getLog(ProductService.class);
 
     private static final int PAGE_SIZE = 10;
     @Autowired

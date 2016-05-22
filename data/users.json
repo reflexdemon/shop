@@ -1,0 +1,46 @@
+[
+  {
+    "firstName": "Venkateswara",
+    "lastName": "Venkatraman Prasanna",
+    "organization": "Nanthinis Health Care",
+    "email": "venkateswara.vp@gmail.com",
+    "phone": "678-559-7522",
+    "mobile": "678-559-7522",
+    "pricingTag": "PLATINUM_TAG",
+    "username": "venkatvp",
+    "password": "password",
+    "roles": [
+      "ADMIN",
+      "USER"
+    ]
+  },
+  {
+    "firstName": "Harini",
+    "lastName": "Venkateswara",
+    "organization": "Nanthinis Health Care",
+    "email": "harini.narayanagobbur@gmail.com",
+    "phone": "678-559-7522",
+    "mobile": "678-559-7522",
+    "pricingTag": "PLATINUM_TAG",
+    "username": "harinign",
+    "password": "password",
+    "roles": [
+      "ADMIN",
+      "USER"
+    ]
+  },
+  {
+    "firstName": "system",
+    "lastName": "root",
+    "organization": "Nanthinis Health Care",
+    "email": "venkateswara.vp@gmail.com",
+    "phone": "678-559-7522",
+    "mobile": "678-559-7522",
+    "pricingTag": "BRONZE_TAG",
+    "username": "root",
+    "password": "system",
+    "roles": [
+      "SYSTEM"
+    ]
+  }
+]

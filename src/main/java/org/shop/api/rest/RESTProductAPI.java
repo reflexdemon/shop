@@ -46,9 +46,7 @@ public class RESTProductAPI {
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Success", response = SearchResponse.class),
             @ApiResponse(code = 401, message = "Unauthorized"),
-            @ApiResponse(code = 403, message = "Forbidden"),
-            @ApiResponse(code = 404, message = "Not Found"),
-            @ApiResponse(code = 500, message = "Failure")})
+            @ApiResponse(code = 500, message = "Internal Server Error")})
     public ResponseEntity<SearchResponse> findAll(@RequestParam(required = false) Integer page) {
         SearchResponse response = productService.search(null, page);
         return new ResponseEntity<>(response, HttpStatus.OK);
@@ -69,9 +67,7 @@ public class RESTProductAPI {
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Success", response = Product.class),
             @ApiResponse(code = 401, message = "Unauthorized"),
-            @ApiResponse(code = 403, message = "Forbidden"),
-            @ApiResponse(code = 404, message = "Not Found"),
-            @ApiResponse(code = 500, message = "Failure")})
+            @ApiResponse(code = 500, message = "Internal Server Error")})
     public ResponseEntity<Product> findById(@PathVariable String id) {
         Product item = productService.findById(id);
         return new ResponseEntity<>(item, HttpStatus.OK);
@@ -88,9 +84,7 @@ public class RESTProductAPI {
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Success", response = List.class),
             @ApiResponse(code = 401, message = "Unauthorized"),
-            @ApiResponse(code = 403, message = "Forbidden"),
-            @ApiResponse(code = 404, message = "Not Found"),
-            @ApiResponse(code = 500, message = "Failure")})
+            @ApiResponse(code = 500, message = "Internal Server Error")})
     public ResponseEntity<List<String>> getCategories() {
         List<String> list = productService.getCategories();
         return new ResponseEntity<>(list, HttpStatus.OK);
@@ -111,9 +105,7 @@ public class RESTProductAPI {
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Success", response = Product.class),
             @ApiResponse(code = 401, message = "Unauthorized"),
-            @ApiResponse(code = 403, message = "Forbidden"),
-            @ApiResponse(code = 404, message = "Not Found"),
-            @ApiResponse(code = 500, message = "Failure")})
+            @ApiResponse(code = 500, message = "Internal Server Error")})
     public ResponseEntity<List<Product>> findByCategory(@PathVariable String category) {
         List<Product> list = productService.findByCategory(category);
         return new ResponseEntity<>(list, HttpStatus.OK);
@@ -136,9 +128,7 @@ public class RESTProductAPI {
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Success", response = Product.class),
             @ApiResponse(code = 401, message = "Unauthorized"),
-            @ApiResponse(code = 403, message = "Forbidden"),
-            @ApiResponse(code = 404, message = "Not Found"),
-            @ApiResponse(code = 500, message = "Failure")})
+            @ApiResponse(code = 500, message = "Internal Server Error")})
     public ResponseEntity<SearchResponse> search(@RequestParam String keyword, @RequestParam(required = false) Integer page) {
         SearchResponse response = productService.search(keyword, page);
         return new ResponseEntity<>(response, HttpStatus.OK);

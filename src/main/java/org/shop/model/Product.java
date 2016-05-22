@@ -1,6 +1,7 @@
 package org.shop.model;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 
 /**
  * Created by vprasanna on 5/15/2016.
@@ -8,9 +9,13 @@ import org.springframework.data.annotation.Id;
  */
 public class Product {
     @Id
+    @Indexed
     private String id;
+    @Indexed
     private String category;
+    @Indexed
     private String name;
+    @Indexed
     private String description;
     private String imageURL;
 
