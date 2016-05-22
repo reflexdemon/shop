@@ -7,12 +7,14 @@
 export JAVA_HOME=/etc/alternatives/java_sdk_1.8.0
 export PATH=$JAVA_HOME/bin:$PATH
 
-TOMCAT_DIR="$OPENSHIFT_DATA_DIR/apache-tomcat-8.0.33"
+#TOMCAT_DIR="$OPENSHIFT_DATA_DIR/apache-tomcat-8.0.33"
 
 #Deploy application
 #Killing running process
-echo "Killing current java process"
-ps -ef | grep java| grep -v grep | awk '{print $2}' | xargs kill
+#echo "Killing current java process"
+#ps -ef | grep java| grep -v grep | awk '{print $2}' | xargs kill
+cd $TOMCAT_DIR/bin
+./shutdown.sh
 
 javac -version
 
@@ -21,11 +23,11 @@ echo -e  "<settings>\n <localRepository>$OPENSHIFT_DATA_DIR</localRepository>\n<
 
 cd $OPENSHIFT_REPO_DIR
 $OPENSHIFT_DATA_DIR/apache-maven-3.3.3/bin/mvn -f $OPENSHIFT_REPO_DIR/pom.xml -s $OPENSHIFT_DATA_DIR/settings.xml -DskipTests=true clean install -P openshift
-#war=`ls target/*.war | awk -F'/' '{print $2}'`
+#war=`ls webapps/*.war | awk -F'/' '{print $2}'`
 
 
 #mkdir $TOMCAT_DIR/webapps
-cp webapps/$war $TOMCAT_DIR/webapps/ROOT.war
+#cp webapps/$war $TOMCAT_DIR/webapps/ROOT.war
 # nohup java -jar $OPENSHIFT_REPO_DIR/target/.jar > $LOG 2>&1 &
 
 cd $TOMCAT_DIR/bin

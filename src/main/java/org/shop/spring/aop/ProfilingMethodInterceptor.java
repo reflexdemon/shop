@@ -4,6 +4,8 @@ import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.shop.service.UserServices;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StopWatch;
 
@@ -20,6 +22,9 @@ public class ProfilingMethodInterceptor implements MethodInterceptor {
 
     private static final Log log = LogFactory.getLog(ProfilingMethodInterceptor.class);
 
+    @Autowired
+    private UserServices userServices;
+
     @Override
     public Object invoke(MethodInvocation invocation) throws Throwable {
         final StopWatch stopWatch = new StopWatch(invocation.getMethod().toGenericString());
@@ -30,7 +35,8 @@ public class ProfilingMethodInterceptor implements MethodInterceptor {
             return invocation.proceed();
         } finally {
             stopWatch.stop();
-            classLogger.info(String.format("%s took %d ms", method, stopWatch.getTotalTimeMillis()));
+            String username = userServices.getAuthenticatedUser().getUsername();
+            classLogger.info(String.format("{%s} %s took %d ms",username, method, stopWatch.getTotalTimeMillis()));
         }
     }
 
