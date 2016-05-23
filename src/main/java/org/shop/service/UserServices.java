@@ -10,6 +10,8 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 
+import java.util.Base64;
+
 /**
  * Created by vprasanna on 5/22/2016.
  */
@@ -18,9 +20,15 @@ public class UserServices {
     private static final Log logger = LogFactory.getLog(UserServices.class);
     @Autowired
     private UserRepository userRepository;
-
     public User findByUsername(String username) {
-        return userRepository.findByUsername(username);
+        return findByUsername(username, false);
+    }
+    public User findByUsername(String username, boolean decode) {
+        User user = userRepository.findByUsername(username);
+        if (decode) {
+            user.setPassword(Base64.getDecoder().decode(user.getPassword().getBytes()).toString());
+        }
+        return user;
     }
 
     public void deleteAll() {
@@ -28,6 +36,7 @@ public class UserServices {
     }
 
     public void save(User user) {
+        user.setPassword(Base64.getEncoder().encode(user.getPassword().getBytes()).toString());
         userRepository.save(user);
     }
 
@@ -36,7 +45,8 @@ public class UserServices {
         if (auth.isAuthenticated()) {
             org.springframework.security.core.userdetails.User user = (org.springframework.security.core.userdetails.User) auth.getPrincipal();
             logger.info("Found user " + user.getUsername());
-            return findByUsername(user.getUsername());
+            User u = findByUsername(user.getUsername());
+            return u;
         }
         logger.info("No authenticated user found so going to return null");
         return null;
