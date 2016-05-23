@@ -10,10 +10,8 @@ import org.shop.service.PricingServices;
 import org.shop.service.ProductService;
 import org.shop.service.UserServices;
 import org.shop.utils.DebugUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -33,7 +31,7 @@ public class ProductLoad {
         ConfigurableApplicationContext context = SpringApplication.run(Application.class, args);
         String verboseStr = context.getEnvironment().getProperty("loader.verbose");
         System.out.println("loader.verbose = " + verboseStr);
-        verbose = null == verboseStr? false : Boolean.valueOf(verboseStr);
+        verbose = null == verboseStr ? false : Boolean.valueOf(verboseStr);
         ProductLoad loader = new ProductLoad();
         loader.loadProducts(context);
         loader.loadPricing(context);
@@ -62,6 +60,7 @@ public class ProductLoad {
             System.exit(1);
         }
     }
+
     public void loadPricing(ConfigurableApplicationContext context) throws IOException {
         try {
             PricingServices pricingServices = context.getBean(PricingServices.class);
@@ -82,6 +81,7 @@ public class ProductLoad {
             System.exit(1);
         }
     }
+
     public void loadUsers(ConfigurableApplicationContext context) throws IOException {
         try {
             UserServices userService = context.getBean(UserServices.class);

@@ -123,7 +123,7 @@ public class RESTProductAPI {
     @ApiOperation(value = "search", nickname = "search")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "keyword", value = "Search keyword", required = false, dataType = "string", paramType = "query", defaultValue="device"),
-            @ApiImplicitParam(name = "page", value = "Page number", required = false, dataType = "string", paramType = "query", defaultValue="1")
+            @ApiImplicitParam(name = "page", value = "Page number", required = false, dataType = "integer", paramType = "query", defaultValue="1")
     })
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Success", response = Product.class),
