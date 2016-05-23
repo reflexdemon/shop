@@ -26,7 +26,7 @@ public class UserServices {
     public User findByUsername(String username, boolean decode) {
         User user = userRepository.findByUsername(username);
         if (decode) {
-            user.setPassword(Base64.getDecoder().decode(user.getPassword().getBytes()).toString());
+            user.setPassword(new String(Base64.getDecoder().decode(user.getPassword().getBytes())));
         }
         return user;
     }
@@ -36,7 +36,7 @@ public class UserServices {
     }
 
     public void save(User user) {
-        user.setPassword(Base64.getEncoder().encode(user.getPassword().getBytes()).toString());
+        user.setPassword(new String(Base64.getEncoder().encode(user.getPassword().getBytes())));
         userRepository.save(user);
     }
 

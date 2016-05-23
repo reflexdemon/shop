@@ -1,7 +1,7 @@
 package org.shop;
 
-import org.shop.dao.UserRepository;
 import org.shop.model.UserRole;
+import org.shop.service.UserServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,7 +22,7 @@ import java.util.List;
 class WebSecurityConfiguration extends GlobalAuthenticationConfigurerAdapter {
 
     @Autowired
-    UserRepository userRepository;
+    UserServices userServices;
 
     @Override
     public void init(AuthenticationManagerBuilder auth) throws Exception {
@@ -35,7 +35,7 @@ class WebSecurityConfiguration extends GlobalAuthenticationConfigurerAdapter {
 
             @Override
             public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-                org.shop.model.User user = userRepository.findByUsername(username);
+                org.shop.model.User user = userServices.findByUsername(username, true);
                 if (user != null) {
                     return new User(user.getUsername(), user.getPassword(), true, true, true, true,
                             AuthorityUtils.commaSeparatedStringToAuthorityList(rolesToCommaSeparatedString(user.getRoles())));
