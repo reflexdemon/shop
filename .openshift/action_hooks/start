@@ -7,7 +7,7 @@
 export JAVA_HOME=/etc/alternatives/java_sdk_1.8.0
 export PATH=$JAVA_HOME/bin:$PATH
 
-#TOMCAT_DIR="$OPENSHIFT_DATA_DIR/apache-tomcat-8.0.33"
+TOMCAT_DIR="$OPENSHIFT_DATA_DIR/apache-tomcat-8.0.33"
 
 #Deploy application
 #Killing running process
