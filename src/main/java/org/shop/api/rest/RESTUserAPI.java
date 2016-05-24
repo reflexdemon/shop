@@ -29,7 +29,7 @@ public class RESTUserAPI {
      *
      * @return the categories
      */
-    @RequestMapping(value = "/user", method = GET, produces = APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/rest/user", method = GET, produces = APPLICATION_JSON_VALUE)
     @ProfileExecution
     @ApiOperation(value = "getAuthenticatedUser", nickname = "getAuthenticatedUser")
     @ApiResponses(value = {

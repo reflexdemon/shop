@@ -80,19 +80,19 @@ public class Application extends SpringBootServletInitializer {
                 .groupName("rest")
                 .apiInfo(apiInfo())
                 .select()
-                .paths(regex("/.*"))
+                .paths(regex("/rest/.*"))
                 .build();
     }
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("REST Shop")
-                .description("Shopping Cart REST API Swagger")
+                .title("Nanthinis Healthcare REST Shop")
+                .description("REST API for Nanthinis Healthcare online shop")
                 .termsOfServiceUrl("http://nanthinishealthcare.com/")
                 .contact("Venkat")
                 .license("Nanthinis Healthcare")
                 .licenseUrl("http://nanthinishealthcare.com/")
-                .version("2.0")
+                .version("1.0")
                 .build();
     }
 }

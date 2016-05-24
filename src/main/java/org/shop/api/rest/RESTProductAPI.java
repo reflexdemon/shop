@@ -37,7 +37,7 @@ public class RESTProductAPI {
      * @param page the page
      * @return the response entity
      */
-    @RequestMapping(value = "/product", method = GET, produces = APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/rest/product", method = GET, produces = APPLICATION_JSON_VALUE)
     @ProfileExecution
     @ApiOperation(value = "findAll", nickname = "findAll")
     @ApiImplicitParams({
@@ -58,7 +58,7 @@ public class RESTProductAPI {
      * @param id the id
      * @return the response entity
      */
-    @RequestMapping(value = "/product/{id}", method = GET, produces = APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/rest/product/{id}", method = GET, produces = APPLICATION_JSON_VALUE)
     @ProfileExecution
     @ApiOperation(value = "findById", nickname = "findById")
     @ApiImplicitParams({
@@ -78,7 +78,7 @@ public class RESTProductAPI {
      *
      * @return the categories
      */
-    @RequestMapping(value = "/category", method = GET, produces = APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/rest/category", method = GET, produces = APPLICATION_JSON_VALUE)
     @ProfileExecution
     @ApiOperation(value = "getCategories", nickname = "getCategories")
     @ApiResponses(value = {
@@ -96,7 +96,7 @@ public class RESTProductAPI {
      * @param category the category
      * @return the response entity
      */
-    @RequestMapping(value = "/category/{category}", method = GET, produces = APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/rest/category/{category}", method = GET, produces = APPLICATION_JSON_VALUE)
     @ProfileExecution
     @ApiOperation(value = "findByCategory", nickname = "findByCategory")
     @ApiImplicitParams({
@@ -118,7 +118,7 @@ public class RESTProductAPI {
      * @param page    the page
      * @return the response entity
      */
-    @RequestMapping(value = "/search", method = GET, produces = APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/rest/search", method = GET, produces = APPLICATION_JSON_VALUE)
     @ProfileExecution
     @ApiOperation(value = "search", nickname = "search")
     @ApiImplicitParams({
