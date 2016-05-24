@@ -4,14 +4,14 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.shop.dao.UserRepository;
 import org.shop.model.User;
-import org.shop.utils.DebugUtils;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 
-import java.util.Base64;
 
+import static org.shop.utils.CryptoUtils.*;
 /**
  * Created by vprasanna on 5/22/2016.
  */
@@ -26,7 +26,7 @@ public class UserServices {
     public User findByUsername(String username, boolean decode) {
         User user = userRepository.findByUsername(username);
         if (decode) {
-            user.setPassword(new String(Base64.getDecoder().decode(user.getPassword().getBytes())));
+            user.setPassword(decode(user.getPassword()));
         }
         return user;
     }
@@ -36,7 +36,7 @@ public class UserServices {
     }
 
     public void save(User user) {
-        user.setPassword(new String(Base64.getEncoder().encode(user.getPassword().getBytes())));
+        user.setPassword(encode(user.getPassword()));
         userRepository.save(user);
     }
 
