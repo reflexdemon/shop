@@ -21,13 +21,7 @@ public class UserServices {
     @Autowired
     private UserRepository userRepository;
     public User findByUsername(String username) {
-        return findByUsername(username, false);
-    }
-    public User findByUsername(String username, boolean decode) {
         User user = userRepository.findByUsername(username);
-        if (decode) {
-            user.setPassword(decode(user.getPassword()));
-        }
         return user;
     }
 
@@ -42,9 +36,9 @@ public class UserServices {
 
     public User getAuthenticatedUser() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        if (auth.isAuthenticated()) {
+        if (null != auth && auth.isAuthenticated()) {
             org.springframework.security.core.userdetails.User user = (org.springframework.security.core.userdetails.User) auth.getPrincipal();
-            logger.info("Found user " + user.getUsername());
+            logger.trace("Found user " + user.getUsername());
             User u = findByUsername(user.getUsername());
             return u;
         }

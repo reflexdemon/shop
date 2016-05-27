@@ -1,5 +1,6 @@
 package org.shop.utils;
 
+import java.security.MessageDigest;
 import java.util.Base64;
 import java.util.Date;
 import java.util.Random;
@@ -45,5 +46,29 @@ public class CryptoUtils {
             return new String(encoder.decode(cipher));
         }
         return input;
+    }
+
+    /**
+     * Sha 256 string.
+     *
+     * @param base the base
+     * @return the string
+     */
+    public static String sha256(String base) {
+        try{
+            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+            byte[] hash = digest.digest(base.getBytes("UTF-8"));
+            StringBuffer hexString = new StringBuffer();
+
+            for (int i = 0; i < hash.length; i++) {
+                String hex = Integer.toHexString(0xff & hash[i]);
+                if(hex.length() == 1) hexString.append('0');
+                hexString.append(hex);
+            }
+
+            return hexString.toString();
+        } catch(Exception ex){
+            throw new RuntimeException(ex);
+        }
     }
 }

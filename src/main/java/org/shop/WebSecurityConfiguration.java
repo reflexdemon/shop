@@ -13,6 +13,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
+import static org.shop.utils.CryptoUtils.decode;
+
 import java.util.List;
 
 /**
@@ -35,9 +37,9 @@ class WebSecurityConfiguration extends GlobalAuthenticationConfigurerAdapter {
 
             @Override
             public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-                org.shop.model.User user = userServices.findByUsername(username, true);
+                org.shop.model.User user = userServices.findByUsername(username);
                 if (user != null) {
-                    return new User(user.getUsername(), user.getPassword(), true, true, true, true,
+                    return new User(user.getUsername(), decode(user.getPassword()), true, true, true, true,
                             AuthorityUtils.commaSeparatedStringToAuthorityList(rolesToCommaSeparatedString(user.getRoles())));
                 } else {
                     throw new UsernameNotFoundException("could not find the user '"
