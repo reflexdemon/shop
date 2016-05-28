@@ -69,13 +69,15 @@ public class InventoryService {
      */
     public SearchResponse search(String keyword, Integer page) {
         //To make page parameter optional
-        if (null == page || 0 == page) {
+        if (null == page || 0 >= page) {
             page = 1;
         }
 
         int limit = PAGE_SIZE;
         int offset = (PAGE_SIZE * page) - PAGE_SIZE;
-        return search.search(keyword, limit, offset);
+        SearchResponse  response = search.search(keyword, limit, offset);
+        response.setPage(page);
+        return response;
     }
 
     /**

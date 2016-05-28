@@ -11,6 +11,7 @@ public class SearchResponse {
     private int offSet;
     private int limit;
     private long maxCount;
+    private int page;
 
     /**
      * Gets products.
@@ -84,6 +85,14 @@ public class SearchResponse {
         this.maxCount = maxCount;
     }
 
+    public int getPage() {
+        return page;
+    }
+
+    public void setPage(int page) {
+        this.page = page;
+    }
+
     @Override
     public String toString() {
         return "SearchResponse{" +
@@ -91,6 +100,7 @@ public class SearchResponse {
                 ", offSet=" + offSet +
                 ", limit=" + limit +
                 ", maxCount=" + maxCount +
+                ", page=" + page +
                 '}';
     }
 }
