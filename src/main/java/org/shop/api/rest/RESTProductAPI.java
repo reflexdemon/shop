@@ -3,7 +3,7 @@ package org.shop.api.rest;
 import io.swagger.annotations.*;
 import org.shop.model.Product;
 import org.shop.model.SearchResponse;
-import org.shop.service.ProductService;
+import org.shop.service.InventoryService;
 import org.shop.spring.aop.ProfileExecution;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -23,13 +23,14 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
  * The type Rest product api.
  */
 @RestController
+@RequestMapping("/rest")
 public class RESTProductAPI {
 
     /**
      * The Product service.
      */
     @Autowired
-    ProductService productService;
+    InventoryService inventoryService;
 
     /**
      * Find all response entity.
@@ -37,7 +38,7 @@ public class RESTProductAPI {
      * @param page the page
      * @return the response entity
      */
-    @RequestMapping(value = "/rest/product", method = GET, produces = APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/product", method = GET, produces = APPLICATION_JSON_VALUE)
     @ProfileExecution
     @ApiOperation(value = "findAll", nickname = "findAll")
     @ApiImplicitParams({
@@ -48,7 +49,7 @@ public class RESTProductAPI {
             @ApiResponse(code = 401, message = "Unauthorized"),
             @ApiResponse(code = 500, message = "Internal Server Error")})
     public ResponseEntity<SearchResponse> findAll(@RequestParam(required = false) Integer page) {
-        SearchResponse response = productService.search(null, page);
+        SearchResponse response = inventoryService.search(null, page);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
@@ -58,7 +59,7 @@ public class RESTProductAPI {
      * @param id the id
      * @return the response entity
      */
-    @RequestMapping(value = "/rest/product/{id}", method = GET, produces = APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/product/{id}", method = GET, produces = APPLICATION_JSON_VALUE)
     @ProfileExecution
     @ApiOperation(value = "findById", nickname = "findById")
     @ApiImplicitParams({
@@ -69,7 +70,7 @@ public class RESTProductAPI {
             @ApiResponse(code = 401, message = "Unauthorized"),
             @ApiResponse(code = 500, message = "Internal Server Error")})
     public ResponseEntity<Product> findById(@PathVariable String id) {
-        Product item = productService.findById(id);
+        Product item = inventoryService.findById(id);
         return new ResponseEntity<>(item, HttpStatus.OK);
     }
 
@@ -78,7 +79,7 @@ public class RESTProductAPI {
      *
      * @return the categories
      */
-    @RequestMapping(value = "/rest/category", method = GET, produces = APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/category", method = GET, produces = APPLICATION_JSON_VALUE)
     @ProfileExecution
     @ApiOperation(value = "getCategories", nickname = "getCategories")
     @ApiResponses(value = {
@@ -86,7 +87,7 @@ public class RESTProductAPI {
             @ApiResponse(code = 401, message = "Unauthorized"),
             @ApiResponse(code = 500, message = "Internal Server Error")})
     public ResponseEntity<List<String>> getCategories() {
-        List<String> list = productService.getCategories();
+        List<String> list = inventoryService.getCategories();
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
@@ -96,18 +97,18 @@ public class RESTProductAPI {
      * @param category the category
      * @return the response entity
      */
-    @RequestMapping(value = "/rest/category/{category}", method = GET, produces = APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/category/{category}", method = GET, produces = APPLICATION_JSON_VALUE)
     @ProfileExecution
     @ApiOperation(value = "findByCategory", nickname = "findByCategory")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "category", value = "Category name", required = false, dataType = "string", paramType = "path", defaultValue = "INFECTION CONTROL PRODUCTS")
     })
     @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "Success", response = Product.class),
+            @ApiResponse(code = 200, message = "Success", response = List.class),
             @ApiResponse(code = 401, message = "Unauthorized"),
             @ApiResponse(code = 500, message = "Internal Server Error")})
     public ResponseEntity<List<Product>> findByCategory(@PathVariable String category) {
-        List<Product> list = productService.findByCategory(category);
+        List<Product> list = inventoryService.findByCategory(category);
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
@@ -118,7 +119,7 @@ public class RESTProductAPI {
      * @param page    the page
      * @return the response entity
      */
-    @RequestMapping(value = "/rest/search", method = GET, produces = APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/search", method = GET, produces = APPLICATION_JSON_VALUE)
     @ProfileExecution
     @ApiOperation(value = "search", nickname = "search")
     @ApiImplicitParams({
@@ -126,11 +127,11 @@ public class RESTProductAPI {
             @ApiImplicitParam(name = "page", value = "Page number", required = false, dataType = "object", paramType = "query", defaultValue="1")
     })
     @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "Success", response = Product.class),
+            @ApiResponse(code = 200, message = "Success", response = SearchResponse.class),
             @ApiResponse(code = 401, message = "Unauthorized"),
             @ApiResponse(code = 500, message = "Internal Server Error")})
     public ResponseEntity<SearchResponse> search(@RequestParam String keyword, @RequestParam(required = false) Integer page) {
-        SearchResponse response = productService.search(keyword, page);
+        SearchResponse response = inventoryService.search(keyword, page);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 }

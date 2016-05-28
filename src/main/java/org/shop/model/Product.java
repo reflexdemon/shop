@@ -19,6 +19,8 @@ public class Product {
     private String description;
     private String imageURL;
 
+    private PricingInfo pricingInfo;
+
     /**
      * Gets id.
      *
@@ -109,6 +111,23 @@ public class Product {
         this.imageURL = imageURL;
     }
 
+    /**
+     * Gets pricing info.
+     *
+     * @return the pricing info
+     */
+    public PricingInfo getPricingInfo() {
+        return pricingInfo;
+    }
+
+    /**
+     * Sets pricing info.
+     *
+     * @param pricingInfo the pricing info
+     */
+    public void setPricingInfo(PricingInfo pricingInfo) {
+        this.pricingInfo = pricingInfo;
+    }
 
     @Override
     public String toString() {
@@ -118,6 +137,7 @@ public class Product {
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", imageURL='" + imageURL + '\'' +
+                ", pricingInfo=" + pricingInfo +
                 '}';
     }
 }

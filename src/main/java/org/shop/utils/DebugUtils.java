@@ -181,23 +181,10 @@ public class DebugUtils {
                 return Arrays.asList((Object[]) obj).toString();
             }
         } else if (obj instanceof List) {
-//         List<?> list=(List<?>)obj;
-//         StringBuilder sb=new StringBuilder();
-//         sb.append("List["+list.size());
-//         if (list.size() > 0) {
-//            sb.append(", type="+list.get(0).getClass().getName());
-//         }
-//         sb.append("]");
-//         
-//         return truncate(sb.toString());
             return debugString(obj, depth + 1, maxLength, compact);
         } else if (obj instanceof String) {
             return "\"" + truncate(obj.toString(), maxLength) + "\"";
         } else if (obj.getClass().getName().toLowerCase().contains("domain")) {
-            return separator + debugString(obj, depth + 1, maxLength, compact);
-        } else if (obj.getClass().getName().toLowerCase().contains("bsftmanager.client")) {
-            return separator + debugString(obj, depth + 1, maxLength, compact);
-        } else if (obj.getClass().getName().toLowerCase().contains("maxasp.client")) {
             return separator + debugString(obj, depth + 1, maxLength, compact);
         } else {
             return truncate(obj.toString(), maxLength);
@@ -493,47 +480,6 @@ public class DebugUtils {
         return null;
     }
 
-    /**
-     * Gets calling class and method.
-     *
-     * @param depth the depth
-     * @return the calling class and method
-     */
-    public static final String getCallingClassAndMethod(int depth) {
-        // FIXME: THIS Does not really work as of 6/7/11.
-        StackTraceElement stack[] = Thread.currentThread().getStackTrace();
-        String thisClassname = DebugUtils.class.getName();
-
-        int i = 0;
-        for (i = 0; i < stack.length; i++) {
-            String classname = stack[i].getClassName();
-            if (debug) System.out.println(i + ":" + classname);
-            if (classname == null || classname.equals(thisClassname))
-                break;
-        }
-        for (; i < stack.length; i++) {
-            String classname = stack[i].getClassName();
-            if (debug) System.out.println(i + ":" + classname);
-            if (classname == null || !classname.equals(thisClassname))
-                break;
-        }
-        int callingEle = i + depth;
-
-        if (callingEle < stack.length) {
-            if (debug) {
-                for (int j = i + 1; j <= callingEle; j++) {
-                    System.out.println(j + ":" + stack[j].getClassName());
-                }
-            }
-            String cl = stack[callingEle].getClassName();
-            String meth = stack[callingEle].getMethodName();
-            int line = stack[callingEle].getLineNumber();
-            String file = stack[callingEle].getFileName();
-            return callingEle + ":" + cl + "." + meth + "(" + file + ": " + line + ")";
-        }
-
-        return null;
-    }
 
     /**
      * Format as html string.
@@ -607,18 +553,6 @@ public class DebugUtils {
      * @param description the description
      * @return the string
      */
-//   public static void main (String argv[]){
-//      
-//     String s = "string";
-//      
-//     Ticket ticket = new Ticket();
-//     ticket.setAccountId("blah");
-//     ticket.setCallbackEmail("blah1");
-//     ticket.setDescription("blah");
-//     ticket.setTicketNumber("1-dfasd");
-//     System.out.println(DebugUtils.jsonDebug(s, false));
-//     System.out.println(DebugUtils.jsonDebug(ticket, false));
-//   }
     public static String logObjectAsXML(final Object source, final String description) {
         String result = null;
         if (source != null) {

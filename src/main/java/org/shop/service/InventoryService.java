@@ -2,15 +2,11 @@ package org.shop.service;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.shop.dao.ProductRepository;
+import org.shop.dao.InventoryRepository;
 import org.shop.dao.Search;
 import org.shop.model.Product;
 import org.shop.model.SearchResponse;
-import org.shop.utils.DebugUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -18,19 +14,22 @@ import java.util.List;
 
 /**
  * Created by vprasanna on 5/15/2016.
- * The type Product service.
+ * The type Inventory service.
  */
 @Component
-public class ProductService {
+public class InventoryService {
 
-    private static final Log logger = LogFactory.getLog(ProductService.class);
+    private static final Log logger = LogFactory.getLog(InventoryService.class);
 
     private static final int PAGE_SIZE = 10;
     @Autowired
     private Search search;
 
     @Autowired
-    private ProductRepository productDao;
+    private InventoryRepository productDao;
+
+    @Autowired
+    private PricingServices pricingServices;
 
     /**
      * Find all list.
@@ -38,7 +37,7 @@ public class ProductService {
      * @return the list
      */
     public List<Product> findAll() {
-        return productDao.findAll();
+        return pricingServices.applyPricing(productDao.findAll());
     }
 
     /**
@@ -48,7 +47,7 @@ public class ProductService {
      * @return the product
      */
     public Product findById(String id) {
-        return productDao.findById(id);
+        return pricingServices.applyPricing(productDao.findById(id));
     }
 
     /**
@@ -58,7 +57,7 @@ public class ProductService {
      * @return the list
      */
     public List<Product> findByCategory(String category) {
-        return productDao.findByCategory(category);
+        return pricingServices.applyPricing(productDao.findByCategory(category));
     }
 
     /**

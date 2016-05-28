@@ -19,6 +19,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
  * Created by vprasanna on 5/22/2016.
  */
 @RestController
+@RequestMapping("/rest")
 public class RESTUserAPI {
 
     @Autowired
@@ -29,7 +30,7 @@ public class RESTUserAPI {
      *
      * @return the categories
      */
-    @RequestMapping(value = "/rest/user", method = GET, produces = APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/user", method = GET, produces = APPLICATION_JSON_VALUE)
     @ProfileExecution
     @ApiOperation(value = "getAuthenticatedUser", nickname = "getAuthenticatedUser")
     @ApiResponses(value = {

@@ -5,6 +5,7 @@ import org.apache.commons.logging.LogFactory;
 import org.shop.dao.Search;
 import org.shop.model.Product;
 import org.shop.model.SearchResponse;
+import org.shop.service.PricingServices;
 import org.shop.spring.aop.ProfileExecution;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -25,6 +26,9 @@ public class SearchImpl implements Search {
     private static final String COLLECTION = "product";
     @Autowired
     private MongoTemplate mongoTemplate;
+
+    @Autowired
+    private PricingServices pricingServices;
 
     @Override
     @ProfileExecution
@@ -49,7 +53,7 @@ public class SearchImpl implements Search {
         List<Product> products = mongoTemplate.find(query, Product.class);
 
 
-        response.setProducts(products);
+        response.setProducts(pricingServices.applyPricing(products));
         response.setLimit(limit);
         response.setOffSet(offset);
 

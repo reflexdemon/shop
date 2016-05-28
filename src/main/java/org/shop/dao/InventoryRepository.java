@@ -7,9 +7,9 @@ import java.util.List;
 
 /**
  * Created by vprasanna on 5/15/2016.
- * The interface Product repository.
+ * The interface Inventory repository.
  */
-public interface ProductRepository extends MongoRepository<Product, String> {
+public interface InventoryRepository extends MongoRepository<Product, String> {
     List<Product> findAll();
 
     /**

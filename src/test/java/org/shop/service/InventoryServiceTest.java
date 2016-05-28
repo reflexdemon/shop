@@ -12,32 +12,32 @@ import static org.junit.Assert.assertTrue;
 /**
  * Created by vprasanna on 5/15/2016.
  */
-public class ProductServiceTest extends AbstractTest {
+public class InventoryServiceTest extends AbstractTest {
 
     @Autowired
-    ProductService productService;
+    InventoryService inventoryService;
 
     @org.junit.Test
     public void testAutoWire() throws Exception {
-        assertNotNull("Check if the autowire worked", productService);
+        assertNotNull("Check if the autowire worked", inventoryService);
     }
 
 
     @org.junit.Test
     public void testGetDistinctCategory() throws Exception {
-        List<String> list = productService.getCategories();
+        List<String> list = inventoryService.getCategories();
         assertTrue("Check if the listing worked", list.size() > 0);
     }
 
     @org.junit.Test
     public void testFindByCategory() throws Exception {
-        List<Product> list = productService.findByCategory("INCONTINENT PRODUCTS");
+        List<Product> list = inventoryService.findByCategory("INCONTINENT PRODUCTS");
         assertTrue("Check if the findByCategory worked", list.size() > 0);
     }
 
     @org.junit.Test
     public void testSearch() throws Exception {
-        SearchResponse response = productService.search("Dev", 1);
+        SearchResponse response = inventoryService.search("Dev", 1);
         assertTrue("Check if the search worked", response.getProducts().size() > 0);
         assertTrue("Check if the search worked", response.getLimit() > 0);
         assertTrue("Check if the search worked", response.getMaxCount() > 0);
@@ -45,7 +45,7 @@ public class ProductServiceTest extends AbstractTest {
 
     @org.junit.Test
     public void testFindById() throws Exception {
-        Product item = productService.findById("1");
+        Product item = inventoryService.findById("1");
         assertNotNull("Check if the findById worked", item);
     }
 

@@ -6,8 +6,8 @@ import org.shop.Application;
 import org.shop.model.PricingInfo;
 import org.shop.model.Product;
 import org.shop.model.User;
+import org.shop.service.InventoryService;
 import org.shop.service.PricingServices;
-import org.shop.service.ProductService;
 import org.shop.service.UserServices;
 import org.shop.utils.DebugUtils;
 import org.springframework.boot.SpringApplication;
@@ -24,8 +24,8 @@ import java.util.List;
  */
 //@SpringApplicationConfiguration(value = {Application.class})
 public class ProductLoad {
-    private static boolean verbose;
     static final ObjectMapper mapper = new ObjectMapper(); // can reuse, share globally
+    private static boolean verbose;
 
     public static void main(String[] args) throws IOException {
         ConfigurableApplicationContext context = SpringApplication.run(Application.class, args);
@@ -42,17 +42,17 @@ public class ProductLoad {
 
     public void loadProducts(ConfigurableApplicationContext context) throws IOException {
         try {
-            ProductService productService = context.getBean(ProductService.class);
+            InventoryService inventoryService = context.getBean(InventoryService.class);
             File file = new File("./data/products.json");
             System.out.println("Absolute Path" + file.getAbsolutePath());
 
             InputStream content = new FileInputStream(file);
             List<Product> products = mapper.readValue(content, new TypeReference<List<Product>>() {
             });
-            productService.deleteAll();
+            inventoryService.deleteAll();
             products.stream().forEach(product -> {
                 if (verbose) System.out.println("Saving: " + DebugUtils.jsonDebug(product));
-                productService.save(product);
+                inventoryService.save(product);
             });
             System.out.println("Product Loading is complete");
         } catch (Exception e) {
