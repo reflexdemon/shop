@@ -13,8 +13,8 @@ TOMCAT_DIR="$OPENSHIFT_DATA_DIR/apache-tomcat-8.0.33"
 #Killing running process
 #echo "Killing current java process"
 #ps -ef | grep java| grep -v grep | awk '{print $2}' | xargs kill
-cd $TOMCAT_DIR/bin
-./shutdown.sh
+#cd $TOMCAT_DIR/bin
+#./shutdown.sh
 
 javac -version
 
@@ -29,6 +29,12 @@ $OPENSHIFT_DATA_DIR/apache-maven-3.3.3/bin/mvn -f $OPENSHIFT_REPO_DIR/pom.xml -s
 #mkdir $TOMCAT_DIR/webapps
 #cp webapps/$war $TOMCAT_DIR/webapps/ROOT.war
 # nohup java -jar $OPENSHIFT_REPO_DIR/target/.jar > $LOG 2>&1 &
+
+rm -rf $TOMCAT_DIR/work/Catalina/shop-venkatvp.rhcloud.com
+rm -rf $TOMCAT_DIR/webapps/ROOT
+rm -rf $TOMCAT_DIR/logs/*
+
+
 
 cd $TOMCAT_DIR/bin
 ./startup.sh
