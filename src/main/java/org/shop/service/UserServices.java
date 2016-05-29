@@ -30,17 +30,16 @@ public class UserServices {
     }
 
     public void save(User user) {
-        user.setPassword(encode(user.getPassword()));
+        user.setPassword(sha256(user.getPassword()));
         userRepository.save(user);
     }
 
     public User getAuthenticatedUser() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         if (null != auth && auth.isAuthenticated()) {
-            org.springframework.security.core.userdetails.User user = (org.springframework.security.core.userdetails.User) auth.getPrincipal();
+            User user = (User) auth.getPrincipal();
             logger.trace("Found user " + user.getUsername());
-            User u = findByUsername(user.getUsername());
-            return u;
+            return user;
         }
         logger.info("No authenticated user found so going to return null");
         return null;

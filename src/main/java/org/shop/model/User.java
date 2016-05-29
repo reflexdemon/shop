@@ -2,15 +2,17 @@ package org.shop.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * The type User.
  * Created by vprasanna on 5/22/2016.
  */
-public class User {
+public class User implements UserDetails {
     @Id
     @Indexed
     private String id;
@@ -24,7 +26,8 @@ public class User {
     @Indexed
     private String username;
     private String password;
-    private List<UserRole> roles = new ArrayList<>();
+
+    private Set<Role> roles = new HashSet<>();
 
     /**
      * Gets first name.
@@ -161,6 +164,26 @@ public class User {
         return username;
     }
 
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
+
     /**
      * Sets username.
      *
@@ -168,6 +191,15 @@ public class User {
      */
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        Collection<GrantedAuthority> grantedAuthorities = new ArrayList<>();
+        this.getRoles().stream().forEach(
+                role -> grantedAuthorities.add(new SimpleGrantedAuthority(role.getAuthority()))
+        );
+        return grantedAuthorities;
     }
 
     /**
@@ -193,7 +225,7 @@ public class User {
      *
      * @return the roles
      */
-    public List<UserRole> getRoles() {
+    public Set<Role> getRoles() {
         return roles;
     }
 
@@ -202,7 +234,7 @@ public class User {
      *
      * @param roles the roles
      */
-    public void setRoles(List<UserRole> roles) {
+    public void setRoles(Set<Role> roles) {
         this.roles = roles;
     }
 

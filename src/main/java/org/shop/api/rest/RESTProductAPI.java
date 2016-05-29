@@ -42,7 +42,7 @@ public class RESTProductAPI {
     @ProfileExecution
     @ApiOperation(value = "findAll", nickname = "findAll")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "page", value = "Page number", required = false, dataType = "object", paramType = "query", defaultValue="1")
+            @ApiImplicitParam(name = "page", value = "Page number", required = false, dataType = "object", paramType = "query", defaultValue = "1")
     })
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Success", response = SearchResponse.class),
@@ -63,12 +63,13 @@ public class RESTProductAPI {
     @ProfileExecution
     @ApiOperation(value = "findById", nickname = "findById")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "id", value = "Record Identifier", required = false, dataType = "string", paramType = "path", defaultValue="1")
+            @ApiImplicitParam(name = "id", value = "Record Identifier", required = false, dataType = "string", paramType = "path", defaultValue = "1")
     })
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Success", response = Product.class),
             @ApiResponse(code = 401, message = "Unauthorized"),
             @ApiResponse(code = 500, message = "Internal Server Error")})
+
     public ResponseEntity<Product> findById(@PathVariable String id) {
         Product item = inventoryService.findById(id);
         return new ResponseEntity<>(item, HttpStatus.OK);
@@ -86,6 +87,7 @@ public class RESTProductAPI {
             @ApiResponse(code = 200, message = "Success", response = List.class),
             @ApiResponse(code = 401, message = "Unauthorized"),
             @ApiResponse(code = 500, message = "Internal Server Error")})
+
     public ResponseEntity<List<String>> getCategories() {
         List<String> list = inventoryService.getCategories();
         return new ResponseEntity<>(list, HttpStatus.OK);
@@ -107,6 +109,7 @@ public class RESTProductAPI {
             @ApiResponse(code = 200, message = "Success", response = List.class),
             @ApiResponse(code = 401, message = "Unauthorized"),
             @ApiResponse(code = 500, message = "Internal Server Error")})
+
     public ResponseEntity<List<Product>> findByCategory(@PathVariable String category) {
         List<Product> list = inventoryService.findByCategory(category);
         return new ResponseEntity<>(list, HttpStatus.OK);
@@ -123,13 +126,14 @@ public class RESTProductAPI {
     @ProfileExecution
     @ApiOperation(value = "search", nickname = "search")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "keyword", value = "Search keyword", required = false, dataType = "string", paramType = "query", defaultValue="device"),
-            @ApiImplicitParam(name = "page", value = "Page number", required = false, dataType = "object", paramType = "query", defaultValue="1")
+            @ApiImplicitParam(name = "keyword", value = "Search keyword", required = false, dataType = "string", paramType = "query", defaultValue = "device"),
+            @ApiImplicitParam(name = "page", value = "Page number", required = false, dataType = "object", paramType = "query", defaultValue = "1")
     })
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Success", response = SearchResponse.class),
             @ApiResponse(code = 401, message = "Unauthorized"),
             @ApiResponse(code = 500, message = "Internal Server Error")})
+
     public ResponseEntity<SearchResponse> search(@RequestParam String keyword, @RequestParam(required = false) Integer page) {
         SearchResponse response = inventoryService.search(keyword, page);
         return new ResponseEntity<>(response, HttpStatus.OK);

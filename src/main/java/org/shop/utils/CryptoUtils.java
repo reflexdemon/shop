@@ -71,4 +71,10 @@ public class CryptoUtils {
             throw new RuntimeException(ex);
         }
     }
+    public static String sha256(CharSequence base) {
+        if (null == base) {
+            throw new IllegalArgumentException("Base for SHA256 encoding is null");
+        }
+        return sha256(base.toString());
+    }
 }
