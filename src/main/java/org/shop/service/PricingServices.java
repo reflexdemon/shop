@@ -3,8 +3,9 @@ package org.shop.service;
 import org.shop.dao.PricingRepository;
 import org.shop.model.PricingInfo;
 import org.shop.model.Product;
+import org.shop.spring.aop.ProfileExecution;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +13,7 @@ import java.util.List;
 /**
  * Created by vprasanna on 5/22/2016.
  */
-@Component
+@Service
 public class PricingServices {
     @Autowired
     UserServices userServices;
@@ -66,10 +67,12 @@ public class PricingServices {
 
     }
 
+    @ProfileExecution
     public void deleteAll() {
         pricingDao.deleteAll();
     }
 
+    @ProfileExecution
     public void save(PricingInfo pricing) {
         pricingDao.save(pricing);
     }

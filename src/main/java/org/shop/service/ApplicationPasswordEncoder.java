@@ -1,13 +1,14 @@
 package org.shop.service;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
+
 import static org.shop.utils.CryptoUtils.sha256;
 
 /**
  * Created by vprasanna on 5/29/2016.
  */
-@Service
+@Component
 public class ApplicationPasswordEncoder implements PasswordEncoder {
     @Override
     public String encode(CharSequence charSequence) {

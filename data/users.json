@@ -9,9 +9,10 @@
     "pricingTag": "PLATINUM_TAG",
     "username": "venkatvp",
     "password": "password",
-    "roles": [
-      "ADMIN",
-      "USER"
+    "authorities": [
+      "ROLE_ADMIN",
+      "ROLE_USER",
+      "ROLE_SYSTEM"
     ]
   },
   {
@@ -24,9 +25,9 @@
     "pricingTag": "GOLD_TAG",
     "username": "harinign",
     "password": "password",
-    "roles": [
-      "ADMIN",
-      "USER"
+    "authorities": [
+      "ROLE_ADMIN",
+      "ROLE_USER"
     ]
   },
   {
@@ -39,8 +40,8 @@
     "pricingTag": "BRONZE_TAG",
     "username": "root",
     "password": "system",
-    "roles": [
-      "SYSTEM"
+    "authorities": [
+      "ROLE_SYSTEM"
     ]
   }
 ]

@@ -7,15 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.mock.web.MockHttpSession;
+import org.springframework.security.test.context.support.WithUserDetails;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-import java.util.List;
-
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 
 /**
  * Created by vprasanna on 5/20/2016.
@@ -23,20 +21,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class RESTProductAPITest extends AbstractTest {
 
     @Autowired
-    private WebApplicationContext webApplicationContext;
-
-
-    @Autowired
     MockHttpSession session;
     @Autowired
     MockHttpServletRequest request;
-
-    private MockMvc mockMvc;
-
-
     @Autowired
     RESTProductAPI restProductAPI;
-
+    @Autowired
+    private WebApplicationContext webApplicationContext;
+    private MockMvc mockMvc;
 
     @Before
     public void setUp() throws Exception {
@@ -44,40 +36,45 @@ public class RESTProductAPITest extends AbstractTest {
     }
 
     @Test
+    @WithUserDetails(value = "root", userDetailsServiceBeanName = "profileService")
     public void testFindAll() throws Exception {
-        mockMvc.perform(get("/product?page=1"))
+        mockMvc.perform(get("/rest/product?page=1"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andExpect(jsonPath("$.products[0].id").value("1"));
     }
 
     @Test
+    @WithUserDetails(value = "root", userDetailsServiceBeanName = "profileService")
     public void testGetCategories() throws Exception {
-        mockMvc.perform(get("/category"))
+        mockMvc.perform(get("/rest/category"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andExpect(jsonPath("$").exists());
     }
 
     @Test
+    @WithUserDetails(value = "root", userDetailsServiceBeanName = "profileService")
     public void testFindById() throws Exception {
-        mockMvc.perform(get("/product/4"))
+        mockMvc.perform(get("/rest/product/4"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andExpect(jsonPath("$.id").value("4"));
     }
 
     @Test
+    @WithUserDetails(value = "root", userDetailsServiceBeanName = "profileService")
     public void testFindByCategory() throws Exception {
-        mockMvc.perform(get("/category/SECUREMENT DEVICES"))
+        mockMvc.perform(get("/rest/category/SECUREMENT DEVICES"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andExpect(jsonPath("$").exists());
     }
 
     @Test
+    @WithUserDetails(value = "root", userDetailsServiceBeanName = "profileService")
     public void testSearch() throws Exception {
-        mockMvc.perform(get("/search?keyword=dev"))
+        mockMvc.perform(get("/rest/search?keyword=dev"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andExpect(jsonPath("$.products").exists());

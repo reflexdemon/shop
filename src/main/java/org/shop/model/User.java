@@ -6,7 +6,10 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * The type User.
@@ -27,7 +30,7 @@ public class User implements UserDetails {
     private String username;
     private String password;
 
-    private Set<Role> roles = new HashSet<>();
+    private Set<Role> authorities = new HashSet<>();
 
     /**
      * Gets first name.
@@ -164,6 +167,15 @@ public class User implements UserDetails {
         return username;
     }
 
+    /**
+     * Sets username.
+     *
+     * @param username the username
+     */
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     @Override
     public boolean isAccountNonExpired() {
         return true;
@@ -184,22 +196,21 @@ public class User implements UserDetails {
         return true;
     }
 
-    /**
-     * Sets username.
-     *
-     * @param username the username
-     */
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
+        if (null == this.authorities || this.authorities.isEmpty()) {
+            return null;
+        }
+
         Collection<GrantedAuthority> grantedAuthorities = new ArrayList<>();
-        this.getRoles().stream().forEach(
+        this.authorities.stream().forEach(
                 role -> grantedAuthorities.add(new SimpleGrantedAuthority(role.getAuthority()))
         );
         return grantedAuthorities;
+    }
+
+    public void setAuthorities(Set<Role> authorities) {
+        this.authorities = authorities;
     }
 
     /**
@@ -218,24 +229,6 @@ public class User implements UserDetails {
      */
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    /**
-     * Gets roles.
-     *
-     * @return the roles
-     */
-    public Set<Role> getRoles() {
-        return roles;
-    }
-
-    /**
-     * Sets roles.
-     *
-     * @param roles the roles
-     */
-    public void setRoles(Set<Role> roles) {
-        this.roles = roles;
     }
 
     /**
@@ -268,8 +261,8 @@ public class User implements UserDetails {
                 ", mobile='" + mobile + '\'' +
                 ", pricingTag=" + pricingTag +
                 ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", roles=" + roles +
+                ", password=\'*********\'" +
+                ", authorities=" + authorities +
                 '}';
     }
 }

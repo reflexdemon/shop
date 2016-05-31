@@ -2,6 +2,7 @@ package org.shop.dao;
 
 import org.shop.model.Product;
 import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -9,6 +10,7 @@ import java.util.List;
  * Created by vprasanna on 5/15/2016.
  * The interface Inventory repository.
  */
+@Repository("inventoryRepository")
 public interface InventoryRepository extends MongoRepository<Product, String> {
     List<Product> findAll();
 

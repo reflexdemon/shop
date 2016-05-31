@@ -6,8 +6,9 @@ import org.shop.dao.InventoryRepository;
 import org.shop.dao.Search;
 import org.shop.model.Product;
 import org.shop.model.SearchResponse;
+import org.shop.spring.aop.ProfileExecution;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -16,7 +17,7 @@ import java.util.List;
  * Created by vprasanna on 5/15/2016.
  * The type Inventory service.
  */
-@Component
+@Service
 public class InventoryService {
 
     private static final Log logger = LogFactory.getLog(InventoryService.class);
@@ -75,7 +76,7 @@ public class InventoryService {
 
         int limit = PAGE_SIZE;
         int offset = (PAGE_SIZE * page) - PAGE_SIZE;
-        SearchResponse  response = search.search(keyword, limit, offset);
+        SearchResponse response = search.search(keyword, limit, offset);
         response.setPage(page);
         return response;
     }
@@ -86,6 +87,7 @@ public class InventoryService {
      * @param product the product
      * @return the product
      */
+    @ProfileExecution
     public Product save(final Product product) {
         return productDao.save(product);
     }
@@ -93,6 +95,7 @@ public class InventoryService {
     /**
      * Delete all.
      */
+    @ProfileExecution
     public void deleteAll() {
         productDao.deleteAll();
     }

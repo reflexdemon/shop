@@ -3,7 +3,8 @@ package org.shop.api.rest;
 import org.junit.Test;
 import org.shop.utils.CryptoUtils;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Created by vprasanna on 5/23/2016.

@@ -35,7 +35,7 @@ public class ProfilingMethodInterceptor implements MethodInterceptor {
             return invocation.proceed();
         } finally {
             stopWatch.stop();
-            String username = userServices.getAuthenticatedUser().getUsername();
+            String username = userServices.getAuthenticatedUser("root").getUsername();
             classLogger.info(String.format("{%s} %s took %d ms",username, method, stopWatch.getTotalTimeMillis()));
         }
     }

@@ -3,8 +3,8 @@ package org.shop.api.rest;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
-import org.shop.model.User;
-import org.shop.service.UserServices;
+import org.shop.model.Cart;
+import org.shop.service.CartService;
 import org.shop.spring.aop.ProfileExecution;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,35 +16,25 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
 /**
- * Created by vprasanna on 5/22/2016.
+ * Created by vprasanna on 5/30/2016.
  */
 @RestController
 @RequestMapping("/rest")
-public class RESTUserAPI {
+public class RESTCartAPI {
 
     @Autowired
-    private UserServices userServices;
+    private CartService cartService;
 
-    /**
-     * Gets categories.
-     *
-     * @return the categories
-     */
-    @RequestMapping(value = "/user", method = GET, produces = APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/cart", method = GET, produces = APPLICATION_JSON_VALUE)
     @ProfileExecution
-    @ApiOperation(value = "getAuthenticatedUser", nickname = "getAuthenticatedUser")
+    @ApiOperation(value = "getMyCart", nickname = "getMyCart")
     @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "Success", response = User.class),
+            @ApiResponse(code = 200, message = "Success", response = Cart.class),
             @ApiResponse(code = 401, message = "Unauthorized"),
             @ApiResponse(code = 500, message = "Internal Server Error")})
-    public ResponseEntity<User> getAuthenticatedUser() {
-        User user = userServices.getAuthenticatedUser();
-
-        if (null == user) {
-            return new ResponseEntity<>(user, HttpStatus.UNAUTHORIZED);
-        }
-
-        return new ResponseEntity<>(user, HttpStatus.OK);
+    public ResponseEntity<Cart> getMyCart() {
+        Cart cart = cartService.getMyCart();
+        return new ResponseEntity<>(cart, HttpStatus.OK);
     }
 
 }

@@ -12,8 +12,11 @@ public class PricingInfo {
     private String id;
     @Indexed
     private String productId;
+
     private double basePrice;
     private double taxPercentage;
+
+    private Currency currency;
     @Indexed
     private PricingTag tag;
 
@@ -57,6 +60,14 @@ public class PricingInfo {
         this.tag = tag;
     }
 
+    public Currency getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(Currency currency) {
+        this.currency = currency;
+    }
+
     @Override
     public String toString() {
         return "PricingInfo{" +
@@ -64,6 +75,7 @@ public class PricingInfo {
                 ", productId='" + productId + '\'' +
                 ", basePrice=" + basePrice +
                 ", taxPercentage=" + taxPercentage +
+                ", currency=" + currency +
                 ", tag=" + tag +
                 '}';
     }

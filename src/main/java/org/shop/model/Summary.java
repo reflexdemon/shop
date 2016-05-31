@@ -9,6 +9,7 @@ public class Summary {
     double shipping;
     double tax;
     double handlingCharges;
+    Currency currency;
 
     public double getNetTotal() {
         return netTotal;
@@ -50,6 +51,14 @@ public class Summary {
         this.handlingCharges = handlingCharges;
     }
 
+    public Currency getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(Currency currency) {
+        this.currency = currency;
+    }
+
     @Override
     public String toString() {
         return "Summary{" +
@@ -58,6 +67,7 @@ public class Summary {
                 ", shipping=" + shipping +
                 ", tax=" + tax +
                 ", handlingCharges=" + handlingCharges +
+                ", currency=" + currency +
                 '}';
     }
 }
