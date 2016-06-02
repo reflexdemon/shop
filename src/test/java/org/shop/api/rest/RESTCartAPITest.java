@@ -54,7 +54,7 @@ public class RESTCartAPITest extends AbstractTest {
     @WithUserDetails(value = "root", userDetailsServiceBeanName = "profileService")
     public void testAddItemToCart() throws Exception {
         CartRequest request = new CartRequest();
-        request.setProductId("1");
+        request.setProductId("2");
         request.setQuantity(2);
         mockMvc.perform(post("/rest/cart", request)
                 .content(DebugUtils.jsonDebug(request))
