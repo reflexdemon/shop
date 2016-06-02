@@ -2,7 +2,9 @@ package org.shop.api.rest;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.shop.model.CartRequest;
 import org.shop.service.AbstractTest;
+import org.shop.utils.DebugUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockHttpServletRequest;
@@ -14,12 +16,13 @@ import org.springframework.web.context.WebApplicationContext;
 
 import static org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers.springSecurity;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 /**
- * Created by vprasanna on 5/20/2016.
+ * Created by vprasanna on 6/2/2016.
  */
-public class RESTUserAPITest extends AbstractTest {
+public class RESTCartAPITest extends AbstractTest {
 
     @Autowired
     MockHttpSession session;
@@ -40,8 +43,24 @@ public class RESTUserAPITest extends AbstractTest {
 
     @Test
     @WithUserDetails(value = "root", userDetailsServiceBeanName = "profileService")
-    public void testUser() throws Exception {
-        mockMvc.perform(get("/rest/user"))
+    public void testGetMyCart() throws Exception {
+        mockMvc.perform(get("/rest/cart"))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
+                .andExpect(jsonPath("$.username").value("root"));
+    }
+
+    @Test
+    @WithUserDetails(value = "root", userDetailsServiceBeanName = "profileService")
+    public void testAddItemToCart() throws Exception {
+        CartRequest request = new CartRequest();
+        request.setProductId("1");
+        request.setQuantity(2);
+        mockMvc.perform(post("/rest/cart", request)
+                .content(DebugUtils.jsonDebug(request))
+                .contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON)
+        )
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andExpect(jsonPath("$.username").value("root"));

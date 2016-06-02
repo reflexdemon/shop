@@ -10,6 +10,7 @@ import org.shop.model.User;
 import org.shop.spring.aop.ProfileExecution;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StopWatch;
 import org.springframework.util.StringUtils;
 
 import java.util.List;
@@ -33,18 +34,26 @@ public class CartService {
 
     @ProfileExecution
     public Cart getMyCart() {
+        StopWatch stopWatch = new StopWatch();
+        stopWatch.setKeepTaskList(true);
+        stopWatch.start("Get Cart: Get User");
         User currentUser = verifyAndGetUser();
+        stopWatch.stop();
 
+        stopWatch.start("Get Cart: Find User");
         Cart cart = cartRepository.findByUsername(currentUser.getUsername());
+        stopWatch.stop();
 
         if (null == cart) {
             logger.info("Crating new empty cart");
+            stopWatch.start("Get Cart: Create New Cart");
             cart = new Cart();
             cart.setUsername(currentUser.getUsername());
             //Saving to DB to get a new Cart ID
             cart = cartRepository.save(cart);
+            stopWatch.stop();
         }
-
+        logger.info("Cart Performance:" + stopWatch.prettyPrint());
         return cart;
     }
 

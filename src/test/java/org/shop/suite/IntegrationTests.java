@@ -3,6 +3,7 @@ package org.shop.suite;
 import org.junit.runners.Suite;
 import org.shop.Application;
 import org.shop.api.rest.CryptoUtilsTest;
+import org.shop.api.rest.RESTCartAPITest;
 import org.shop.api.rest.RESTProductAPITest;
 import org.shop.api.rest.RESTUserAPITest;
 import org.shop.service.InventoryServiceTest;
@@ -19,7 +20,8 @@ import org.springframework.test.context.web.WebAppConfiguration;
         RESTUserAPITest.class,
         RESTProductAPITest.class,
         CryptoUtilsTest.class,
-        InventoryServiceTest.class
+        InventoryServiceTest.class,
+        RESTCartAPITest.class
 })
 public class IntegrationTests {
 }
