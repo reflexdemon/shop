@@ -60,7 +60,7 @@ public class CartService {
     public Cart addItemToCart(String productId, int quantity) {
 
         if (StringUtils.isEmpty(productId) || quantity <= 0) {
-            throw new IllegalArgumentException("Product ID cannot be empty or quantity cannot be 0 or less whle adding item to cart.");
+            throw new IllegalArgumentException("Product ID cannot be empty or quantity cannot be 0 or less while adding item to cart.");
         }
 
         Cart cart = getMyCart();
@@ -199,5 +199,32 @@ public class CartService {
             throw new IllegalStateException("Cannot View/Modify cart for non logged in user.");
         }
         return currentUser;
+    }
+
+    public Cart updateQuantity(String productId, int quantity) {
+        Cart cart = getMyCart();
+
+        if (StringUtils.isEmpty(productId) || null == cart.getLineItems() || cart.getLineItems().isEmpty()) {
+            throw new IllegalArgumentException("Product ID cannot be empty or there is no items on the cart.");
+        }
+
+
+        Optional<LineItem> searchItem = cart.getLineItems().stream()
+                .filter(line -> productId.equalsIgnoreCase(line.getProductId()))
+                .findFirst();
+
+        if (!searchItem.isPresent()) {
+            throw new IllegalStateException("The Item cannot be found on cart.");
+        }
+
+        LineItem lineItem = searchItem.get();
+        double unitPrice = lineItem.getPrice() / lineItem.getQuantity();
+        lineItem.setQuantity(quantity);
+        lineItem.setPrice(unitPrice * quantity);
+
+        Summary summary = creatSummary(cart);
+        cart.setSummary(summary);
+        cart = cartRepository.save(cart);
+        return cart;
     }
 }
