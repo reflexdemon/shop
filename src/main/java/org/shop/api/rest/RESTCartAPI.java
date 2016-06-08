@@ -43,7 +43,7 @@ public class RESTCartAPI {
 
     @RequestMapping(value = "/cart", method = POST, produces = APPLICATION_JSON_VALUE)
     @ProfileExecution
-    @ApiOperation(value = "getMyCart", nickname = "getMyCart")
+    @ApiOperation(value = "addItemToCart", nickname = "addItemToCart")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Success", response = Cart.class),
             @ApiResponse(code = 401, message = "Unauthorized"),

@@ -74,7 +74,8 @@ public class CartService {
 
         if (item.isPresent()) {
             lineItem = item.get();
-            lineItems.remove(item);
+            lineItem.setQuantity(lineItem.getQuantity() + quantity);
+//            lineItems.remove(item);
         } else {
             lineItem = createLineItem(productId, quantity);
         }
@@ -83,15 +84,17 @@ public class CartService {
             throw new IllegalStateException("Line Item cannot be null or empty");
         }
 
-        lineItem.setQuantity(lineItem.getQuantity() + quantity);
         calculateTax(productId, lineItem);
 
-        lineItems.add(lineItem);
+        //Add line item
+        if (isNewProduct(lineItem, lineItems)) {
+            lineItems.add(lineItem);
+        }
 
-        counter.init();
-        lineItems.stream().forEach(line ->
-                line.setId(String.valueOf(counter.next())));
-        counter.reset();
+        lineItems.stream()
+                .forEach(
+                        line -> line.setId(line.getProductId())
+                );
 
         cart.setLineItems(lineItems);
 
@@ -100,6 +103,18 @@ public class CartService {
         cart = cartRepository.save(cart);
 
         return cart;
+    }
+
+    private boolean isNewProduct(LineItem lineItem, List<LineItem> lineItems) {
+        if (null == lineItems || null == lineItem) {
+            throw new IllegalArgumentException("Invalid input for isNewProduct");
+        }
+
+        Optional<LineItem> searchItem = lineItems.stream()
+                .filter(line -> lineItem.getProductId().equalsIgnoreCase(line.getProductId()))
+                .findFirst();
+
+        return !searchItem.isPresent();
     }
 
     private void calculateTax(String productId, LineItem lineItem) {
