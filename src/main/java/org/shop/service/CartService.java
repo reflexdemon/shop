@@ -10,13 +10,15 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StopWatch;
 import org.springframework.util.StringUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 /**
  * Created by vprasanna on 5/30/2016.
  */
-@Service
+@Service(value = "cartService")
 public class CartService {
 
     private static final Log logger = LogFactory.getLog(CartService.class);
@@ -28,8 +30,6 @@ public class CartService {
     private UserServices userServices;
     @Autowired
     private InventoryService inventoryService;
-    @Autowired
-    private CounterService counter;
 
     @ProfileExecution
     public Cart getMyCart() {
@@ -52,6 +52,8 @@ public class CartService {
             cart = cartRepository.save(cart);
             stopWatch.stop();
         }
+        cart = doPricing(cart);
+        cart = prepareSummaryAndSave(cart);
         logger.info("Cart Performance:" + stopWatch.prettyPrint());
         return cart;
     }
@@ -98,9 +100,7 @@ public class CartService {
 
         cart.setLineItems(lineItems);
 
-        Summary summary = creatSummary(cart);
-        cart.setSummary(summary);
-        cart = cartRepository.save(cart);
+        cart = prepareSummaryAndSave(cart);
 
         return cart;
     }
@@ -125,6 +125,7 @@ public class CartService {
     private Summary creatSummary(Cart cart) {
         Summary summary = new Summary();
 
+        cart = doPricing(cart);
         double shipping = getShippingTotal(cart);
         double tax = getTaxTotal(cart);
         double handlingCharges = getHandlingCharges(cart);
@@ -141,6 +142,18 @@ public class CartService {
 
 
         return summary;
+    }
+
+    private Cart doPricing(Cart cart) {
+        List<LineItem> lineItems = cart.getLineItems();
+        List<LineItem> newList = new ArrayList<>();
+
+        lineItems.stream()
+                .forEach(line -> newList.add(createLineItem(line.getProductId(), line.getQuantity())));
+
+        cart.setLineItems(newList);
+
+        return cart;
     }
 
     private double getNetTotal(Cart cart) {
@@ -222,9 +235,30 @@ public class CartService {
         lineItem.setQuantity(quantity);
         lineItem.setPrice(unitPrice * quantity);
 
+        cart = prepareSummaryAndSave(cart);
+        return cart;
+    }
+
+    private Cart prepareSummaryAndSave(Cart cart) {
         Summary summary = creatSummary(cart);
         cart.setSummary(summary);
         cart = cartRepository.save(cart);
+        return cart;
+    }
+
+
+    @ProfileExecution
+    public Cart deleteItem(String productId) {
+        Cart cart = getMyCart();
+
+        List<LineItem> currentLineItems = cart.getLineItems();
+
+        cart.setLineItems(
+                currentLineItems.stream()
+                        .filter(line -> !line.getProductId().equalsIgnoreCase(productId))
+                        .collect(Collectors.toList())
+        );
+        cart = prepareSummaryAndSave(cart);
         return cart;
     }
 }

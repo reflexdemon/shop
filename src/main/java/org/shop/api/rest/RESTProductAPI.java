@@ -1,6 +1,7 @@
 package org.shop.api.rest;
 
 import io.swagger.annotations.*;
+import org.shop.exception.Message;
 import org.shop.model.Product;
 import org.shop.model.SearchResponse;
 import org.shop.service.InventoryService;
@@ -46,8 +47,8 @@ public class RESTProductAPI {
     })
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Success", response = SearchResponse.class),
-            @ApiResponse(code = 401, message = "Unauthorized"),
-            @ApiResponse(code = 500, message = "Internal Server Error")})
+            @ApiResponse(code = 400, message = "Bad Request", response = Message.class),
+            @ApiResponse(code = 500, message = "Internal Server Error", response = Message.class)})
     public ResponseEntity<SearchResponse> findAll(@RequestParam(required = false) Integer page) {
         SearchResponse response = inventoryService.search(null, page);
         return new ResponseEntity<>(response, HttpStatus.OK);
@@ -67,8 +68,8 @@ public class RESTProductAPI {
     })
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Success", response = Product.class),
-            @ApiResponse(code = 401, message = "Unauthorized"),
-            @ApiResponse(code = 500, message = "Internal Server Error")})
+            @ApiResponse(code = 400, message = "Bad Request", response = Message.class),
+            @ApiResponse(code = 500, message = "Internal Server Error", response = Message.class)})
 
     public ResponseEntity<Product> findById(@PathVariable String id) {
         Product item = inventoryService.findById(id);
@@ -85,8 +86,8 @@ public class RESTProductAPI {
     @ApiOperation(value = "getCategories", nickname = "getCategories")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Success", response = List.class),
-            @ApiResponse(code = 401, message = "Unauthorized"),
-            @ApiResponse(code = 500, message = "Internal Server Error")})
+            @ApiResponse(code = 400, message = "Bad Request", response = Message.class),
+            @ApiResponse(code = 500, message = "Internal Server Error", response = Message.class)})
 
     public ResponseEntity<List<String>> getCategories() {
         List<String> list = inventoryService.getCategories();
@@ -107,8 +108,8 @@ public class RESTProductAPI {
     })
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Success", response = List.class),
-            @ApiResponse(code = 401, message = "Unauthorized"),
-            @ApiResponse(code = 500, message = "Internal Server Error")})
+            @ApiResponse(code = 400, message = "Bad Request", response = Message.class),
+            @ApiResponse(code = 500, message = "Internal Server Error", response = Message.class)})
 
     public ResponseEntity<List<Product>> findByCategory(@PathVariable String category) {
         List<Product> list = inventoryService.findByCategory(category);
@@ -131,8 +132,8 @@ public class RESTProductAPI {
     })
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Success", response = SearchResponse.class),
-            @ApiResponse(code = 401, message = "Unauthorized"),
-            @ApiResponse(code = 500, message = "Internal Server Error")})
+            @ApiResponse(code = 400, message = "Bad Request", response = Message.class),
+            @ApiResponse(code = 500, message = "Internal Server Error", response = Message.class)})
 
     public ResponseEntity<SearchResponse> search(@RequestParam String keyword, @RequestParam(required = false) Integer page) {
         SearchResponse response = inventoryService.search(keyword, page);

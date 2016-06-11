@@ -15,8 +15,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 import static org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers.springSecurity;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 /**
@@ -54,11 +53,42 @@ public class RESTCartAPITest extends AbstractTest {
     @WithUserDetails(value = "root", userDetailsServiceBeanName = "profileService")
     public void testAddItemToCart() throws Exception {
         CartRequest request = new CartRequest();
-        request.setProductId("2");
+        request.setProductId("15");
         request.setQuantity(2);
         mockMvc.perform(post("/rest/cart", request)
                 .content(DebugUtils.jsonDebug(request))
                 .contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON)
+        )
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
+                .andExpect(jsonPath("$.username").value("root"));
+    }
+
+    @Test
+    @WithUserDetails(value = "root", userDetailsServiceBeanName = "profileService")
+    public void testUpdateQuantity() throws Exception {
+        testAddItemToCart();
+        CartRequest request = new CartRequest();
+        request.setProductId("15");
+        request.setQuantity(200);
+        mockMvc.perform(put("/rest/cart/lineItem", request)
+                .content(DebugUtils.jsonDebug(request))
+                .contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON)
+        )
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
+                .andExpect(jsonPath("$.username").value("root"));
+    }
+
+    @Test
+    @WithUserDetails(value = "root", userDetailsServiceBeanName = "profileService")
+    public void testDeleteItem() throws Exception {
+        testUpdateQuantity();
+        String productId = "15";
+
+        mockMvc.perform(delete("/rest/cart/lineItem/" + productId)
                 .accept(MediaType.APPLICATION_JSON)
         )
                 .andExpect(status().isOk())

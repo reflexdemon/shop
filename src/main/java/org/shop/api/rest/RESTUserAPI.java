@@ -3,6 +3,7 @@ package org.shop.api.rest;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
+import org.shop.exception.Message;
 import org.shop.model.User;
 import org.shop.service.UserServices;
 import org.shop.spring.aop.ProfileExecution;
@@ -35,8 +36,8 @@ public class RESTUserAPI {
     @ApiOperation(value = "getAuthenticatedUser", nickname = "getAuthenticatedUser")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Success", response = User.class),
-            @ApiResponse(code = 401, message = "Unauthorized"),
-            @ApiResponse(code = 500, message = "Internal Server Error")})
+            @ApiResponse(code = 400, message = "Bad Request", response = Message.class),
+            @ApiResponse(code = 500, message = "Internal Server Error", response = Message.class)})
     public ResponseEntity<User> getAuthenticatedUser() {
         User user = userServices.getAuthenticatedUser();
 
