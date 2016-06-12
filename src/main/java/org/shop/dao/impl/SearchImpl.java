@@ -8,6 +8,7 @@ import org.shop.model.SearchResponse;
 import org.shop.service.PricingServices;
 import org.shop.spring.aop.ProfileExecution;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
@@ -23,7 +24,7 @@ import java.util.List;
 @Component
 public class SearchImpl implements Search {
     private static final Log logger = LogFactory.getLog(SearchImpl.class);
-    private static final String COLLECTION = "product";
+    private static final String COLLECTION = "inventory";
     @Autowired
     private MongoTemplate mongoTemplate;
 
@@ -47,7 +48,9 @@ public class SearchImpl implements Search {
             criteria.orOperator(Criteria.where("name").regex(keyword, "i"), Criteria.where("description").regex(keyword, "i"), Criteria.where("category").regex(keyword, "i"));
         }
 
-        Query query = new Query(criteria);
+        Sort sort = new Sort(Sort.DEFAULT_DIRECTION, "name", "category", "description");
+
+        Query query = new Query(criteria).with(sort);
         response.setMaxCount(getMaxCount(criteria));
         query.limit(limit).skip(offset);
         List<Product> products = mongoTemplate.find(query, Product.class);

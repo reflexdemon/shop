@@ -4,7 +4,7 @@ import org.junit.runners.Suite;
 import org.shop.Application;
 import org.shop.api.rest.CryptoUtilsTest;
 import org.shop.api.rest.RESTCartAPITest;
-import org.shop.api.rest.RESTProductAPITest;
+import org.shop.api.rest.RESTInventoryAPITest;
 import org.shop.api.rest.RESTUserAPITest;
 import org.shop.service.InventoryServiceTest;
 import org.springframework.boot.test.SpringApplicationConfiguration;
@@ -18,7 +18,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 @WebAppConfiguration
 @Suite.SuiteClasses({
         RESTUserAPITest.class,
-        RESTProductAPITest.class,
+        RESTInventoryAPITest.class,
         CryptoUtilsTest.class,
         InventoryServiceTest.class,
         RESTCartAPITest.class

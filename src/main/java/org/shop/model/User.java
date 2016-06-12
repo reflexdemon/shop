@@ -2,6 +2,7 @@ package org.shop.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -15,6 +16,7 @@ import java.util.Set;
  * The type User.
  * Created by vprasanna on 5/22/2016.
  */
+@Document(collection = "users")
 public class User implements UserDetails {
     @Id
     @Indexed

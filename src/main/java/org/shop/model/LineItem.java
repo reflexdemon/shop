@@ -14,6 +14,7 @@ public class LineItem {
     private String productId;
     private String description;
     private double price;
+    private double unitPrice;
     private double tax;
     private int quantity;
     private String imageURL;
@@ -82,6 +83,14 @@ public class LineItem {
         this.imageURL = imageURL;
     }
 
+    public double getUnitPrice() {
+        return unitPrice;
+    }
+
+    public void setUnitPrice(double unitPrice) {
+        this.unitPrice = unitPrice;
+    }
+
     @Override
     public String toString() {
         return "LineItem{" +
@@ -89,6 +98,7 @@ public class LineItem {
                 ", productId='" + productId + '\'' +
                 ", description='" + description + '\'' +
                 ", price=" + price +
+                ", unitPrice=" + unitPrice +
                 ", tax=" + tax +
                 ", quantity=" + quantity +
                 ", currency=" + currency +

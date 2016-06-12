@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en"  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html xmlns:th="http://www.thymeleaf.org" lang="en" xmlns="http://www.w3.org/1999/xhtml"
+>
 <head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -37,8 +37,9 @@
         You have been logged out.
     </div>
 
+    <h1>Nanthinis Healthcare Pvt. Ltd.,</h1>
     <form th:action="@{/login.htm}" method="post" class="form-signin">
-        <h2 class="form-signin-heading">Please Signin to Nanthinis Healthcare Online Shop</h2>
+        <h2 class="form-signin-heading">Please Signin</h2>
         <label for="inputEmail" class="sr-only">User Name</label>
         <input type="text" id="inputEmail" class="form-control" placeholder="Login Username" required="required" autofocus="autofocus" name="username"/>
         <label for="inputPassword" class="sr-only">Password</label>

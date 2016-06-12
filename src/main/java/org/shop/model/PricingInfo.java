@@ -2,10 +2,12 @@ package org.shop.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * Created by vprasanna on 5/22/2016.
  */
+@Document(collection = "pricingInfo")
 public class PricingInfo {
     @Id
     @Indexed

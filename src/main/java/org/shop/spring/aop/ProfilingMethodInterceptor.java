@@ -4,6 +4,7 @@ import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.shop.model.User;
 import org.shop.service.UserServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -35,7 +36,11 @@ public class ProfilingMethodInterceptor implements MethodInterceptor {
             return invocation.proceed();
         } finally {
             stopWatch.stop();
-            String username = userServices.getAuthenticatedUser("root").getUsername();
+            User user = userServices.getAuthenticatedUser("root");
+            String username = "root";
+            if (null != user) {
+                username = user.getUsername();
+            }
             classLogger.info(String.format("{%s} %s took %d ms",username, method, stopWatch.getTotalTimeMillis()));
         }
     }

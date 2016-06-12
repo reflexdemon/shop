@@ -23,6 +23,7 @@ public class CartService {
 
     private static final Log logger = LogFactory.getLog(CartService.class);
     private static final double SHIPPING = 0.05;
+    private static final double SALES_TAX = 0.07;
     private static final double HANDLING_CHARGES = 0.03;
     @Autowired
     private CartRepository cartRepository;
@@ -198,11 +199,17 @@ public class CartService {
         Product product = inventoryService.findById(productId);
         LineItem lineItem = new LineItem();
         lineItem.setProductId(productId);
+        lineItem.setDescription(product.getName());
+        lineItem.setImageURL(product.getImageURL());
+
+
+        //Pricing related
         lineItem.setQuantity(quantity);
         lineItem.setCurrency(product.getPricingInfo().getCurrency());
-        lineItem.setDescription(product.getName());
-        lineItem.setPrice(product.getPricingInfo().getBasePrice() * quantity);
-        lineItem.setImageURL(product.getImageURL());
+        lineItem.setUnitPrice(product.getPricingInfo().getBasePrice());
+        lineItem.setPrice(lineItem.getUnitPrice() * quantity);
+        lineItem.setTax(lineItem.getPrice() * SALES_TAX);
+
         return lineItem;
     }
 

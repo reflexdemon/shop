@@ -18,14 +18,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 /**
  * Created by vprasanna on 5/20/2016.
  */
-public class RESTProductAPITest extends AbstractTest {
+public class RESTInventoryAPITest extends AbstractTest {
 
     @Autowired
     MockHttpSession session;
     @Autowired
     MockHttpServletRequest request;
     @Autowired
-    RESTProductAPI restProductAPI;
+    RESTInventoryAPI restInventoryAPI;
     @Autowired
     private WebApplicationContext webApplicationContext;
     private MockMvc mockMvc;
@@ -41,7 +41,7 @@ public class RESTProductAPITest extends AbstractTest {
         mockMvc.perform(get("/rest/product?page=1"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
-                .andExpect(jsonPath("$.products[0].id").value("1"));
+                .andExpect(jsonPath("$.products[0].id").isNotEmpty());
     }
 
     @Test

@@ -2,20 +2,26 @@ package org.shop.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.index.TextIndexed;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * Created by vprasanna on 5/15/2016.
  * The type Product.
  */
+@Document(collection = "inventory")
 public class Product {
     @Id
     @Indexed
     private String id;
     @Indexed
+    @TextIndexed(weight = 5)
     private String category;
     @Indexed
+    @TextIndexed(weight = 10)
     private String name;
     @Indexed
+    @TextIndexed(weight = 10)
     private String description;
     private String imageURL;
 

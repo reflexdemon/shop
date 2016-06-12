@@ -8,24 +8,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by vprasanna on 5/22/2016.
+ * Created by vprasanna on 6/11/2016.
  */
-@Document(collection = "shoppingCart")
-public class Cart {
+@Document(collection = "orders")
+public class Order {
     List<LineItem> lineItems = new ArrayList<>();
     Summary summary;
     @Indexed
     String username;
     @Id
     private String id;
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public List<LineItem> getLineItems() {
         return lineItems;
@@ -51,13 +43,21 @@ public class Cart {
         this.username = username;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
-        return "Cart{" +
-                "id='" + id + '\'' +
-                ", lineItems=" + lineItems +
+        return "Order{" +
+                "lineItems=" + lineItems +
                 ", summary=" + summary +
                 ", username='" + username + '\'' +
+                ", id='" + id + '\'' +
                 '}';
     }
 }
