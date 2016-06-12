@@ -7,7 +7,6 @@ import org.shop.model.*;
 import org.shop.spring.aop.ProfileExecution;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.util.StopWatch;
 import org.springframework.util.StringUtils;
 
 import java.util.ArrayList;
@@ -34,28 +33,32 @@ public class CartService {
 
     @ProfileExecution
     public Cart getMyCart() {
-        StopWatch stopWatch = new StopWatch();
-        stopWatch.setKeepTaskList(true);
-        stopWatch.start("Get Cart: Get User");
+        Cart cart = getEmptyCart();
+        cart = doPricing(cart);
+        cart = prepareSummaryAndSave(cart);
+        return cart;
+    }
+
+    private Cart getEmptyCart() {
         User currentUser = verifyAndGetUser();
-        stopWatch.stop();
-
-        stopWatch.start("Get Cart: Find User");
         Cart cart = cartRepository.findByUsername(currentUser.getUsername());
-        stopWatch.stop();
-
         if (null == cart) {
             logger.info("Crating new empty cart");
-            stopWatch.start("Get Cart: Create New Cart");
             cart = new Cart();
             cart.setUsername(currentUser.getUsername());
             //Saving to DB to get a new Cart ID
             cart = cartRepository.save(cart);
-            stopWatch.stop();
         }
-        cart = doPricing(cart);
-        cart = prepareSummaryAndSave(cart);
-        logger.info("Cart Performance:" + stopWatch.prettyPrint());
+        return cart;
+    }
+
+    @ProfileExecution
+    public Cart getBlankCart() {
+        Cart cart = getEmptyCart();
+        //Ensure all items are removed
+        cart.getLineItems().clear();
+        cart.setSummary(new Summary());
+        cartRepository.save(cart);
         return cart;
     }
 

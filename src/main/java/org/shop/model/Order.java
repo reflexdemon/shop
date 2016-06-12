@@ -5,6 +5,7 @@ import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -18,6 +19,10 @@ public class Order {
     String username;
     @Id
     private String id;
+    private OrderStatus status;
+    private Date created;
+    private Date updated;
+    private String notes;
 
     public List<LineItem> getLineItems() {
         return lineItems;
@@ -51,6 +56,38 @@ public class Order {
         this.id = id;
     }
 
+    public OrderStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(OrderStatus status) {
+        this.status = status;
+    }
+
+    public Date getCreated() {
+        return created;
+    }
+
+    public void setCreated(Date created) {
+        this.created = created;
+    }
+
+    public Date getUpdated() {
+        return updated;
+    }
+
+    public void setUpdated(Date updated) {
+        this.updated = updated;
+    }
+
+    public String getNotes() {
+        return notes;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
+    }
+
     @Override
     public String toString() {
         return "Order{" +
@@ -58,6 +95,10 @@ public class Order {
                 ", summary=" + summary +
                 ", username='" + username + '\'' +
                 ", id='" + id + '\'' +
+                ", status=" + status +
+                ", created=" + created +
+                ", updated=" + updated +
+                ", notes='" + notes + '\'' +
                 '}';
     }
 }
