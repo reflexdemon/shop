@@ -1,6 +1,6 @@
 package org.shop.model;
 
-import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.*;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -20,8 +20,14 @@ public class Order {
     @Id
     private String id;
     private OrderStatus status;
+    @CreatedDate
     private Date created;
+    @LastModifiedDate
     private Date updated;
+    @LastModifiedBy
+    private String updatedBy;
+    @CreatedBy
+    private String createdBy;
     private String notes;
 
     public List<LineItem> getLineItems() {

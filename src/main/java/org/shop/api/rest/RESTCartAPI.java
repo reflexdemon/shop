@@ -23,8 +23,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.*;
  * Created by vprasanna on 5/30/2016.
  */
 @RestController
-@RequestMapping("/rest")
-public class RESTCartAPI {
+public class RESTCartAPI extends RESTBaseAPI {
 
     @Autowired
     private CartService cartService;

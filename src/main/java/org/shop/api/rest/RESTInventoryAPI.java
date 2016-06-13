@@ -24,8 +24,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
  * The type Rest product api.
  */
 @RestController
-@RequestMapping("/rest")
-public class RESTInventoryAPI {
+public class RESTInventoryAPI extends RESTBaseAPI {
 
     /**
      * The Product service.

@@ -20,8 +20,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
  * Created by vprasanna on 5/22/2016.
  */
 @RestController
-@RequestMapping("/rest")
-public class RESTUserAPI {
+public class RESTUserAPI extends RESTBaseAPI {
 
     @Autowired
     private UserServices userServices;

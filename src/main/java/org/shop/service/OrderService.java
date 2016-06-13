@@ -8,8 +8,8 @@ import org.shop.model.OrderStatus;
 import org.shop.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -37,11 +37,34 @@ public class OrderService {
         return orderRepository.findByUsername(username);
     }
 
-    public List<Order> findByStatus(String username, OrderStatus status) {
+    public Order findById(String id) {
         User user = userServices.getAuthenticatedUser();
-        return orderRepository.findByStatus(user.getUsername(), status);
+        return orderRepository.findByUsernameAndId(user.getUsername(), id);
     }
 
+    public Order updateOrderStatus(String id, OrderStatus status) {
+        User user = userServices.getAuthenticatedUser();
+        Order order = orderRepository.findByUsernameAndId(user.getUsername(), id);
+        if (null == order) {
+            throw new RuntimeException(String.format("Order for \'%s\' cannot be found with order id as \'%s\'", user.getUsername(), id));
+        }
+        order.setStatus(status);
+        orderRepository.save(order);
+        return order;
+    }
+
+
+    public List<Order> findByUsernameAndStatus(String username, OrderStatus status) {
+        return orderRepository.findByUsernameAndStatus(username, status);
+    }
+
+    public List<Order> findByStatus(OrderStatus status) {
+        User user = userServices.getAuthenticatedUser();
+        return findByUsernameAndStatus(user.getUsername(), status);
+    }
+
+
+    @Transactional
     public Order placeOrder() {
         User user = userServices.getAuthenticatedUser();
         Cart cart = cartService.getMyCart();
@@ -52,8 +75,6 @@ public class OrderService {
 
         order.setLineItems(cart.getLineItems());
         order.setSummary(cart.getSummary());
-        order.setCreated(new Date());
-        order.setUpdated(new Date());
         order.setStatus(OrderStatus.NEW);
         order.setUsername(user.getUsername());
         order.setId(Long.toString(sequence.getNextSequenceId(SEQUENCE_ID)));
