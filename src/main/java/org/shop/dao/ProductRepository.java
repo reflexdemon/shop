@@ -11,7 +11,7 @@ import java.util.List;
  * The interface Inventory repository.
  */
 @Repository("inventoryRepository")
-public interface InventoryRepository extends MongoRepository<Product, String> {
+public interface ProductRepository extends MongoRepository<Product, String> {
     List<Product> findAll();
 
     /**
@@ -21,6 +21,8 @@ public interface InventoryRepository extends MongoRepository<Product, String> {
      * @return the list
      */
     List<Product> findByCategory(String category);
+
+    List<Product> findByName(String name);
 
     /**
      * Find by id product.

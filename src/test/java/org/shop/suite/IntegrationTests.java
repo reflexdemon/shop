@@ -6,7 +6,7 @@ import org.shop.api.rest.CryptoUtilsTest;
 import org.shop.api.rest.RESTCartAPITest;
 import org.shop.api.rest.RESTInventoryAPITest;
 import org.shop.api.rest.RESTUserAPITest;
-import org.shop.service.InventoryServiceTest;
+import org.shop.service.CatalogServiceTest;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.web.WebAppConfiguration;
 
@@ -20,7 +20,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
         RESTUserAPITest.class,
         RESTInventoryAPITest.class,
         CryptoUtilsTest.class,
-        InventoryServiceTest.class,
+        CatalogServiceTest.class,
         RESTCartAPITest.class
 })
 public class IntegrationTests {

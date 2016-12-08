@@ -6,7 +6,7 @@ import org.shop.Application;
 import org.shop.model.PricingInfo;
 import org.shop.model.Product;
 import org.shop.model.User;
-import org.shop.service.InventoryService;
+import org.shop.service.CatalogService;
 import org.shop.service.PricingServices;
 import org.shop.service.UserServices;
 import org.shop.utils.DebugUtils;
@@ -42,17 +42,17 @@ public class ProductLoad {
 
     public void loadProducts(ConfigurableApplicationContext context) throws IOException {
         try {
-            InventoryService inventoryService = context.getBean(InventoryService.class);
+            CatalogService catalogService = context.getBean(CatalogService.class);
             File file = new File("./data/products.json");
             System.out.println("Absolute Path" + file.getAbsolutePath());
 
             InputStream content = new FileInputStream(file);
             List<Product> products = mapper.readValue(content, new TypeReference<List<Product>>() {
             });
-            inventoryService.deleteAll();
+            catalogService.deleteAll();
             products.stream().forEach(product -> {
                 if (verbose) System.out.println("Saving: " + DebugUtils.jsonDebug(product));
-                inventoryService.save(product);
+                catalogService.save(product);
             });
             System.out.println("Product Loading is complete");
         } catch (Exception e) {

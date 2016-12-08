@@ -25,7 +25,7 @@ public class RESTInventoryAPITest extends AbstractTest {
     @Autowired
     MockHttpServletRequest request;
     @Autowired
-    RESTInventoryAPI restInventoryAPI;
+    RESTCatalogAPI restCatalogAPI;
     @Autowired
     private WebApplicationContext webApplicationContext;
     private MockMvc mockMvc;
@@ -38,7 +38,7 @@ public class RESTInventoryAPITest extends AbstractTest {
     @Test
     @WithUserDetails(value = "root", userDetailsServiceBeanName = "profileService")
     public void testFindAll() throws Exception {
-        mockMvc.perform(get("/rest/product?page=1"))
+        mockMvc.perform(get("/rest/catalog/product?page=1"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andExpect(jsonPath("$.products[0].id").isNotEmpty());
@@ -47,7 +47,7 @@ public class RESTInventoryAPITest extends AbstractTest {
     @Test
     @WithUserDetails(value = "root", userDetailsServiceBeanName = "profileService")
     public void testGetCategories() throws Exception {
-        mockMvc.perform(get("/rest/category"))
+        mockMvc.perform(get("/rest/catalog/category"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andExpect(jsonPath("$").exists());
@@ -56,7 +56,7 @@ public class RESTInventoryAPITest extends AbstractTest {
     @Test
     @WithUserDetails(value = "root", userDetailsServiceBeanName = "profileService")
     public void testFindById() throws Exception {
-        mockMvc.perform(get("/rest/product/4"))
+        mockMvc.perform(get("/rest/catalog/product/4"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andExpect(jsonPath("$.id").value("4"));
@@ -65,7 +65,7 @@ public class RESTInventoryAPITest extends AbstractTest {
     @Test
     @WithUserDetails(value = "root", userDetailsServiceBeanName = "profileService")
     public void testFindByCategory() throws Exception {
-        mockMvc.perform(get("/rest/category/SECUREMENT DEVICES"))
+        mockMvc.perform(get("/rest/catalog/category/SECUREMENT DEVICES"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andExpect(jsonPath("$").exists());
@@ -74,7 +74,7 @@ public class RESTInventoryAPITest extends AbstractTest {
     @Test
     @WithUserDetails(value = "root", userDetailsServiceBeanName = "profileService")
     public void testSearch() throws Exception {
-        mockMvc.perform(get("/rest/search?keyword=dev"))
+        mockMvc.perform(get("/rest/catalog/search?keyword=dev"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andExpect(jsonPath("$.products").exists());

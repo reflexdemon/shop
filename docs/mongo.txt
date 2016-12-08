@@ -4,6 +4,9 @@ Please make note of these MongoDB credentials:
 RockMongo User: admin
 RockMongo Password: 3-5KUWZlPnC4
 
+export OPENSHIFT_MONGODB_DB_HOST=localhost
+export OPENSHIFT_MONGODB_DB_PORT=27017
+
 
 Auto Increment inside Mongo:
 http://www.tutorialspoint.com/mongodb/mongodb_autoincrement_sequence.htm
@@ -56,4 +59,6 @@ db.inventory.createIndex(
                         description : 10
             }
         })
+
+
 

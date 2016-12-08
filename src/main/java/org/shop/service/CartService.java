@@ -29,7 +29,7 @@ public class CartService {
     @Autowired
     private UserServices userServices;
     @Autowired
-    private InventoryService inventoryService;
+    private CatalogService catalogService;
 
     @ProfileExecution
     public Cart getMyCart() {
@@ -122,7 +122,7 @@ public class CartService {
     }
 
     private void calculateTax(String productId, LineItem lineItem) {
-        Product product = inventoryService.findById(productId);
+        Product product = catalogService.findById(productId);
         lineItem.setTax(lineItem.getPrice() * product.getPricingInfo().getTaxPercentage() / 100);
     }
 
@@ -199,7 +199,7 @@ public class CartService {
     }
 
     public LineItem createLineItem(String productId, int quantity) {
-        Product product = inventoryService.findById(productId);
+        Product product = catalogService.findById(productId);
         LineItem lineItem = new LineItem();
         lineItem.setProductId(productId);
         lineItem.setDescription(product.getName());

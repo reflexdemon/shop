@@ -4,7 +4,7 @@ import io.swagger.annotations.*;
 import org.shop.exception.Message;
 import org.shop.model.Product;
 import org.shop.model.SearchResponse;
-import org.shop.service.InventoryService;
+import org.shop.service.CatalogService;
 import org.shop.spring.aop.ProfileExecution;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -24,13 +24,14 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
  * The type Rest product api.
  */
 @RestController
-public class RESTInventoryAPI extends RESTBaseAPI {
+@RequestMapping(value = "/rest/catalog")
+public class RESTCatalogAPI extends RESTBaseAPI {
 
     /**
-     * The Product service.
+     * The Catalog service.
      */
     @Autowired
-    InventoryService inventoryService;
+    CatalogService catalogService;
 
     /**
      * Find all response entity.
@@ -49,7 +50,7 @@ public class RESTInventoryAPI extends RESTBaseAPI {
             @ApiResponse(code = 400, message = "Bad Request", response = Message.class),
             @ApiResponse(code = 500, message = "Internal Server Error", response = Message.class)})
     public ResponseEntity<SearchResponse> findAll(@RequestParam(required = false) Integer page) {
-        SearchResponse response = inventoryService.search(null, page);
+        SearchResponse response = catalogService.search(null, page);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
@@ -71,7 +72,7 @@ public class RESTInventoryAPI extends RESTBaseAPI {
             @ApiResponse(code = 500, message = "Internal Server Error", response = Message.class)})
 
     public ResponseEntity<Product> findById(@PathVariable String id) {
-        Product item = inventoryService.findById(id);
+        Product item = catalogService.findById(id);
         return new ResponseEntity<>(item, HttpStatus.OK);
     }
 
@@ -89,7 +90,7 @@ public class RESTInventoryAPI extends RESTBaseAPI {
             @ApiResponse(code = 500, message = "Internal Server Error", response = Message.class)})
 
     public ResponseEntity<List<String>> getCategories() {
-        List<String> list = inventoryService.getCategories();
+        List<String> list = catalogService.getCategories();
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
@@ -111,7 +112,7 @@ public class RESTInventoryAPI extends RESTBaseAPI {
             @ApiResponse(code = 500, message = "Internal Server Error", response = Message.class)})
 
     public ResponseEntity<List<Product>> findByCategory(@PathVariable String category) {
-        List<Product> list = inventoryService.findByCategory(category);
+        List<Product> list = catalogService.findByCategory(category);
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
@@ -135,7 +136,7 @@ public class RESTInventoryAPI extends RESTBaseAPI {
             @ApiResponse(code = 500, message = "Internal Server Error", response = Message.class)})
 
     public ResponseEntity<SearchResponse> search(@RequestParam String keyword, @RequestParam(required = false) Integer page) {
-        SearchResponse response = inventoryService.search(keyword, page);
+        SearchResponse response = catalogService.search(keyword, page);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 }

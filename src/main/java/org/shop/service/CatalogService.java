@@ -2,7 +2,7 @@ package org.shop.service;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.shop.dao.InventoryRepository;
+import org.shop.dao.ProductRepository;
 import org.shop.dao.Search;
 import org.shop.model.Product;
 import org.shop.model.SearchResponse;
@@ -18,16 +18,16 @@ import java.util.List;
  * The type Inventory service.
  */
 @Service
-public class InventoryService {
+public class CatalogService {
 
-    private static final Log logger = LogFactory.getLog(InventoryService.class);
+    private static final Log logger = LogFactory.getLog(CatalogService.class);
 
     private static final int PAGE_SIZE = 10;
     @Autowired
     private Search search;
 
     @Autowired
-    private InventoryRepository productDao;
+    private ProductRepository productDao;
 
     @Autowired
     private PricingServices pricingServices;
@@ -58,6 +58,8 @@ public class InventoryService {
      * @return the list
      */
     public List<Product> findByCategory(String category) {
+
+
         return pricingServices.applyPricing(productDao.findByCategory(category));
     }
 
