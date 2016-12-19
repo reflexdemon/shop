@@ -196,7 +196,7 @@
               <webResources>
                 <resource>
                   <!-- this is relative to the pom.xml directory -->
-                  <directory>target/web-generated</directory>
+                  <directory>src/main/resources/static</directory>
                   <targetPath>/</targetPath>
                 </resource>
               </webResources>

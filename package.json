@@ -7,7 +7,7 @@
     "start": "ng serve",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
-    "build": "ng build -prod --output-path \"target/web-generated\"",
+    "build": "ng build -prod --output-path \"src/main/resources/static\"",
     "pree2e": "webdriver-manager update",
     "e2e": "protractor"
   },
