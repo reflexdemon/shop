@@ -40,7 +40,7 @@ public class RESTInventoryAPITest extends AbstractTest {
     public void testFindAll() throws Exception {
         mockMvc.perform(get("/rest/catalog/product?page=1"))
                 .andExpect(status().isOk())
-                .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
                 .andExpect(jsonPath("$.products[0].id").isNotEmpty());
     }
 
@@ -49,7 +49,7 @@ public class RESTInventoryAPITest extends AbstractTest {
     public void testGetCategories() throws Exception {
         mockMvc.perform(get("/rest/catalog/category"))
                 .andExpect(status().isOk())
-                .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
                 .andExpect(jsonPath("$").exists());
     }
 
@@ -58,7 +58,7 @@ public class RESTInventoryAPITest extends AbstractTest {
     public void testFindById() throws Exception {
         mockMvc.perform(get("/rest/catalog/product/4"))
                 .andExpect(status().isOk())
-                .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
                 .andExpect(jsonPath("$.id").value("4"));
     }
 
@@ -67,7 +67,7 @@ public class RESTInventoryAPITest extends AbstractTest {
     public void testFindByCategory() throws Exception {
         mockMvc.perform(get("/rest/catalog/category/SECUREMENT DEVICES"))
                 .andExpect(status().isOk())
-                .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
                 .andExpect(jsonPath("$").exists());
     }
 
@@ -76,7 +76,7 @@ public class RESTInventoryAPITest extends AbstractTest {
     public void testSearch() throws Exception {
         mockMvc.perform(get("/rest/catalog/search?keyword=dev"))
                 .andExpect(status().isOk())
-                .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
                 .andExpect(jsonPath("$.products").exists());
     }
 }

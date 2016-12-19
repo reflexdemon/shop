@@ -45,7 +45,7 @@ public class RESTCartAPITest extends AbstractTest {
     public void testGetMyCart() throws Exception {
         mockMvc.perform(get("/rest/cart"))
                 .andExpect(status().isOk())
-                .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
                 .andExpect(jsonPath("$.username").value("root"));
     }
 
@@ -61,7 +61,7 @@ public class RESTCartAPITest extends AbstractTest {
                 .accept(MediaType.APPLICATION_JSON)
         )
                 .andExpect(status().isOk())
-                .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
                 .andExpect(jsonPath("$.username").value("root"));
     }
 
@@ -78,7 +78,7 @@ public class RESTCartAPITest extends AbstractTest {
                 .accept(MediaType.APPLICATION_JSON)
         )
                 .andExpect(status().isOk())
-                .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
                 .andExpect(jsonPath("$.username").value("root"));
     }
 
@@ -92,7 +92,7 @@ public class RESTCartAPITest extends AbstractTest {
                 .accept(MediaType.APPLICATION_JSON)
         )
                 .andExpect(status().isOk())
-                .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
                 .andExpect(jsonPath("$.username").value("root"));
     }
 }

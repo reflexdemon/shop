@@ -116,3 +116,6 @@ fabric.properties
 
 /webapps/
 /OPENSHIFT_DIY_LOG_DIR_IS_UNDEFINED/
+
+/node_modules/
+/node/

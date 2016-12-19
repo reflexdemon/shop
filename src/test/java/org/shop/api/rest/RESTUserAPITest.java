@@ -43,7 +43,7 @@ public class RESTUserAPITest extends AbstractTest {
     public void testUser() throws Exception {
         mockMvc.perform(get("/rest/user"))
                 .andExpect(status().isOk())
-                .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
                 .andExpect(jsonPath("$.username").value("root"));
     }
 }
