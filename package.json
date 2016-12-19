@@ -3,6 +3,10 @@
   "version": "0.0.0",
   "license": "MIT",
   "angular-cli": {},
+  "config" : {
+    "userconfig" : ".npmrc",
+    "cache" : ".npm"
+  },
   "scripts": {
     "start": "ng serve",
     "lint": "tslint \"src/**/*.ts\"",
