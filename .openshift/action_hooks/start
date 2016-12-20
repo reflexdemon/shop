@@ -33,6 +33,9 @@ $OPENSHIFT_DATA_DIR/apache-maven-3.3.3/bin/mvn -f $OPENSHIFT_REPO_DIR/pom.xml -s
 rm -rf $TOMCAT_DIR/work/Catalina/shop-venkatvp.rhcloud.com
 rm -rf $TOMCAT_DIR/webapps/ROOT
 rm -rf $TOMCAT_DIR/logs/*
+#Cleanup to gain disk space
+rm -rf $OPENSHIFT_REPO_DIR/node
+rm -rf $OPENSHIFT_REPO_DIR/node_modules
 
 
 
