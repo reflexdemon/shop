@@ -1,5 +1,4 @@
 # Shop API
----
 
 This is a carlessly written simple API that is implemented using [Spring Boot] and some of its associated project. The running application has been hosted on the [Open Shift(r) RedHat(r) Cloud][open shift]. [Spring Boot] is a nice little handy framwork that I have workd with and it is giving us the freedom to build quick and robust applications. This project was mainly created to learn the following concepts in around [Spring Boot].
 
@@ -15,9 +14,24 @@ This is a carlessly written simple API that is implemented using [Spring Boot] a
 10. Deploying the application using RedHat(tm) [Open Shift] (r)
 11. [Open Shift] (r) [DIY] Cartige
 
+# Index Page
+This is more in construction phase as I was busy building the spring based backend API.
+Now time to explore the [Angular 2] page and can expect a glaring page soon :) 
+
+# API Login
+
+To login to the application please use the below credentials and test the [Swagger API UI][swagger api].
+
+URL | User Name | Password
+--- | --- | ---
+http://shop-venkatvp.rhcloud.com/swagger-ui.html | user | `testing123`
 
 
+# Disclaimer
 
+I am using a free version of the [Open Shift] gear and if not accessed for more then 24hrs they will shutdown the cartige. 
+In case you see the site to be down please click on http://shop-venkatvp.rhcloud.com/index.html and the site will start up by itself.
+This will bring all the services back into action in few minutes.
 
 [spring boot]: http://projects.spring.io/spring-boot/
 [open shift]: https://www.openshift.com/
@@ -33,3 +47,6 @@ This is a carlessly written simple API that is implemented using [Spring Boot] a
 [Angular 2]: https://angular.io/
 [Angular CLI]: https://cli.angular.io/
 [DIY]: https://github.com/openshift/origin-server/blob/master/documentation/oo_cartridge_guide.adoc#diy
+[swagger api]: http://shop-venkatvp.rhcloud.com/swagger-ui.html
+[Web Page]: http://shop-venkatvp.rhcloud.com/index.html
+

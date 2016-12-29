@@ -43,5 +43,19 @@
     "authorities": [
       "ROLE_SYSTEM"
     ]
+  },
+  {
+    "firstName": "Generic",
+    "lastName": "User",
+    "organization": "Nanthinis Health Care",
+    "email": "reflexdemon@github.com",
+    "phone": "678-559-7522",
+    "mobile": "678-559-7522",
+    "pricingTag": "BRONZE_TAG",
+    "username": "user",
+    "password": "testing123",
+    "authorities": [
+      "ROLE_USER"
+    ]
   }
 ]
