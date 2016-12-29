@@ -1,0 +1,11 @@
+#!/bin/bash
+
+git pull ssh://57399fda0c1e66013700000b@shop-venkatvp.rhcloud.com/~/git/shop.git
+
+rm -rf data docs scripts
+
+git add .
+
+git commit -am "Removed scripts the data and docs folder"
+
+git push
