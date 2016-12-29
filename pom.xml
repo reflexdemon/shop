@@ -215,13 +215,13 @@
             <configuration>
               <outputDirectory>webapps</outputDirectory>
               <warName>ROOT</warName>
-              <!--<webResources>-->
-                <!--<resource>-->
-                  <!--&lt;!&ndash; this is relative to the pom.xml directory &ndash;&gt;-->
-                  <!--<directory>src/main/resources/static</directory>-->
-                  <!--<targetPath>/</targetPath>-->
-                <!--</resource>-->
-              <!--</webResources>-->
+              <webResources>
+                <resource>
+                  <!-- this is relative to the pom.xml directory -->
+                  <directory>src/main/resources/static</directory>
+                  <targetPath>/</targetPath>
+                </resource>
+              </webResources>
             </configuration>
           </plugin>
         </plugins>
