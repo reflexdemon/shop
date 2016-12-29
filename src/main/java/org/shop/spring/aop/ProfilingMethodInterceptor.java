@@ -4,7 +4,9 @@ import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.shop.model.AppLogLevel;
 import org.shop.model.User;
+import org.shop.service.AsyncLoggerService;
 import org.shop.service.UserServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -26,10 +28,12 @@ public class ProfilingMethodInterceptor implements MethodInterceptor {
     @Autowired
     private UserServices userServices;
 
+    @Autowired
+    private AsyncLoggerService loggerService;
+
     @Override
     public Object invoke(MethodInvocation invocation) throws Throwable {
         final StopWatch stopWatch = new StopWatch(invocation.getMethod().toGenericString());
-        final Log classLogger = LogFactory.getLog(invocation.getMethod().getDeclaringClass());
         stopWatch.start("invocation.proceed()");
         String method = buildMethod(invocation);
         try {
@@ -41,7 +45,8 @@ public class ProfilingMethodInterceptor implements MethodInterceptor {
             if (null != user) {
                 username = user.getUsername();
             }
-            classLogger.info(String.format("{%s} %s took %d ms",username, method, stopWatch.getTotalTimeMillis()));
+          String message =String.format("%s took %d ms", method, stopWatch.getTotalTimeMillis());
+          loggerService.log(AppLogLevel.INFO, message, "method call", username);
         }
     }
 

@@ -94,6 +94,19 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-thymeleaf</artifactId>
     </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-activemq</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.activemq</groupId>
+      <artifactId>activemq-broker</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+    </dependency>
     <!-- http://mvnrepository.com/artifact/org.springframework/spring-test -->
     <dependency>
       <groupId>org.springframework</groupId>
@@ -149,66 +162,66 @@
       <build>
         <finalName>shop</finalName>
         <plugins>
-          <plugin>
-            <groupId>com.github.eirslett</groupId>
-            <artifactId>frontend-maven-plugin</artifactId>
-            <!-- NB! Set <version> to the latest released version of frontend-maven-plugin, like in README.md -->
-            <version>${frontEndPluginVersion}</version>
-            <executions>
+          <!--<plugin>-->
+            <!--<groupId>com.github.eirslett</groupId>-->
+            <!--<artifactId>frontend-maven-plugin</artifactId>-->
+            <!--&lt;!&ndash; NB! Set <version> to the latest released version of frontend-maven-plugin, like in README.md &ndash;&gt;-->
+            <!--<version>${frontEndPluginVersion}</version>-->
+            <!--<executions>-->
 
-              <execution>
-                <id>install node and npm</id>
-                <goals>
-                  <goal>install-node-and-npm</goal>
-                </goals>
-                <phase>generate-resources</phase>
-                <configuration>
-                  <!-- See https://nodejs.org/en/download/ for latest node and npm (lts) versions -->
-                  <nodeVersion>${nodeVersion}</nodeVersion>
-                  <!--<yarnVersion>${yarnVersion}</yarnVersion>-->
-                  <!-- optional: with node version greater than 4.0.0 will use npm provided by node distribution -->
-                  <npmVersion>${npmVersion}</npmVersion>
-                </configuration>
-              </execution>
+              <!--<execution>-->
+                <!--<id>install node and npm</id>-->
+                <!--<goals>-->
+                  <!--<goal>install-node-and-npm</goal>-->
+                <!--</goals>-->
+                <!--<phase>generate-resources</phase>-->
+                <!--<configuration>-->
+                  <!--&lt;!&ndash; See https://nodejs.org/en/download/ for latest node and npm (lts) versions &ndash;&gt;-->
+                  <!--<nodeVersion>${nodeVersion}</nodeVersion>-->
+                  <!--&lt;!&ndash;<yarnVersion>${yarnVersion}</yarnVersion>&ndash;&gt;-->
+                  <!--&lt;!&ndash; optional: with node version greater than 4.0.0 will use npm provided by node distribution &ndash;&gt;-->
+                  <!--<npmVersion>${npmVersion}</npmVersion>-->
+                <!--</configuration>-->
+              <!--</execution>-->
 
-              <execution>
-                <id>npm install</id>
-                <goals>
-                  <goal>npm</goal>
-                </goals>
-                <configuration>
-                  <!-- optional: The default argument is actually
-                  "install", so unless you need to run some other yarn command,
-                  you can remove this whole <configuration> section.
-                  -->
-                  <arguments>install</arguments>
-                </configuration>
-              </execution>
+              <!--<execution>-->
+                <!--<id>npm install</id>-->
+                <!--<goals>-->
+                  <!--<goal>npm</goal>-->
+                <!--</goals>-->
+                <!--<configuration>-->
+                  <!--&lt;!&ndash; optional: The default argument is actually-->
+                  <!--"install", so unless you need to run some other yarn command,-->
+                  <!--you can remove this whole <configuration> section.-->
+                  <!--&ndash;&gt;-->
+                  <!--<arguments>install</arguments>-->
+                <!--</configuration>-->
+              <!--</execution>-->
 
-              <execution>
-                <id>yarn run build</id>
-                <goals>
-                  <goal>npm</goal>
-                </goals>
-                <configuration>
-                  <arguments>run build</arguments>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
+              <!--<execution>-->
+                <!--<id>yarn run build</id>-->
+                <!--<goals>-->
+                  <!--<goal>npm</goal>-->
+                <!--</goals>-->
+                <!--<configuration>-->
+                  <!--<arguments>run build</arguments>-->
+                <!--</configuration>-->
+              <!--</execution>-->
+            <!--</executions>-->
+          <!--</plugin>-->
           <plugin>
             <artifactId>maven-war-plugin</artifactId>
             <version>2.1.1</version>
             <configuration>
               <outputDirectory>webapps</outputDirectory>
               <warName>ROOT</warName>
-              <webResources>
-                <resource>
-                  <!-- this is relative to the pom.xml directory -->
-                  <directory>src/main/resources/static</directory>
-                  <targetPath>/</targetPath>
-                </resource>
-              </webResources>
+              <!--<webResources>-->
+                <!--<resource>-->
+                  <!--&lt;!&ndash; this is relative to the pom.xml directory &ndash;&gt;-->
+                  <!--<directory>src/main/resources/static</directory>-->
+                  <!--<targetPath>/</targetPath>-->
+                <!--</resource>-->
+              <!--</webResources>-->
             </configuration>
           </plugin>
         </plugins>
