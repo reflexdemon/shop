@@ -1,4 +1,30 @@
-<h1>
-  {{title}}
-</h1>
-<a href="home.html">Navigate to default page</a>
+<md-sidenav-layout [class.m2app-dark]="isDarkTheme">
+
+  <md-sidenav #sidenav mode="over" class="app-sidenav">
+    <!-- sidenav content -->
+    <h2>Navigation</h2>
+    <md-list>
+      <md-list-item><a routerLink="/" routerLinkActive="active">Home</a></md-list-item>
+      <md-list-item><a routerLink="/lost" routerLinkActive="active">404</a></md-list-item>
+    </md-list>
+    <p>I fight for the user</p>
+  </md-sidenav>
+
+  <md-toolbar color="primary">
+    <button class="app-icon-button" (click)="sidenav.toggle()">
+      <i class="material-icons app-toolbar-menu">menu</i>
+    </button>
+    {{title}}
+    <span class="app-toolbar-filler"></span>
+    <button md-button (click)="isDarkTheme = !isDarkTheme">TOGGLE DARK THEME</button>
+  </md-toolbar>
+
+  <div class="app-content">
+    <router-outlet></router-outlet>
+  </div>
+
+</md-sidenav-layout>
+
+<span class="app-action" [class.m2app-dark]="isDarkTheme">
+  <button md-fab><md-icon>check circle</md-icon></button>
+</span>

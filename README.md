@@ -27,11 +27,35 @@ URL | User Name | Password
 http://shop-venkatvp.rhcloud.com/swagger-ui.html | user | `testing123`
 
 
-# Disclaimer
+# Building
 
-I am using a free version of the [Open Shift] gear and if not accessed for more then 24hrs they will shutdown the cartige. 
-In case you see the site to be down please click on http://shop-venkatvp.rhcloud.com/index.html and the site will start up by itself.
-This will bring all the services back into action in few minutes.
+TODO Will be adding notes soon.
+
+# Running
+
+TODO Will be adding notes soon.
+
+# Deployment
+
+TODO Will be adding notes soon.
+
+# Thanks
+
+1. Thanks to [Baron Wilson's][Baron Wilson] [Angular 2 Starter seed][Angular Starter].
+⋅⋅* [Angular 2]
+⋅⋅* [Angular CLI]
+⋅⋅* [Material Design]
+⋅⋅* [Bootstrap 4]
+..* [Webpack]
+..* [Yarn]
+
+
+
+
+>**_Disclaimer_**: I am using a free version of the [Open Shift] gear and if not accessed for more then 24hrs they will shutdown the cartige. In case you see the site to be down please click on http://shop-venkatvp.rhcloud.com/index.html and the site will start up by itself. This will bring all the services back into action in few minutes.
+
+
+
 
 [spring boot]: http://projects.spring.io/spring-boot/
 [open shift]: https://www.openshift.com/
@@ -49,4 +73,11 @@ This will bring all the services back into action in few minutes.
 [DIY]: https://github.com/openshift/origin-server/blob/master/documentation/oo_cartridge_guide.adoc#diy
 [swagger api]: http://shop-venkatvp.rhcloud.com/swagger-ui.html
 [Web Page]: http://shop-venkatvp.rhcloud.com/index.html
+[Angular Starter]: https://github.com/thebaron24/angular-webapp
+[Baron Wilson]: https://github.com/thebaron24
+[Bootstrap 4]: https://v4-alpha.getbootstrap.com/
+[Material Design]: https://material.io/
+[Webpack]: https://webpack.js.org/
+[Yarn]: https://yarnpkg.com/
+
 

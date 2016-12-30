@@ -1,0 +1,10 @@
+{
+  "/rest": {
+    "target": "http://shop-venkatvp.rhcloud.com",
+    "secure": false,
+    "changeOrigin" : false,
+    "pathRewrite": {
+      "^/rest" : "/rest"
+    }
+  }
+}
