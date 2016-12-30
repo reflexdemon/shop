@@ -1,6 +1,6 @@
 {
   "project": {
-    "version": "1.0.0-beta.22-1",
+    "version": "1.0.0-beta.24",
     "name": "shop"
   },
   "apps": [
@@ -18,7 +18,8 @@
       "prefix": "app",
       "mobile": false,
       "styles": [
-        "styles.css"
+        "../node_modules/bootstrap/dist/css/bootstrap.css",
+        "styles.scss"
       ],
       "scripts": [],
       "environments": {
@@ -41,7 +42,7 @@
     }
   },
   "defaults": {
-    "styleExt": "css",
+    "styleExt": "scss",
     "prefixInterfaces": false,
     "inline": {
       "style": false,
