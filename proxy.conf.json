@@ -1,10 +1,4 @@
-{
-  "/rest": {
-    "target": "http://shop-venkatvp.rhcloud.com",
-    "secure": false,
-    "changeOrigin" : false,
-    "pathRewrite": {
-      "^/rest" : "/rest"
-    }
-  }
-}
+[{
+       "path":    "/^(?!.*\\login)(.*)$/",
+       "target":  "http://localhost:8080/"
+   }]

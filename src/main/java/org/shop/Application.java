@@ -1,5 +1,6 @@
 package org.shop;
 
+import com.google.common.base.Predicate;
 import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -17,7 +18,9 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.util.Arrays;
 
+
 import static springfox.documentation.builders.PathSelectors.regex;
+import static com.google.common.base.Predicates.or;
 
 /**
  * Created by vprasanna on 5/15/2016.
@@ -80,10 +83,12 @@ public class Application extends SpringBootServletInitializer {
                 .groupName("rest")
                 .apiInfo(apiInfo())
                 .select()
-                .paths(regex("/rest/.*"))
+                .paths(paths())
                 .build();
     }
-
+  private Predicate<String> paths() {
+    return or(regex("/rest/.*"));
+  }
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("Nanthinis Healthcare REST Shop")

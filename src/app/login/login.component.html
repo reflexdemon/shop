@@ -1,0 +1,32 @@
+<p class="login-form" align="center">
+    <md-card class="app-input-section login-card" align="start">
+        <md-card-header>
+            <md-card-title>Login to Nandhini's Healthcare Shop</md-card-title>
+            <md-card-subtitle>Please enter your credentials</md-card-subtitle>
+        </md-card-header>
+        <form ngNoForm action="/login.htm" method="POST">
+        <p>
+            <md-input name="username">
+                <md-placeholder>
+                    <i class="material-icons app-input-icon">perm_identity</i> User
+                    Name
+                </md-placeholder>
+            </md-input>
+        </p>
+        <p>
+            <md-input type="password" name="password">
+                <md-placeholder>
+                    Password
+                </md-placeholder>
+            </md-input>
+        </p>
+
+          <md-card-actions align="end">
+            <button md-button md-raised-button color="primary" type="submit">Sign In</button>
+            <button md-button>Sign Up</button>
+          </md-card-actions>
+        
+      </form>
+
+    </md-card>
+</p>
