@@ -15,4 +15,11 @@ public class LoginController {
     public ModelAndView handle() {
         return new ModelAndView("login");
     }
+
+    @RequestMapping(value = "loginpage", method = RequestMethod.GET)
+    public String loginpage() {
+        return "redirect:/";
+    }
+
+
 }

@@ -76,7 +76,7 @@ TODO Will be adding notes soon.
 [Angular Starter]: https://github.com/thebaron24/angular-webapp
 [Baron Wilson]: https://github.com/thebaron24
 [Bootstrap 4]: https://v4-alpha.getbootstrap.com/
-[Material Design]: https://material.io/
+[Material Design]: https://material.angular.io/
 [Webpack]: https://webpack.js.org/
 [Yarn]: https://yarnpkg.com/
 

@@ -8,13 +8,21 @@ import { AppComponent} from './app.component';
 import { AppRoutingModule } from './router/routing.module';
 import { HomeComponent } from './home/home.component';
 import { LostComponent, DialogContent } from './lost/lost.component';
+import { PageComponent } from './page/page.component';
+import { LoginComponent } from './login/login.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { UserService  } from './user.service';
+import { User  } from './user';
 
 @NgModule({
   declarations: [
     AppComponent,
     DialogContent,
     HomeComponent,
-    LostComponent
+    LostComponent,
+    PageComponent,
+    LoginComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
@@ -23,8 +31,14 @@ import { LostComponent, DialogContent } from './lost/lost.component';
     MaterialModule.forRoot(),
     AppRoutingModule
   ],
-  entryComponents: [DialogContent],
-  providers: [],
-  bootstrap: [AppComponent]
+  entryComponents: [
+    DialogContent
+  ],
+  providers: [
+    UserService
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }
