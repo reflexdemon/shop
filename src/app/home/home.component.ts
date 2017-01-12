@@ -12,4 +12,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
+  openCode() {
+    window.location.href = "https://github.com/reflexdemon/shop";
+  }
 }
