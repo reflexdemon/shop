@@ -1,8 +1,28 @@
 # Shop API
 
-This is a carlessly written simple API that is implemented using [Spring Boot] and some of its associated project. The running application has been hosted on the [Open Shift(r) RedHat(r) Cloud][open shift]. [Spring Boot] is a nice little handy framwork that I have workd with and it is giving us the freedom to build quick and robust applications. This project was mainly created to learn the following concepts in around [Spring Boot].
+This is a carlessly written simple API that is implemented using [Spring Boot] and some of its associated project. The running application has been hosted on the [Open Shift(r) RedHat(r) Cloud][open shift]. [Spring Boot] is a nice little handy framwork that I have workd with and it is giving us the freedom to build quick and robust applications. This project was mainly created to learn the following concepts in around [Spring Boot] and [Angular 2].
 
-1. [Swagger]
+Please note this was built in the intentions of learning new stuff and not to code for production. At the same time there was utmost care teken to keep this up-to-date with the latest and greatest and acts as a reference implementation to club all pollible things that has been learnt.
+
+
+# Contributions
+
+I stongly welcome all the developers to feel free to fork the project and send me pull requests to help me keep this molnolythic web application up and running.
+
+# Tech Stack
+
+The Tech Stack can be broadly grouped into 3 distinct areas of intrest.
+
+1. Backend/Server
+2. Frontend/UI
+3. Deployment/Cloud
+
+## 1. Backend/Server
+This out and out uses Java based technologies like [Spring Boot] and [Java 8]. This is just a combination of Framworks/Technologies/Features that are listed below are used in this project.
+
+1. [Java 8]
+2. [Spring]
+2. [Swagger]
 2. [Spring Testing]
 3. [Spring Security]
 4. [Spring Boot MVC Jackson]
@@ -10,13 +30,19 @@ This is a carlessly written simple API that is implemented using [Spring Boot] a
 6. [Spring Boot Web] Templating using [Thymeleaf]
 7. [Spring AOP]
 8. [Spring Mongo DB]
-9. [Angular 2] uisng [Angular CLI]
-10. Deploying the application using RedHat(tm) [Open Shift] (r)
-11. [Open Shift] (r) [DIY] Cartige
+## 2. Frontend/UI
+ 1. [Angular 2]
+ 2. [Angular CLI]
+ 3. [Material Design]
+ 4. [Bootstrap 4]
+ 5. [Webpack]
+ 6. [Yarn]
+## 3. Deployment/Cloud
+1. [Open Shift] (r) [DIY] Cartige
 
 # Index Page
 This is more in construction phase as I was busy building the spring based backend API.
-Now time to explore the [Angular 2] page and can expect a glaring page soon :) 
+Now time to explore the [Angular 2] page and can expect a glaring page soon :)
 
 # API Login
 
@@ -29,26 +55,29 @@ http://shop-venkatvp.rhcloud.com/swagger-ui.html | user | `testing123`
 
 # Building
 
-TODO Will be adding notes soon.
+## UI
+Before you push any changes that you made in ui project please ensure to run the below to generate the ui artifacts.
+```
+yarn run build
+```
+## Backend
+Once the above is built, please do the following task to run generate the `war` file.
+
+```
+mvn clean package -P openshift -DskipTests=true
+```
+
 
 # Running
 
-TODO Will be adding notes soon.
+Deploy the generated `WAR` file on Tomcat or any other container.
 
 # Deployment
 
 TODO Will be adding notes soon.
 
 # Thanks
-
-1. Thanks to [Baron Wilson's][Baron Wilson] [Angular 2 Starter seed][Angular Starter].
-* [Angular 2]
-* [Angular CLI]
-* [Material Design]
-* [Bootstrap 4]
-* [Webpack]
-* [Yarn]
-
+Thanks to [Baron Wilson's][Baron Wilson] [Angular 2 Starter seed][Angular Starter].
 
 
 
@@ -79,5 +108,6 @@ TODO Will be adding notes soon.
 [Material Design]: https://material.angular.io/
 [Webpack]: https://webpack.js.org/
 [Yarn]: https://yarnpkg.com/
-
-
+[Java 8]: http://www.oracle.com/technetwork/java/javase/8-whats-new-2157071.html
+[TypeScripts]: https://www.typescriptlang.org/
+[Spring]: http://spring.io
