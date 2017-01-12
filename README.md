@@ -30,6 +30,8 @@ This out and out uses Java based technologies like [Spring Boot] and [Java 8]. T
 6. [Spring Boot Web] Templating using [Thymeleaf]
 7. [Spring AOP]
 8. [Spring Mongo DB]
+
+
 ## 2. Frontend/UI
  1. [Angular 2]
  2. [Angular CLI]
