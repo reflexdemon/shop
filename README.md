@@ -42,12 +42,12 @@ TODO Will be adding notes soon.
 # Thanks
 
 1. Thanks to [Baron Wilson's][Baron Wilson] [Angular 2 Starter seed][Angular Starter].
-⋅⋅* [Angular 2]
-⋅⋅* [Angular CLI]
-⋅⋅* [Material Design]
-⋅⋅* [Bootstrap 4]
-..* [Webpack]
-..* [Yarn]
+* [Angular 2]
+* [Angular CLI]
+* [Material Design]
+* [Bootstrap 4]
+* [Webpack]
+* [Yarn]
 
 
 
