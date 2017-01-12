@@ -39,6 +39,8 @@ This out and out uses Java based technologies like [Spring Boot] and [Java 8]. T
  4. [Bootstrap 4]
  5. [Webpack]
  6. [Yarn]
+ 
+ 
 ## 3. Deployment/Cloud
 1. [Open Shift] (r) [DIY] Cartige
 
