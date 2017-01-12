@@ -27,7 +27,7 @@ var UserService = (function () {
     // }
     UserService.prototype.getUser = function () {
         return this.http.get(this.userUrl)
-            .map(function (r) { return r.json().data; });
+            .map(function (r) { return r.json(); });
     };
     UserService.prototype.handleError = function (error) {
         console.error('An error occurred', error); // for demo purposes only

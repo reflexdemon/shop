@@ -10,6 +10,8 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
+import java.util.UUID;
+
 import static org.shop.utils.CryptoUtils.sha256;
 
 /**
@@ -41,12 +43,24 @@ public class UserServices {
     @ProfileExecution
     public User getAuthenticatedUser() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        User user = null;
         if (null != auth && auth.isAuthenticated()) {
-            User user = (User) auth.getPrincipal();
+            Object principal = auth.getPrincipal();
+            if (principal instanceof java.lang.String) {
+//              anonymousUser
+              user = new User();
+              user.setUsername(principal.toString());
+              user.setFirstName("anonymous");
+              user.setLastName("anonymous");
+              user.setId(UUID.randomUUID().toString());
+            } else {
+              user= (User) principal;
+            }
+
             logger.trace("Found user " + user.getUsername());
             return user;
         }
-        return null;
+        return user;
     }
 
     @ProfileExecution
