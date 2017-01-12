@@ -31,7 +31,8 @@ export class UserService {
 
     getUser(): Observable<User> {
         return this.http.get(this.userUrl)
-               .map((r: Response) => r.json() as User);
+               .map((r: Response) => r.json() as User)
+               .catch(this.handleError);
     }
     private handleError(error: any): Promise<any> {
         console.error('An error occurred', error); // for demo purposes only
