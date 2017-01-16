@@ -1,0 +1,52 @@
+{
+      "/rest/*": {
+        "host": "localhost",
+        "target": "http://shop-venkatvp.rhcloud.com:80/",
+        "headers" : {
+          "host" : "shop-venkatvp.rhcloud.com"
+        },
+        "pathRewrite": {
+          "/rest" : "/rest"
+        }
+      },
+      "/login.htm": {
+        "host": "localhost",
+        "target": "http://shop-venkatvp.rhcloud.com:80/",
+        "headers" : {
+          "host" : "shop-venkatvp.rhcloud.com"
+        },
+        "pathRewrite": {
+          "/login.htm" : "/login.htm"
+        }
+      },
+      "/swagger-ui.html": {
+        "host": "localhost",
+        "target": "http://shop-venkatvp.rhcloud.com:80/",
+        "headers" : {
+          "host" : "shop-venkatvp.rhcloud.com"
+        },
+        "pathRewrite": {
+          "/swagger-ui.html" : "/swagger-ui.html"
+        }
+      },
+      "/css/*": {
+        "host": "localhost",
+        "target": "http://shop-venkatvp.rhcloud.com:80/",
+        "headers" : {
+          "host" : "shop-venkatvp.rhcloud.com"
+        },
+        "pathRewrite": {
+          "/css" : "/css"
+        }
+      },
+      "/js/*": {
+        "host": "localhost",
+        "target": "http://shop-venkatvp.rhcloud.com:80/",
+        "headers" : {
+          "host" : "shop-venkatvp.rhcloud.com"
+        },
+        "pathRewrite": {
+          "/js" : "/js"
+        }
+      }
+}

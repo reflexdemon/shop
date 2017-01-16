@@ -5,9 +5,9 @@ import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreato
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -91,12 +91,12 @@ public class Application extends SpringBootServletInitializer {
   }
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("Nanthinis Healthcare REST Shop")
-                .description("REST API for Nanthinis Healthcare online shop")
+                .title("REST Shop Example Project")
+                .description("REST API for online shop")
                 .termsOfServiceUrl("http://nanthinishealthcare.com/")
                 .contact("Venkat")
-                .license("Nanthinis Healthcare")
-                .licenseUrl("http://nanthinishealthcare.com/")
+                .license("Back to Home Page")
+                .licenseUrl("/")
                 .version("1.0")
                 .build();
     }
