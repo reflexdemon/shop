@@ -3,7 +3,6 @@ import { Headers, Http,  Response } from '@angular/http';
 
 import { User } from './user';
 import { Observable } from 'rxjs';
-import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class UserService {
@@ -34,8 +33,9 @@ export class UserService {
                .map((r: Response) => r.json() as User)
                .catch(this.handleError);
     }
-    private handleError(error: any): Promise<any> {
-        console.error('An error occurred', error); // for demo purposes only
-        return Promise.reject(error.message || error);
+
+    private handleError(error: any): Observable<any> {
+        console.log('An error occurred', error); // for demo purposes only
+        return Observable.throw(error.json().error || 'Server error');
     }
 }

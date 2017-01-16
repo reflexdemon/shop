@@ -1,0 +1,37 @@
+{
+      "/rest/*": {
+        "host": "localhost",
+        "target": "http://localhost:8080/",
+        "pathRewrite": {
+          "/rest" : "/rest"
+        }
+      },
+      "/login.htm": {
+        "host": "localhost",
+        "target": "http://localhost:8080/",
+        "pathRewrite": {
+          "/login.htm" : "/login.htm"
+        }
+      },
+      "/swagger-ui.html": {
+        "host": "localhost",
+        "target": "http://localhost:8080/",
+        "pathRewrite": {
+          "/swagger-ui.html" : "/swagger-ui.html"
+        }
+      },
+      "/css/*": {
+        "host": "localhost",
+        "target": "http://localhost:8080/",
+        "pathRewrite": {
+          "/css" : "/css"
+        }
+      },
+      "/js/*": {
+        "host": "localhost",
+        "target": "http://localhost:8080/",
+        "pathRewrite": {
+          "/js" : "/js"
+        }
+      }
+}

@@ -74,11 +74,54 @@ mvn clean package -P openshift -DskipTests=true
 
 # Running
 
-Deploy the generated `WAR` file on Tomcat or any other container.
+## Localhost only
 
-# Deployment
+### API Service
 
-TODO Will be adding notes soon.
+Run the Java process on [Tomcat] or you can run the [Spring boot] app's `org.shop.Application.main()` method.
+Lets assume it is running on `localhost:8080`. This will be our API service.
+
+### Angular WebApp
+
+To run the Angular WebApp with local proxy please run the below.
+
+#### Yarn
+```
+$ yarn install    #Only once!
+$ yarn run proxy
+```
+
+#### NPM
+```
+$ npm install    #Only once!
+$ npm run proxy
+```
+
+## Remote API
+
+### API Service
+
+You can relay on the running version of the API on the [Open Shift] cloud and it is not required to run in your `localhost`.
+
+### Angular WebApp
+
+To run the Angular WebApp with local proxy please run the below.
+
+#### Yarn
+```
+$ yarn install    #Only once!
+$ yarn run proxyr
+```
+
+#### NPM
+```
+$ npm install    #Only once!
+$ npm run proxyr
+```
+
+
+As a recommendation for running the applicaiton locally for development purpose, I would strongly recommend running with remote proxy.
+
 
 # Thanks
 Thanks to [Baron Wilson's][Baron Wilson] [Angular 2 Starter seed][Angular Starter].
@@ -115,3 +158,4 @@ Thanks to [Baron Wilson's][Baron Wilson] [Angular 2 Starter seed][Angular Starte
 [Java 8]: http://www.oracle.com/technetwork/java/javase/8-whats-new-2157071.html
 [TypeScripts]: https://www.typescriptlang.org/
 [Spring]: http://spring.io
+[Tomcat]: http://tomcat.apache.org/
