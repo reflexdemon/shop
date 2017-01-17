@@ -6,11 +6,25 @@
           "/rest" : "/rest"
         }
       },
+      "/webjars/*": {
+        "host": "localhost",
+        "target": "http://localhost:8080/",
+        "pathRewrite": {
+          "/webjars" : "/webjars"
+        }
+      },
       "/login.htm": {
         "host": "localhost",
         "target": "http://localhost:8080/",
         "pathRewrite": {
           "/login.htm" : "/login.htm"
+        }
+      },
+      "/logout": {
+        "host": "localhost",
+        "target": "http://localhost:8080/",
+        "pathRewrite": {
+          "/logout" : "/logout"
         }
       },
       "/swagger-ui.html": {

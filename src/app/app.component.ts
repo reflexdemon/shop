@@ -13,11 +13,7 @@ import { User } from './user';
 export class AppComponent {
     title = 'Shop';
     isDarkTheme: boolean = false;
-    user: User = {
-      id: "58659560561d906dcb4567b3",
-      firstName: "Venkateswara",
-      lastName: "Venkatraman Prasanna",
-      username: "venkatvp"};
+    user: User = {"id":"9439842e-8fb3-42d5-af5c-b0f74cc74c0c","firstName":"anonymous","lastName":"anonymous","organization":null,"email":null,"phone":null,"mobile":null,"pricingTag":null,"username":"anonymousUser","password":null,"authorities":null,"accountNonExpired":true,"accountNonLocked":true,"credentialsNonExpired":true,"enabled":true};
     constructor(userService: UserService) {
         userService.getUser().subscribe(
           data => {
@@ -28,6 +24,10 @@ export class AppComponent {
             console.log("Problem!!!", error);
           }
         );
+    }
+
+    isAnonymous():boolean {
+      return this.user.firstName === "anonymous";
     }
 
     ngOnInit() {

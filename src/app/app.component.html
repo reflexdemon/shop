@@ -2,16 +2,16 @@
 
   <md-sidenav #sidenav mode="over" class="app-sidenav">
     <!-- sidenav content -->
-    <h2>Navigation</h2>
+    <h2>Menu</h2>
     <md-list>
       <md-list-item><a routerLink="/" routerLinkActive="active">Home</a></md-list-item>
-      <!-- <md-list-item><a routerLink="/lost" routerLinkActive="active">404</a></md-list-item> -->
-      <md-list-item><a routerLink="/loginpage" routerLinkActive="active">Login Page</a></md-list-item>
-      <md-list-item><a href="/swagger-ui.html">API Access</a></md-list-item>
-      <md-list-item><a href="/logout">Logout</a></md-list-item>
+      <md-list-item><a routerLink="/lost" routerLinkActive="active">404</a></md-list-item>
+      <md-list-item *ngIf="isAnonymous()"><a routerLink="/loginpage" routerLinkActive="active">Sign In</a></md-list-item>
       <md-list-item><a href="https://github.com/reflexdemon/shop">Git Hub</a></md-list-item>
+
+      <md-list-item *ngIf="!isAnonymous()"><a href="/swagger-ui.html">API Access</a></md-list-item>
+      <md-list-item *ngIf="!isAnonymous()"><a href="/logout">Sign Out</a></md-list-item>
     </md-list>
-    <p>Welcome {{user.lastName}} </p>
   </md-sidenav>
 
   <md-toolbar color="primary">
@@ -20,8 +20,16 @@
     </button>
     {{title}}
     <span class="app-toolbar-filler"></span>
-    <button md-button (click)="isDarkTheme = !isDarkTheme">TOGGLE DARK THEME</button>
 
+    <!-- <button md-button (click)="isDarkTheme = !isDarkTheme">TOGGLE DARK THEME</button> -->
+    <!-- Anonymous  User-->
+    <p *ngIf="isAnonymous()">
+      <a routerLink="/loginpage" routerLinkActive="active" md-button>Sign In</a>
+      <a routerLink="/signup" routerLinkActive="active" md-button>Sign Up</a>
+    </p>
+
+    <!-- Logged In User-->
+    <p *ngIf="!isAnonymous()">Welcome, {{user.firstName}} <a *ngIf="!isAnonymous()" href="/logout" md-button>Sign Out</a></p>
   </md-toolbar>
 
   <div class="app-content">

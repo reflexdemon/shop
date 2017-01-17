@@ -5,11 +5,13 @@ import { HomeComponent }     from './../home/home.component';
 import { LostComponent } from './../lost/lost.component';
 import { LoginComponent } from './../login/login.component';
 import { PageComponent } from './../page/page.component';
+import { SignUpComponent } from '../sign-up/sign-up.component';
 
 const appRoutes: Routes = [
   { path: '',   component: HomeComponent },
   { path: 'page', component: PageComponent },
   { path: 'loginpage', component: LoginComponent },
+  { path: 'signup', component: SignUpComponent },
   { path: '**', component: LostComponent }
 ];
 @NgModule({
