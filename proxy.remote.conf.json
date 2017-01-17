@@ -9,6 +9,16 @@
           "/rest" : "/rest"
         }
       },
+      "/webjars/*": {
+        "host": "localhost",
+        "target": "http://shop-venkatvp.rhcloud.com:80/",
+        "headers" : {
+          "host" : "shop-venkatvp.rhcloud.com"
+        },
+        "pathRewrite": {
+          "/webjars" : "/webjars"
+        }
+      },
       "/login.htm": {
         "host": "localhost",
         "target": "http://shop-venkatvp.rhcloud.com:80/",
@@ -17,6 +27,16 @@
         },
         "pathRewrite": {
           "/login.htm" : "/login.htm"
+        }
+      },
+      "/logout": {
+        "host": "localhost",
+        "target": "http://shop-venkatvp.rhcloud.com:80/",
+        "headers" : {
+          "host" : "shop-venkatvp.rhcloud.com"
+        },
+        "pathRewrite": {
+          "/logout" : "/logout"
         }
       },
       "/swagger-ui.html": {
