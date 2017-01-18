@@ -4,13 +4,14 @@
     <!-- sidenav content -->
     <h2>Menu</h2>
     <md-list>
-      <md-list-item><a routerLink="/" routerLinkActive="active">Home</a></md-list-item>
-      <md-list-item><a routerLink="/lost" routerLinkActive="active">404</a></md-list-item>
-      <md-list-item *ngIf="isAnonymous()"><a routerLink="/loginpage" routerLinkActive="active">Sign In</a></md-list-item>
-      <md-list-item><a href="https://github.com/reflexdemon/shop">Git Hub</a></md-list-item>
+      <md-list-item><a (click)="sidenav.toggle()" routerLink="/" routerLinkActive="active">Home</a></md-list-item>
+      <md-list-item><a (click)="sidenav.toggle()" routerLink="/lost" routerLinkActive="active">404</a></md-list-item>
+      <md-list-item *ngIf="isAnonymous()"><a (click)="sidenav.toggle()" routerLink="/loginpage" routerLinkActive="active">Sign In</a></md-list-item>
+      <md-list-item><a (click)="sidenav.toggle()" href="https://github.com/reflexdemon/shop">Git Hub</a></md-list-item>
 
-      <md-list-item *ngIf="!isAnonymous()"><a href="/swagger-ui.html">API Access</a></md-list-item>
-      <md-list-item *ngIf="!isAnonymous()"><a href="/logout">Sign Out</a></md-list-item>
+      <md-list-item *ngIf="!isAnonymous()"><a (click)="sidenav.toggle()" routerLink="/profile" routerLinkActive="active">View Profile</a></md-list-item>
+      <md-list-item *ngIf="!isAnonymous()"><a (click)="sidenav.toggle()" href="/swagger-ui.html">API Access</a></md-list-item>
+      <md-list-item *ngIf="!isAnonymous()"><a (click)="sidenav.toggle()" href="/logout">Sign Out</a></md-list-item>
     </md-list>
   </md-sidenav>
 

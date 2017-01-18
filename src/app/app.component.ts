@@ -18,7 +18,7 @@ export class AppComponent {
         userService.getUser().subscribe(
           data => {
           console.log("User:", data);
-          return this.user = data;
+            return this.user = data;
           },
           error => {
             console.log("Problem!!!", error);

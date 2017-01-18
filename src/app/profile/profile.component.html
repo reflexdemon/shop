@@ -1,0 +1,22 @@
+  <h2>Profile</h2>
+  <md-card *ngIf="user">
+  <md-card-header>
+    <md-card-title>User Profile</md-card-title>
+    <md-card-subtitle>{{user.username}}</md-card-subtitle>
+  </md-card-header>
+  <md-card-content>
+    <table>
+      <tr>
+          <th align="right">Name</th>
+          <td>{{user.firstName}} {{user.lastName}}</td>
+      </tr>
+      <tr>
+          <th align="right">Login ID</th>
+          <td>{{user.username}}</td>
+      </tr>
+    </table>
+  </md-card-content>
+  <md-card-actions>
+    <a routerLink="/" routerLinkActive="active" md-button>Back</a>
+  </md-card-actions>
+</md-card>

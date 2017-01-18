@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { UserService  } from './user.service';
 import { User  } from './user';
+import { ProfileModule } from './profile/profile.module';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { User  } from './user';
     FormsModule,
     HttpModule,
     MaterialModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    ProfileModule
   ],
   entryComponents: [
     DialogContent
