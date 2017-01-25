@@ -19,10 +19,20 @@ public class AppLogger {
   private String action;
   private AppLogLevel level = AppLogLevel.TRACE;
 
+  /**
+   * Gets id.
+   *
+   * @return the id
+   */
   public String getId() {
     return id;
   }
 
+  /**
+   * Sets id.
+   *
+   * @param id the id
+   */
   public void setId(String id) {
     this.id = id;
   }
