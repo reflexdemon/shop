@@ -29,7 +29,7 @@ public class ProfilingMethodInterceptor implements MethodInterceptor {
     private UserServices userServices;
 
     @Autowired
-    private AsyncLoggerService loggerService;
+    private AsyncLoggerService asyncLoggerService;
 
     @Override
     public Object invoke(MethodInvocation invocation) throws Throwable {
@@ -46,7 +46,7 @@ public class ProfilingMethodInterceptor implements MethodInterceptor {
                 username = user.getUsername();
             }
           String message =String.format("%s took %d ms", method, stopWatch.getTotalTimeMillis());
-          loggerService.log(AppLogLevel.INFO, message, "method call", username);
+          asyncLoggerService.log(AppLogLevel.INFO, message, "method call", username);
         }
     }
 
