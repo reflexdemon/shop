@@ -1,0 +1,33 @@
+@import "../app.component.scss";
+
+
+md-card {
+  margin: 20px;
+}
+
+md-checkbox {
+  margin: 10px;
+}
+
+
+.signup-radio-group {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.signup-radio-button {
+  margin: 5px;
+}
+
+.signup-selected-value {
+  margin: 15px 0;
+}
+
+
+.signup-form {
+  width: 500px;
+}
+
+.signup-full-width {
+  width: 100%;
+}

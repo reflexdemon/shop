@@ -7,6 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignUpComponent implements OnInit {
 
+
+  tags = [
+      'Gold',
+      'Silver',
+      'Bronze'
+    ];
+
   constructor() { }
 
   ngOnInit() {
