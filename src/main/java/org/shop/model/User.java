@@ -7,6 +7,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
@@ -21,15 +22,20 @@ public class User implements UserDetails {
     @Id
     @Indexed
     private String id;
+    @NotNull
     private String firstName;
+    @NotNull
     private String lastName;
     private String organization;
+    @NotNull
     private String email;
     private String phone;
     private String mobile;
     private PricingTag pricingTag;
     @Indexed
+    @NotNull
     private String username;
+    @NotNull
     private String password;
 
     private Set<Role> authorities = new HashSet<>();
