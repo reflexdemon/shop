@@ -7,26 +7,10 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class UserService {
     private userUrl:string = '/rest/user';  // URL to web api
-    private userLogin:string = 'login.htm';  // URL to web api
-
-
+    
     constructor(private http: Http) {
 
     }
-
-    // login(username:string, password:string) {
-    //   var headers = new Headers();
-    //   let urlSearchParams = new URLSearchParams();
-    //   urlSearchParams.append('username', username);
-    //   urlSearchParams.append('password', password);
-    //   let body = urlSearchParams.toString()
-    //     this.http.post(this.userLogin, body)
-    //         .toPromise()
-    //         .then(
-    //           response => console.log(response)
-    //         )
-    //         .catch(this.handleError);
-    // }
 
     getUser(): Observable<User> {
         return this.http.get(this.userUrl)
@@ -34,8 +18,15 @@ export class UserService {
                .catch(this.handleError);
     }
 
+
+    createUser(user:User): Observable<User> {
+        return this.http.post(this.userUrl, user)
+               .map((r: Response) => r.json() as User)
+               .catch(this.handleError);
+    }
+
     private handleError(error: any): Observable<any> {
         console.log('An error occurred', error); // for demo purposes only
-        return Observable.throw(error.json().error || 'Server error');
+        return Observable.throw(error.json().message || 'Server error');
     }
 }

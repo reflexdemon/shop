@@ -36,11 +36,37 @@ public class UserServices {
 
     @ProfileExecution
     public void save(User user) {
+        verifyUser(user);
         user.setPassword(sha256(user.getPassword()));
         userRepository.save(user);
     }
 
-    @ProfileExecution
+  private void verifyUser(User user) {
+
+    if ( null == user) {
+      throw new RuntimeException("Empty User please verify user object");
+    }
+
+    if ( user.getId() == null) { //This is for new user!
+
+      User anotherUser = null;
+
+      anotherUser  = userRepository.findByUsername(user.getUsername());
+
+      if (null != anotherUser) {
+        throw new RuntimeException("User already exist. Please choose another username");
+      }
+
+      anotherUser  = userRepository.findByEmail(user.getEmail());
+      if (null != anotherUser) {
+        throw new RuntimeException("User already exist. Please choose another email address");
+      }
+
+    }
+
+  }
+
+  //    @ProfileExecution
     public User getAuthenticatedUser() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         User user = null;

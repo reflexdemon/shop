@@ -1,0 +1,48 @@
+<div>
+  <h1>Product Listing</h1>
+  <span *ngIf="!result">
+    <md-progress-bar
+        class="app-progress"
+        mode="indeterminate"
+        aria-label="Loading Please wait"></md-progress-bar>
+  </span>
+  <md-grid-list cols="2" *ngIf="result">
+    <div>
+      I am glad that we found {{result.maxCount}} products.
+      <div class="paging-container">
+      <md-chip-list>
+  <md-chip>
+      <div class="paging-chip">
+          <span *ngFor="let page of pages;let isLast=last">
+            <span *ngIf="result.page == page"><button class="page-button-selected" md-mini-fab>{{page}}</button></span>
+            <span *ngIf="result.page != page"> <button class="page-button" md-mini-fab (click)="showPage(page)">{{page}}</button></span>
+          <!-- <span *ngIf="!isLast">,</span> -->
+        </span>
+      </div>
+    </md-chip>
+  </md-chip-list>
+  </div>
+  </div>
+  <md-grid-tile *ngFor="let product of result.products">
+    <!-- Here are the products -->
+    <md-card>
+  <md-card-header>
+    <md-card-title>{{product.name}}</md-card-title>
+    <md-card-subtitle>{{product.category}}</md-card-subtitle>
+  </md-card-header>
+  <img md-card-image src="{{product.imageURL}}">
+  <md-card-content>
+    <p>
+      {{product.description}}
+    </p>
+  </md-card-content>
+  <md-card-actions>
+    <button md-button>LIKE</button>
+    <button md-button>SHARE</button>
+  </md-card-actions>
+</md-card>
+
+  </md-grid-tile>
+</md-grid-list>
+
+</div>

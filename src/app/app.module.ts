@@ -14,6 +14,8 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { UserService  } from './user.service';
 import { User  } from './user';
 import { ProfileModule } from './profile/profile.module';
+import { ProductListingModule } from './product-listing/product-listing.module';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { ProfileModule } from './profile/profile.module';
     HttpModule,
     MaterialModule.forRoot(),
     AppRoutingModule,
-    ProfileModule
+    ProfileModule,
+    ProductListingModule
   ],
   entryComponents: [
     DialogContent
