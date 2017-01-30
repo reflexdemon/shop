@@ -26,29 +26,20 @@
       <md-icon>more_vert</md-icon>
     </button>
     <md-menu #menu="mdMenu">
-      <button md-menu-item>
-        <md-icon>dialpad</md-icon>
-        <span>Redial</span>
+      <a md-menu-item *ngIf="isAnonymous()" routerLink="/loginpage" routerLinkActive="active">
+        <span>Sign In</span>
+      </a>
+      <a md-menu-item *ngIf="isAnonymous()" routerLink="/signup" routerLinkActive="active">
+        <span>Sign Up</span>
+      </a>
+      <button md-menu-item disabled *ngIf="!isAnonymous()">
+        <span>Welcome, {{user.firstName}} {{user.lastName}}</span>
       </button>
-      <button md-menu-item disabled>
-        <md-icon>voicemail</md-icon>
-        <span>Check voicemail</span>
-      </button>
-      <button md-menu-item>
-        <md-icon>notifications_off</md-icon>
-        <span>Disable alerts</span>
-      </button>
+      <a md-menu-item *ngIf="!isAnonymous()" href="/logout">
+        <span>Sign Out</span>
+      </a>
     </md-menu>
 
-    <!-- <button md-button (click)="isDarkTheme = !isDarkTheme">TOGGLE DARK THEME</button> -->
-    <!-- Anonymous  User-->
-    <p *ngIf="isAnonymous()">
-      <a routerLink="/loginpage" routerLinkActive="active" md-button>Sign In</a>
-      <a routerLink="/signup" routerLinkActive="active" md-button>Sign Up</a>
-    </p>
-
-    <!-- Logged In User-->
-    <p *ngIf="!isAnonymous()">Welcome, {{user.firstName}} <a href="/logout" md-button>Sign Out</a></p>
   </md-toolbar>
 
   <div class="app-content">

@@ -10,7 +10,6 @@ import { CommonModule } from '@angular/common';
 import { ProductListingComponent } from './product-listing.component';
 import  { ProductListingService } from './product-listing.service';
 
-
 @NgModule({
   imports: [
     BrowserModule,

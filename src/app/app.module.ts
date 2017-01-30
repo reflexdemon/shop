@@ -16,6 +16,7 @@ import { User  } from './user';
 import { ProfileModule } from './profile/profile.module';
 import { ProductListingModule } from './product-listing/product-listing.module';
 
+
 @NgModule({
   declarations: [
     AppComponent,

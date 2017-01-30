@@ -9,7 +9,7 @@ import { SearchResponse } from './search-response';
   templateUrl: './product-listing.component.html',
   styleUrls: ['./product-listing.component.scss']
 })
-export class ProductListingComponent implements OnInit {
+export class ProductListingComponent  implements OnInit {
 
   private result : SearchResponse;
   private error: string;
@@ -41,6 +41,7 @@ showPage(page:number) {
   }
 
   getProducts(page: number) {
+    this.result = null;
     this.productListingService.findAll(page)
     .subscribe(
       data => {
