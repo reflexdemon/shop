@@ -1,5 +1,6 @@
 <div>
-  <h1>Product Listing</h1>
+  <h1 *ngIf="!keyword">Product Listing</h1>
+  <h1 *ngIf="keyword">Search Results for "{{keyword}}"</h1>
   <span *ngIf="!result">
     <md-progress-bar
         class="app-progress"

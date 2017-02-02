@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 
 import  { ProductListingService } from './product-listing.service';
 import { SearchResponse } from './search-response';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
+import 'rxjs/add/operator/switchMap';
 
 @Component({
   selector: 'app-product-listing',
@@ -15,8 +17,13 @@ export class ProductListingComponent  implements OnInit {
   private error: string;
   totalPages:number;
   pages:number[];
+  private keyword:string;
 
-  constructor(private productListingService:ProductListingService) {
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private productListingService:ProductListingService
+  ) {
 
   }
 
@@ -33,27 +40,44 @@ export class ProductListingComponent  implements OnInit {
 
 showPage(page:number) {
   console.log("Page:", page);
-  this.getProducts(page);
+  this.getProducts(page, this.keyword);
 }
 
   ngOnInit() {
-    this.getProducts(0);
+    this.keyword = this.route.snapshot.params['keyword'];
+    console.log("Keyword for searching:", this.keyword);
+    this.getProducts(1, this.keyword);
+
   }
 
-  getProducts(page: number) {
+
+  getProducts(page: number, keyword:string) {
     this.result = null;
-    this.productListingService.findAll(page)
-    .subscribe(
-      data => {
-        this.result = data;
-        this.getPages();
-      },
-      error => {
-        this.result = null;
-        this.error = error;
-      }
-    );
+
+    if (keyword) {
+      this.productListingService.findByKeyword(this.keyword, 0)
+      .subscribe(
+        this.onData.bind(this),
+        this.onError.bind(this)
+      );
+    } else {
+      this.productListingService.findAll(page)
+      .subscribe(
+        this.onData.bind(this),
+        this.onError.bind(this)
+      );
+    }
+
   }
 
+  onData(data:any) {
+    this.result = data;
+    this.getPages();
+  }
+
+  onError(error:any) {
+    this.result = null;
+    this.error = error;
+  }
 
 }

@@ -16,6 +16,7 @@ const appRoutes: Routes = [
   { path: 'signup', component: SignUpComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'products', component: ProductListingComponent },
+  { path: 'search/:keyword', component: ProductListingComponent },
   { path: '**', component: LostComponent }
 ];
 @NgModule({

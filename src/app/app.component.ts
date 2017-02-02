@@ -3,7 +3,7 @@ import { MdDialog, MdDialogRef, MdSnackBar } from '@angular/material';
 
 import { UserService } from './user.service';
 import { User } from './user';
-
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-root',
@@ -15,7 +15,10 @@ export class AppComponent {
     isDarkTheme: boolean = false;
     user: User = {"id":"9439842e-8fb3-42d5-af5c-b0f74cc74c0c","firstName":"anonymous","lastName":"anonymous","organization":null,"email":null,"phone":null,"mobile":null,"pricingTag":null,"username":"anonymousUser","password":null,"authorities":null,"accountNonExpired":true,"accountNonLocked":true,"credentialsNonExpired":true,"enabled":true};
     dummy: User = {"id":"9439842e-8fb3-42d5-af5c-b0f74cc74c0c","firstName":"anonymous","lastName":"anonymous","organization":null,"email":null,"phone":null,"mobile":null,"pricingTag":null,"username":"anonymousUser","password":null,"authorities":null,"accountNonExpired":true,"accountNonLocked":true,"credentialsNonExpired":true,"enabled":true};
-    constructor(userService: UserService) {
+    constructor(
+      private router:Router,
+      userService: UserService
+    ) {
         userService.getUser().subscribe(
           data => {
           console.log("User:", data);
@@ -33,5 +36,10 @@ export class AppComponent {
     }
 
     ngOnInit() {
+    }
+
+    searchWith(keyword:string) {
+      console.log("keyword:", keyword);
+      this.router.navigate(['/search', keyword]);
     }
 }
