@@ -22,6 +22,11 @@
     </button>
     {{title}}
     <span class="app-toolbar-filler"></span>
+    <md-input-container *ngIf="!isAnonymous()">
+  <input md-input placeholder="Search" class="search-input" #keyword>
+</md-input-container>
+<button *ngIf="!isAnonymous()" md-raised-button color="primary" class="search-button" (click)="searchWith(keyword.value)">GO</button>
+
     <button md-icon-button [mdMenuTriggerFor]="menu">
       <md-icon>more_vert</md-icon>
     </button>
