@@ -119,3 +119,4 @@ fabric.properties
 
 /node_modules/
 /node/
+.vscode/

@@ -18,6 +18,7 @@ export class AppComponent {
     constructor(
       private router:Router,
       userService: UserService
+      , private snackbar:MdSnackBar
     ) {
         userService.getUser().subscribe(
           data => {
@@ -38,8 +39,17 @@ export class AppComponent {
     ngOnInit() {
     }
 
+    showMessage(message:string, brief:string):void {
+      this.snackbar.open(message, brief, {duration: 30000});
+    }
+
     searchWith(keyword:string) {
       console.log("keyword:", keyword);
-      this.router.navigate(['/search', keyword]);
+      if (!this.isAnonymous()) {
+        this.router.navigate(['/search', keyword]);
+      } else {
+        this.showMessage("Please Sign In before searching.", "Login Required");
+      }
+
     }
 }

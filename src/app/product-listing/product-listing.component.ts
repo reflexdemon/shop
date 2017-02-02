@@ -2,9 +2,11 @@ import { Component, OnInit } from '@angular/core';
 
 import  { ProductListingService } from './product-listing.service';
 import { SearchResponse } from './search-response';
-import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Router, ActivatedRoute, Params, NavigationEnd } from '@angular/router';
 
 import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/operator/filter';
+
 
 @Component({
   selector: 'app-product-listing',
@@ -17,6 +19,7 @@ export class ProductListingComponent  implements OnInit {
   private error: string;
   totalPages:number;
   pages:number[];
+  fetched:boolean;
   private keyword:string;
 
   constructor(
@@ -39,23 +42,30 @@ export class ProductListingComponent  implements OnInit {
   }
 
 showPage(page:number) {
-  console.log("Page:", page);
   this.getProducts(page, this.keyword);
 }
 
   ngOnInit() {
-    this.keyword = this.route.snapshot.params['keyword'];
-    console.log("Keyword for searching:", this.keyword);
-    this.getProducts(1, this.keyword);
-
+  this.router.events
+  .filter(event => event instanceof NavigationEnd)
+  .subscribe((event:NavigationEnd) => {
+  console.log('Router Changed:NavigationEnd', event);
+    this.updateResults();
+  });
   }
 
+  updateResults():void {
+    this.keyword = this.route.snapshot.params['keyword'];
+    this.getProducts(1, this.keyword);
+  }
 
   getProducts(page: number, keyword:string) {
     this.result = null;
+    this.error = null;
+    this.fetched = false;
 
     if (keyword) {
-      this.productListingService.findByKeyword(this.keyword, 0)
+      this.productListingService.findByKeyword(keyword, page)
       .subscribe(
         this.onData.bind(this),
         this.onError.bind(this)
@@ -71,13 +81,17 @@ showPage(page:number) {
   }
 
   onData(data:any) {
+    console.log('Data:', data);
     this.result = data;
+    this.error = null;
     this.getPages();
+    this.fetched = true;
   }
 
   onError(error:any) {
     this.result = null;
     this.error = error;
+    this.fetched = true;
   }
 
 }
