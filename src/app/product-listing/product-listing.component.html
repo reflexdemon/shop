@@ -32,9 +32,9 @@
             </md-chip-list>
           </div>
         </div>
-        <md-grid-tile *ngFor="let product of result.products">
+        <!--<md-grid-tile *ngFor="let product of result.products">-->
           <!-- Here are the products -->
-          <md-card>
+          <md-card *ngFor="let product of result.products">
             <md-card-header>
               <md-card-title>{{product.name}}</md-card-title>
               <md-card-subtitle>{{product.category}}</md-card-subtitle>
@@ -50,8 +50,7 @@
               <button md-button>SHARE</button>
             </md-card-actions>
           </md-card>
-
-        </md-grid-tile>
+        <!--</md-grid-tile>-->
       </md-grid-list>
     </md-card-content>
   </md-card>
