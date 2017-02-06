@@ -15,6 +15,7 @@ import { UserService  } from './user.service';
 import { User  } from './user';
 import { ProfileModule } from './profile/profile.module';
 import { ProductListingModule } from './product-listing/product-listing.module';
+import { CartModule} from './cart/cart.module';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { ProductListingModule } from './product-listing/product-listing.module';
     MaterialModule.forRoot(),
     AppRoutingModule,
     ProfileModule,
-    ProductListingModule
+    ProductListingModule,
+    CartModule
   ],
   entryComponents: [
     DialogContent

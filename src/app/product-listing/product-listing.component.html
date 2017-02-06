@@ -39,15 +39,22 @@
               <md-card-title>{{product.name}}</md-card-title>
               <md-card-subtitle>{{product.category}}</md-card-subtitle>
             </md-card-header>
-            <img md-card-image src="{{product.imageURL}}">
+            <img
+             [style.width.px]="imageWidth"
+             [style.margin.px]="imageMargin"
+             md-card-image src="{{product.imageURL}}"
+            [title]="product.name"
+            >
             <md-card-content>
               <p>
                 {{product.description}}
               </p>
+              <p>
+                {{product.pricingInfo.currency}} {{product.pricingInfo.basePrice}}
+              </p>
             </md-card-content>
             <md-card-actions>
-              <button md-button>LIKE</button>
-              <button md-button>SHARE</button>
+              <button md-raised-button md-button color="primary" md-tooltip="Adds item to the cart!" (click)="addToCart(product, 1)">Add to Cart</button>
             </md-card-actions>
           </md-card>
         <!--</md-grid-tile>-->
