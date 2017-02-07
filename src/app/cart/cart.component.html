@@ -1,6 +1,11 @@
 <h1>Shopping Cart</h1>
 <p>
 <md-spinner *ngIf="!cart" class="app-spinner"></md-spinner>
+<span *ngIf="isEmptyCart()">
+        Your cart is Empty. Please proceed to 
+         <a md-raised-button color="primary" routerLink="/products" routerLinkActive="active">Products</a>
+      </span>
+  <span *ngIf="!isEmptyCart()">
   <md-card *ngIf="cart">
      <md-card-header>
        <md-card-title>
@@ -8,6 +13,7 @@
        </md-card-title>
      </md-card-header>
     <md-card-content>
+      
       <table>
         <tr>
             <th>
@@ -38,9 +44,9 @@
             {{lineItem.description}}
           </td>
           <td>
-            <button (click)="add(lineItem)" class="app-input-icon"><md-icon>add</md-icon></button>
+            <button (click)="add(lineItem)" class="app-input-icon">+</button>
             {{ lineItem.quantity |  number:'2.0-0'}}
-            <button (click)="remove(lineItem)" class="app-input-icon"><md-icon>remove</md-icon></button>
+            <button (click)="remove(lineItem)" class="app-input-icon">-</button>
           </td>
           <td>
             {{ lineItem.unitPrice | currency:lineItem.currency:true:'1.2-2'}}
@@ -50,6 +56,7 @@
           </td>
           <td>
             {{ (lineItem.price + lineItem.tax) | currency:lineItem.currency:true:'1.2-2'}}
+            <button (click)="delete(lineItem)"><md-icon>delete</md-icon></button>
           </td>
         </tr>
       </table>
@@ -82,4 +89,5 @@
         </table>
       </md-card-content>
   </md-card>
+  </span>
 </p>

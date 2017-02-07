@@ -31,6 +31,12 @@ updateQuantity(request: CartRequest):Observable<Cart> {
    .catch(this.handleError.bind(this));
  }
 
+ delete(productId: string):Observable<Cart> {
+   return this.http.delete(this.cartURL + '/lineItem/' + productId)
+   .map((r: Response) => r.json() as Cart)
+   .catch(this.handleError.bind(this));
+ }
+
   private handleError(error: any): Observable<any> {
       console.log('An error occurred', error); // for demo purposes only
       return Observable.throw(error.json().message || 'Server error');

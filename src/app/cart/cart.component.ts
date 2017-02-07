@@ -32,6 +32,7 @@ export class CartComponent implements OnInit {
     )
   }
 
+
   add(lineItem:LineItem) {
     let request:CartRequest = {productId : lineItem.productId, quantity: (lineItem.quantity + 1)};
     this.cart = null;
@@ -42,6 +43,7 @@ export class CartComponent implements OnInit {
     )
   }
 
+
   remove(lineItem:LineItem) {
     let request:CartRequest = {productId : lineItem.productId, quantity: (lineItem.quantity - 1)};
     this.cart = null;
@@ -50,6 +52,18 @@ export class CartComponent implements OnInit {
       this.onData.bind(this),
       this.onError.bind(this)
     )
+  }
+  delete(lineItem:LineItem) {
+    this.cart = null;
+    this.cartService.delete(lineItem.productId)
+    .subscribe(
+      this.onData.bind(this),
+      this.onError.bind(this)
+    )
+  }
+
+  isEmptyCart():boolean {
+    return ( this.cart && this.cart.lineItems && this.cart.lineItems.length <= 0); 
   }
 
   onData(data:Cart) {
