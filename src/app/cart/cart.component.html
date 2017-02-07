@@ -1,3 +1,84 @@
+<h1>Shopping Cart</h1>
 <p>
-  cart works!
+
+  <md-card *ngIf="cart">
+     <md-card-header>
+       <md-card-title>
+         <h2>Here is your shopping Cart</h2>
+       </md-card-title>
+     </md-card-header>
+    <md-card-content>
+      
+      <table>
+        <tr>
+            <th>
+              #
+            </th>
+            <th>
+              Item Description
+            </th>
+            <th>
+              Quantity
+            </th>
+            <th>
+              Unit Price
+            </th>
+            <th>
+              Tax
+            </th>
+            <th>
+              Total
+            </th>
+        </tr>
+        <tr *ngFor="let lineItem of cart.lineItems;let index=index">
+          <td>
+            {{index  + 1}}
+          </td>
+          <td>
+            <img [src]="lineItem.imageURL" [style.width.px]="50" [style.margin.px]="2">
+            {{lineItem.description}}
+          </td>
+          <td>
+            {{ lineItem.quantity}}
+          </td>
+          <td>
+            {{ lineItem.unitPrice | currency:lineItem.currency:true:'1.2-2'}}
+          </td>
+          <td>
+            {{ lineItem.tax | currency:lineItem.currency:true:'1.2-2'}}
+          </td>
+          <td>
+            {{ (lineItem.price + lineItem.tax) | currency:lineItem.currency:true:'1.2-2'}}
+          </td>
+        </tr>
+      </table>
+    </md-card-content>
+  </md-card>
+  <md-card *ngIf="cart">
+    <md-card-header>
+      <md-card-title>
+        <h2>Cart Summary</h2>
+      </md-card-title>
+    </md-card-header>
+    <md-card-content>
+        <table>
+          <tr>
+            <th>Net Total</th><td>{{cart.summary.netTotal | currency:cart.summary.currency:true:'1.2-2'}}</td>
+          </tr>
+          <tr>
+            <th>Shipping</th><td>{{cart.summary.shipping | currency:cart.summary.currency:true:'1.2-2'}}</td>
+          </tr>
+          <tr>
+            <th>Tax</th><td>{{cart.summary.tax | currency:cart.summary.currency:true:'1.2-2'}}</td>
+          </tr>
+          <tr>
+            <th>Handling Charges</th><td>{{cart.summary.handlingCharges | currency:cart.summary.currency:true:'1.2-2'}}</td>
+          </tr>
+          <tr>
+            <th>Total</th><th>{{cart.summary.grossTotal | currency:cart.summary.currency:true:'1.2-2'}}</th>
+          </tr>
+          
+        </table>
+      </md-card-content>
+  </md-card>
 </p>

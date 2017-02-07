@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import 'hammerjs';
+
 import { AppComponent} from './app.component';
 import { AppRoutingModule } from './router/routing.module';
 import { HomeComponent } from './home/home.component';
