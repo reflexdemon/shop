@@ -1,0 +1,16 @@
+<p>
+    <md-card>
+        <md-card-header>
+            <md-card-title>
+                Item Added successfully!
+            </md-card-title>
+        </md-card-header>
+        <md-card-content>
+            Product Added to cart. Do you want to continue to cart?
+        </md-card-content>
+        <md-card-actions>
+            <button (click)="dialogRef.close(false)" md-button>No</button>
+            <button (click)="dialogRef.close(true)" md-raised-button color="primary">Yes</button>
+        </md-card-actions>
+    </md-card>
+</p>

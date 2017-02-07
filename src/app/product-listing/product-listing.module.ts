@@ -7,7 +7,7 @@ import 'hammerjs';
 
 import { CommonModule } from '@angular/common';
 
-import { ProductListingComponent } from './product-listing.component';
+import { ProductListingComponent, AddToCartDialog } from './product-listing.component';
 import  { ProductListingService } from './product-listing.service';
 
 @NgModule({
@@ -19,10 +19,14 @@ import  { ProductListingService } from './product-listing.service';
     MaterialModule
   ],
   declarations: [
-    ProductListingComponent
+    ProductListingComponent,
+    AddToCartDialog
   ],
  providers: [
    ProductListingService
- ]
+ ],
+ entryComponents: [
+    AddToCartDialog
+  ]
 })
 export class ProductListingModule { }
