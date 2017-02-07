@@ -35,6 +35,10 @@
       <button md-menu-item disabled *ngIf="!isAnonymous()">
         <span>Welcome, {{user.firstName}} {{user.lastName}}</span>
       </button>
+      <a md-menu-item *ngIf="!isAnonymous()" routerLink="/cart" routerLinkActive="active">
+        <md-icon>shopping_cart</md-icon>
+        <span>Cart</span>
+      </a>
       <a md-menu-item *ngIf="!isAnonymous()" href="/logout">
         <span>Sign Out</span>
       </a>
