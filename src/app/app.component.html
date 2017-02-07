@@ -19,14 +19,9 @@
   <md-toolbar color="primary">
     <button class="app-icon-button" (click)="sidenav.toggle()">
       <i class="material-icons app-toolbar-menu">menu</i>
-    </button>
-    {{title}}
+    </button> {{title}}
     <span class="app-toolbar-filler"></span>
-    <md-input-container>
-  <input md-input placeholder="Search" class="search-input" #keywordInput>
-</md-input-container>
-<button md-raised-button color="primary" class="search-button" (click)="searchWith(keywordInput.value)">GO</button>
-
+    <a md-button color="info" *ngIf="!isAnonymous()" routerLink="/products" routerLinkActive="active">Products</a>
     <button md-icon-button [mdMenuTriggerFor]="menu">
       <md-icon>more_vert</md-icon>
     </button>
@@ -45,6 +40,12 @@
       </a>
     </md-menu>
 
+    <md-toolbar-row>
+      <md-input-container>
+        <input md-input placeholder="Search" class="search-input" #keywordInput (keyup.enter)="searchWith(keywordInput.value)">
+      </md-input-container>
+      <button md-raised-button color="warn" class="search-button" (click)="searchWith(keywordInput.value)">GO</button>
+    </md-toolbar-row>
   </md-toolbar>
 
   <div class="app-content">

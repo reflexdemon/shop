@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 import  { ProductListingService } from './product-listing.service';
 import { SearchResponse } from './search-response';
+import {  Product } from './product';
 import { Router, ActivatedRoute, Params, NavigationEnd } from '@angular/router';
+import { CartService } from '../cart/cart.service';
+import { CartRequest } from '../cart/cart-request';
 
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/filter';
@@ -21,11 +24,14 @@ export class ProductListingComponent  implements OnInit {
   pages:number[];
   fetched:boolean;
   private keyword:string;
+  imageWidth:number = 200;
+  imageMargin:number = 5;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private productListingService:ProductListingService
+    private productListingService:ProductListingService,
+    private cartService: CartService
   ) {
 
   }
@@ -93,5 +99,17 @@ showPage(page:number) {
     this.error = error;
     this.fetched = true;
   }
-
+  addToCart(product:Product, quantity: number) {
+    console.log("Item to Add:", product);
+    let request:CartRequest = {"productId": product.id, "quantity": quantity};
+    this.cartService.addToCart(request)
+    .subscribe(
+      data => {
+        console.log("Item successfully added to the cart");
+      },
+      error => {
+        console.log("Problem while adding item to the cart");
+      }
+    )
+  }
 }
