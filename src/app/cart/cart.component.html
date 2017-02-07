@@ -1,6 +1,6 @@
 <h1>Shopping Cart</h1>
 <p>
-
+<md-spinner *ngIf="!cart" class="app-spinner"></md-spinner>
   <md-card *ngIf="cart">
      <md-card-header>
        <md-card-title>
@@ -8,7 +8,6 @@
        </md-card-title>
      </md-card-header>
     <md-card-content>
-      
       <table>
         <tr>
             <th>
@@ -39,7 +38,9 @@
             {{lineItem.description}}
           </td>
           <td>
-            {{ lineItem.quantity}}
+            <button (click)="add(lineItem)" class="app-input-icon"><md-icon>add</md-icon></button>
+            {{ lineItem.quantity |  number:'2.0-0'}}
+            <button (click)="remove(lineItem)" class="app-input-icon"><md-icon>remove</md-icon></button>
           </td>
           <td>
             {{ lineItem.unitPrice | currency:lineItem.currency:true:'1.2-2'}}
@@ -63,19 +64,19 @@
     <md-card-content>
         <table>
           <tr>
-            <th>Net Total</th><td>{{cart.summary.netTotal | currency:cart.summary.currency:true:'1.2-2'}}</td>
+            <th>Net Total</th><td align="right">{{cart.summary.netTotal | currency:cart.summary.currency:true:'1.2-2'}}</td>
           </tr>
           <tr>
-            <th>Shipping</th><td>{{cart.summary.shipping | currency:cart.summary.currency:true:'1.2-2'}}</td>
+            <th>Shipping</th><td align="right">{{cart.summary.shipping | currency:cart.summary.currency:true:'1.2-2'}}</td>
           </tr>
           <tr>
-            <th>Tax</th><td>{{cart.summary.tax | currency:cart.summary.currency:true:'1.2-2'}}</td>
+            <th>Tax</th><td align="right">{{cart.summary.tax | currency:cart.summary.currency:true:'1.2-2'}}</td>
           </tr>
           <tr>
-            <th>Handling Charges</th><td>{{cart.summary.handlingCharges | currency:cart.summary.currency:true:'1.2-2'}}</td>
+            <th>Handling Charges</th><td align="right">{{cart.summary.handlingCharges | currency:cart.summary.currency:true:'1.2-2'}}</td>
           </tr>
           <tr>
-            <th>Total</th><th>{{cart.summary.grossTotal | currency:cart.summary.currency:true:'1.2-2'}}</th>
+            <th>Total</th><th align="right">{{cart.summary.grossTotal | currency:cart.summary.currency:true:'1.2-2'}}</th>
           </tr>
           
         </table>
