@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { MdDialog, MdDialogRef, MdSnackBar } from '@angular/material';
+import { Router, ActivatedRoute, Params, NavigationEnd } from '@angular/router';
 
 import { CartService } from './cart.service';
 import { Cart } from './cart';
@@ -16,7 +17,9 @@ export class CartComponent implements OnInit {
   cart:Cart;
   constructor (
     private cartService:CartService,
-    private snackbar:MdSnackBar
+    private snackbar:MdSnackBar,
+    private route: ActivatedRoute,
+    private router: Router
   ) { }
 
 
@@ -43,6 +46,9 @@ export class CartComponent implements OnInit {
     )
   }
 
+  gotoProducts() {
+    this.router.navigate(["/products"]);
+  }
 
   remove(lineItem:LineItem) {
     let request:CartRequest = {productId : lineItem.productId, quantity: (lineItem.quantity - 1)};

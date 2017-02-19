@@ -131,7 +131,7 @@ export class ProductListingComponent implements OnInit {
     dialogRef.afterClosed().subscribe(response => {
       console.log("Response:", response);
       if (response) {
-
+        this.router.navigate(["/cart"]);
       }
     })
   }

@@ -3,7 +3,7 @@
 <md-spinner *ngIf="!cart" class="app-spinner"></md-spinner>
 <span *ngIf="isEmptyCart()">
         Your cart is Empty. Please proceed to 
-         <a md-raised-button color="primary" routerLink="/products" routerLinkActive="active">Products</a>
+         <a md-raised-button color="primary" routerLink="/products" routerLinkActive="active" (click)="gotoProducts()">Products</a>
       </span>
   <span *ngIf="!isEmptyCart()">
   <md-card *ngIf="cart">

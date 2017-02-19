@@ -14,7 +14,7 @@ export class PageComponent implements OnInit {
   }
 
   gotoAPI() {
-    console.log('Click tot API received.', window.location)
+    console.log('Click to API received.', window.location)
     window.location.href =  "/swagger-ui.html";
   }
 
