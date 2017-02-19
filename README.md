@@ -36,9 +36,8 @@ This out and out uses Java based technologies like [Spring Boot] and [Java 8]. T
  1. [Angular 2]
  2. [Angular CLI]
  3. [Material Design]
- 4. [Bootstrap 4]
- 5. [Webpack]
- 6. [Yarn]
+ 4. [Webpack]
+ 5. [Yarn]/[npm]
  
  
 ## 3. Deployment/Cloud
@@ -159,3 +158,4 @@ Thanks to [Baron Wilson's][Baron Wilson] [Angular 2 Starter seed][Angular Starte
 [TypeScripts]: https://www.typescriptlang.org/
 [Spring]: http://spring.io
 [Tomcat]: http://tomcat.apache.org/
+[npm]: https://www.npmjs.com/
