@@ -49,12 +49,7 @@ Now time to explore the [Angular 2] page and can expect a glaring page soon :)
 
 # API Login
 
-To login to the application please use the below credentials and test the [Swagger API UI][swagger api].
-
-URL | User Name | Password
---- | --- | ---
-http://shop-venkatvp.rhcloud.com/swagger-ui.html | user | `testing123`
-
+Please [signup] to gain access.
 
 # Building
 
@@ -118,7 +113,6 @@ $ npm install    #Only once!
 $ npm run proxyr
 ```
 
-
 As a recommendation for running the applicaiton locally for development purpose, I would strongly recommend running with remote proxy.
 
 
@@ -159,3 +153,4 @@ Thanks to [Baron Wilson's][Baron Wilson] [Angular 2 Starter seed][Angular Starte
 [Spring]: http://spring.io
 [Tomcat]: http://tomcat.apache.org/
 [npm]: https://www.npmjs.com/
+[signup]: [http://shop-venkatvp.rhcloud.com/#/signup]
