@@ -120,3 +120,5 @@ fabric.properties
 /node_modules/
 /node/
 .vscode/
+
+yarn.lock
