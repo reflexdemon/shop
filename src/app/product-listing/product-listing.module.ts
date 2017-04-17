@@ -8,24 +8,27 @@ import 'hammerjs';
 import { CommonModule } from '@angular/common';
 
 import { ProductListingComponent, AddToCartDialog } from './product-listing.component';
-import  { ProductListingService } from './product-listing.service';
+import { ProductListingService } from './product-listing.service';
+
+import { SharedModule } from '../shared/shared.module'
 
 @NgModule({
   imports: [
     BrowserModule,
-   FormsModule,
+    FormsModule,
     HttpModule,
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    SharedModule
   ],
   declarations: [
     ProductListingComponent,
     AddToCartDialog
   ],
- providers: [
-   ProductListingService
- ],
- entryComponents: [
+  providers: [
+    ProductListingService
+  ],
+  entryComponents: [
     AddToCartDialog
   ]
 })

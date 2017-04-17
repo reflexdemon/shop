@@ -7,15 +7,19 @@ import 'hammerjs';
 
 import { CommonModule } from '@angular/common';
 
-import { SharedComponent } from './shared.component';
+import { PagingComponent } from './paging.component';
 
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    MaterialModule.forRoot()
   ],
   declarations: [
-    SharedComponent
+    PagingComponent
   ]
 })
 export class SharedModule { }

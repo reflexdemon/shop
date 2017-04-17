@@ -12,4 +12,8 @@ export class PagingComponent implements OnInit {
   ngOnInit() {
   }
 
+  showPage(page:any) {
+    console.log("page:", page);
+  }
+
 }
