@@ -1,4 +1,4 @@
-<md-sidenav-container [class.m2app-dark]="isDarkTheme">
+<md-sidenav-container [class.unicorn-dark-theme]="isDarkTheme">
 
   <md-sidenav #sidenav mode="over" class="app-sidenav">
     <!-- sidenav content -->
@@ -46,7 +46,7 @@
 
     <md-toolbar-row>
       <md-input-container>
-        <input md-input placeholder="Search" class="search-input" #keywordInput (keyup.enter)="searchWith(keywordInput.value)">
+        <input mdInput placeholder="Search" class="search-input" #keywordInput (keyup.enter)="searchWith(keywordInput.value)">
       </md-input-container>
       <button md-raised-button color="warn" class="search-button" (click)="searchWith(keywordInput.value)">GO</button>
     </md-toolbar-row>
