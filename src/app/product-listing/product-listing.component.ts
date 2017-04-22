@@ -23,13 +23,13 @@ import { Product } from './product';
 })
 export class ProductListingComponent implements OnInit {
 
-  private result: SearchResponse;
-  private cacheResult: SearchResponse;
-  private error: string;
+  result: SearchResponse;
+  cacheResult: SearchResponse;
+  error: string;
   totalPages: number;
   pages: number[];
   fetched: boolean;
-  private keyword: string;
+  keyword: string;
   imageWidth: number = 200;
   imageMargin: number = 5;
 

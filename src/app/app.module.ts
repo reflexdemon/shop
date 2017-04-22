@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MdButtonModule, MdCheckboxModule, MdInputContainer, MdInputModule} from '@angular/material';
+
 import 'hammerjs';
 
 import { AppComponent} from './app.component';
@@ -34,6 +37,7 @@ import { CartModule} from './cart/cart.module';
     FormsModule,
     HttpModule,
     MaterialModule.forRoot(),
+    BrowserAnimationsModule,
     AppRoutingModule,
     ProfileModule,
     ProductListingModule,

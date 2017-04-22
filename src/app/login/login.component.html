@@ -6,19 +6,21 @@
         </md-card-header>
         <form ngNoForm action="/login.htm" method="POST">
         <p>
-            <md-input name="username">
+            <md-input-container>
+            <input name="username" mdInput>
                 <md-placeholder>
                     <i class="material-icons app-input-icon">perm_identity</i> User
                     Name
                 </md-placeholder>
-            </md-input>
+            </md-input-container>
         </p>
         <p>
-            <md-input type="password" name="password">
+            <md-input-container>
+            <input mdInput type="password" name="password">
                 <md-placeholder>
                     Password
                 </md-placeholder>
-            </md-input>
+            </md-input-container>
         </p>
 
           <md-card-actions align="end">
