@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
 
 import { CartComponent} from './cart.component';
 import { CartService } from './cart.service';
+import { OrderService } from './order.service';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { CartService } from './cart.service';
     CartComponent
   ],
    providers: [
-   CartService
+   CartService,
+   OrderService
  ]
 })
 export class CartModule { }
