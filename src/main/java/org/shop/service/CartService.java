@@ -6,6 +6,7 @@ import org.shop.dao.CartRepository;
 import org.shop.model.*;
 import org.shop.spring.aop.ProfileExecution;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -25,6 +26,7 @@ public class CartService {
     private static final double SALES_TAX = 0.07;
     private static final double HANDLING_CHARGES = 0.03;
     @Autowired
+    @Qualifier("cartRepository")
     private CartRepository cartRepository;
     @Autowired
     private UserServices userServices;
@@ -58,6 +60,7 @@ public class CartService {
         //Ensure all items are removed
         cart.getLineItems().clear();
         cart.setSummary(new Summary());
+      cart.setUsername(userServices.getAuthenticatedUser().getUsername());
         cartRepository.save(cart);
         return cart;
     }
@@ -252,6 +255,7 @@ public class CartService {
     private Cart prepareSummaryAndSave(Cart cart) {
         Summary summary = creatSummary(cart);
         cart.setSummary(summary);
+      cart.setUsername(userServices.getAuthenticatedUser().getUsername());
         cart = cartRepository.save(cart);
         return cart;
     }

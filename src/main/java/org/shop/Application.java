@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
-import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -18,9 +17,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.util.Arrays;
 
-
-import static springfox.documentation.builders.PathSelectors.regex;
 import static com.google.common.base.Predicates.or;
+import static springfox.documentation.builders.PathSelectors.regex;
 
 /**
  * Created by vprasanna on 5/15/2016.
@@ -30,7 +28,7 @@ import static com.google.common.base.Predicates.or;
 @EnableAspectJAutoProxy
 @ComponentScan
 @EnableSwagger2
-public class Application extends SpringBootServletInitializer {
+public class Application {
     private static Class<Application> applicationClass = Application.class;
 
     /**
@@ -56,7 +54,7 @@ public class Application extends SpringBootServletInitializer {
         }
     }
 
-    @Override
+  //    @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
         SpringApplicationBuilder appBuilder = application.sources(applicationClass);
         ConfigurableApplicationContext context = application.context();

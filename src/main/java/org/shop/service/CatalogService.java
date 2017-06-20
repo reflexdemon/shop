@@ -8,9 +8,11 @@ import org.shop.model.Product;
 import org.shop.model.SearchResponse;
 import org.shop.spring.aop.ProfileExecution;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 
 /**
@@ -27,6 +29,7 @@ public class CatalogService {
     private Search search;
 
     @Autowired
+    @Qualifier("inventoryRepository")
     private ProductRepository productDao;
 
     @Autowired
@@ -48,7 +51,11 @@ public class CatalogService {
      * @return the product
      */
     public Product findById(String id) {
-        return pricingServices.applyPricing(productDao.findById(id));
+      Optional<Product> product = productDao.findById(id);
+      if (product.isPresent()) {
+        return pricingServices.applyPricing(product.get());
+      }
+      return null;
     }
 
     /**

@@ -1,5 +1,6 @@
 package org.shop.dao.impl;
 
+import com.mongodb.client.DistinctIterable;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.shop.dao.Search;
@@ -15,6 +16,9 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.stream.StreamSupport;
+
+import static java.util.stream.Collectors.toList;
 
 
 /**
@@ -34,9 +38,12 @@ public class SearchImpl implements Search {
     @Override
     @ProfileExecution
     public List<String> getCategories() {
-        List<String> response = mongoTemplate.getCollection(COLLECTION).distinct("category");
-        logger.info(String.format("Found %s records!", response.size()));
-        return response;
+      DistinctIterable<String> iterable = mongoTemplate.getCollection(COLLECTION).distinct("category", String.class);
+      List<String> finalResponse =
+        StreamSupport.stream(iterable.spliterator(), false)
+          .collect(toList());
+      logger.info(String.format("Found %s records!", finalResponse.size()));
+      return finalResponse;
     }
 
     @Override
