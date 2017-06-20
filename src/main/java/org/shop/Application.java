@@ -5,6 +5,7 @@ import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreato
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -28,7 +29,7 @@ import static springfox.documentation.builders.PathSelectors.regex;
 @EnableAspectJAutoProxy
 @ComponentScan
 @EnableSwagger2
-public class Application {
+public class Application extends SpringBootServletInitializer {
     private static Class<Application> applicationClass = Application.class;
 
     /**
