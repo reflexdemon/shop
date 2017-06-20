@@ -85,7 +85,9 @@
           <tr>
             <th>Total</th><th align="right">{{cart.summary.grossTotal | currency:cart.summary.currency:true:'1.2-2'}}</th>
           </tr>
-          
+          <tr>
+            <th colspan="2"><button (click)="placeOrder()"> Place Order <md-icon>local_shipping</md-icon></button></th>
+          </tr>
         </table>
       </md-card-content>
   </md-card>

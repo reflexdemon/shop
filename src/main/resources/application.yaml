@@ -1,0 +1,23 @@
+loader:
+    verbose: false
+logging:
+    level:
+        org:
+            springframework: ERROR
+spring:
+    aop:
+        proxy-target-class: true
+    data:
+        mongodb:
+            authentication-database: admin
+            database: shop
+            host: ${OPENSHIFT_MONGODB_DB_HOST}
+            password: 3-5KUWZlPnC4
+            port: ${OPENSHIFT_MONGODB_DB_PORT}
+            repositories:
+                enabled: true
+            username: admin
+    jpa:
+        properties:
+            hibernate:
+                show_sql: true
