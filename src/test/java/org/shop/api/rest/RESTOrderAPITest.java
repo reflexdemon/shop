@@ -5,6 +5,7 @@ import org.junit.Test;
 import org.shop.model.Order;
 import org.shop.service.AbstractTest;
 import org.shop.service.CartService;
+import org.shop.service.CatalogService;
 import org.shop.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -31,6 +32,9 @@ public class RESTOrderAPITest extends AbstractTest {
   MockHttpServletRequest request;
   @Autowired
   CartService cartService;
+
+  @Autowired
+  CatalogService catalogService;
 
   @Autowired
   OrderService orderService;
@@ -91,9 +95,10 @@ public class RESTOrderAPITest extends AbstractTest {
   }
 
   @Test
-  @WithUserDetails(value = "venkatvp", userDetailsServiceBeanName = "profileService")
+  @WithUserDetails(value = "root", userDetailsServiceBeanName = "profileService")
   public void testUpdateOrderStatus() throws Exception {
-    cartService.addItemToCart("1", 20);
+    String productId = catalogService.search("", 1).getProducts().get(0).getId();
+    cartService.addItemToCart(productId, 20);
     Order order = orderService.placeOrder();
     String id = order.getId();
     String status = order.getStatus().toString();
@@ -107,7 +112,7 @@ public class RESTOrderAPITest extends AbstractTest {
   @WithUserDetails(value = "root", userDetailsServiceBeanName = "profileService")
   public void testUpdateOrderStatus500() throws Exception {
     String id = "1";
-    String status = "OPEN";
+    String status = "O";
     mockMvc.perform(put("/rest/order/" + id + "/" + status))
       .andExpect(status().is(500))
       .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE));

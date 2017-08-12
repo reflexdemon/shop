@@ -38,7 +38,7 @@
     "phone": "678-559-7522",
     "mobile": "678-559-7522",
     "pricingTag": "BRONZE_TAG",
-    "username": "root",
+    "username": "db-root",
     "password": "system",
     "authorities": [
       "ROLE_SYSTEM"
