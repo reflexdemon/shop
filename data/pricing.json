@@ -1,0 +1,1178 @@
+[
+  {
+    "productId": 1,
+    "basePrice" : 100.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "BRONZE_TAG"
+  },
+  {
+    "productId": 2,
+    "basePrice" : 100.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "BRONZE_TAG"
+  },
+  {
+    "productId": 3,
+    "basePrice" : 100.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "BRONZE_TAG"
+  },
+  {
+    "productId": 4,
+    "basePrice" : 100.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "BRONZE_TAG"
+  },
+  {
+    "productId": 5,
+    "basePrice" : 100.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "BRONZE_TAG"
+  },
+  {
+    "productId": 6,
+    "basePrice" : 100.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "BRONZE_TAG"
+  },
+  {
+    "productId": 7,
+    "basePrice" : 100.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "BRONZE_TAG"
+  },
+  {
+    "productId": 8,
+    "basePrice" : 100.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "BRONZE_TAG"
+  },
+  {
+    "productId": 9,
+    "basePrice" : 100.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "BRONZE_TAG"
+  },
+  {
+    "productId": 10,
+    "basePrice" : 100.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "BRONZE_TAG"
+  },
+  {
+    "productId": 11,
+    "basePrice" : 100.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "BRONZE_TAG"
+  },
+  {
+    "productId": 12,
+    "basePrice" : 100.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "BRONZE_TAG"
+  },
+  {
+    "productId": 13,
+    "basePrice" : 100.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "BRONZE_TAG"
+  },
+  {
+    "productId": 14,
+    "basePrice" : 100.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "BRONZE_TAG"
+  },
+  {
+    "productId": 15,
+    "basePrice" : 100.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "BRONZE_TAG"
+  },
+  {
+    "productId": 16,
+    "basePrice" : 100.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "BRONZE_TAG"
+  },
+  {
+    "productId": 17,
+    "basePrice" : 100.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "BRONZE_TAG"
+  },
+  {
+    "productId": 18,
+    "basePrice" : 100.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "BRONZE_TAG"
+  },
+  {
+    "productId": 19,
+    "basePrice" : 100.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "BRONZE_TAG"
+  },
+  {
+    "productId": 20,
+    "basePrice" : 100.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "BRONZE_TAG"
+  },
+  {
+    "productId": 21,
+    "basePrice" : 100.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "BRONZE_TAG"
+  },
+  {
+    "productId": 22,
+    "basePrice" : 100.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "BRONZE_TAG"
+  },
+  {
+    "productId": 23,
+    "basePrice" : 100.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "BRONZE_TAG"
+  },
+  {
+    "productId": 24,
+    "basePrice" : 100.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "BRONZE_TAG"
+  },
+  {
+    "productId": 25,
+    "basePrice" : 100.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "BRONZE_TAG"
+  },
+  {
+    "productId": 26,
+    "basePrice" : 100.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "BRONZE_TAG"
+  },
+  {
+    "productId": 27,
+    "basePrice" : 100.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "BRONZE_TAG"
+  },
+  {
+    "productId": 28,
+    "basePrice" : 100.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "BRONZE_TAG"
+  },
+  {
+    "productId": 29,
+    "basePrice" : 100.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "BRONZE_TAG"
+  },
+  {
+    "productId": 30,
+    "basePrice" : 100.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "BRONZE_TAG"
+  },
+  {
+    "productId": 31,
+    "basePrice" : 100.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "BRONZE_TAG"
+  },
+  {
+    "productId": 32,
+    "basePrice" : 100.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "BRONZE_TAG"
+  },
+  {
+    "productId": 33,
+    "basePrice" : 100.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "BRONZE_TAG"
+  },
+  {
+    "productId": 34,
+    "basePrice" : 100.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "BRONZE_TAG"
+  },
+  {
+    "productId": 35,
+    "basePrice" : 100.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "BRONZE_TAG"
+  },
+  {
+    "productId": 36,
+    "basePrice" : 100.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "BRONZE_TAG"
+  },
+  {
+    "productId": 37,
+    "basePrice" : 100.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "BRONZE_TAG"
+  },
+  {
+    "productId": 38,
+    "basePrice" : 100.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "BRONZE_TAG"
+  },
+  {
+    "productId": 39,
+    "basePrice" : 100.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "BRONZE_TAG"
+  },
+  {
+    "productId": 40,
+    "basePrice" : 100.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "BRONZE_TAG"
+  },
+  {
+    "productId": 41,
+    "basePrice" : 100.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "BRONZE_TAG"
+  },
+  {
+    "productId": 42,
+    "basePrice" : 100.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "BRONZE_TAG"
+  },
+  {
+    "productId": 1,
+    "basePrice" : 75.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "SILVER_TAG"
+  },
+  {
+    "productId": 2,
+    "basePrice" : 75.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "SILVER_TAG"
+  },
+  {
+    "productId": 3,
+    "basePrice" : 75.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "SILVER_TAG"
+  },
+  {
+    "productId": 4,
+    "basePrice" : 75.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "SILVER_TAG"
+  },
+  {
+    "productId": 5,
+    "basePrice" : 75.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "SILVER_TAG"
+  },
+  {
+    "productId": 6,
+    "basePrice" : 75.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "SILVER_TAG"
+  },
+  {
+    "productId": 7,
+    "basePrice" : 75.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "SILVER_TAG"
+  },
+  {
+    "productId": 8,
+    "basePrice" : 75.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "SILVER_TAG"
+  },
+  {
+    "productId": 9,
+    "basePrice" : 75.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "SILVER_TAG"
+  },
+  {
+    "productId": 10,
+    "basePrice" : 75.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "SILVER_TAG"
+  },
+  {
+    "productId": 11,
+    "basePrice" : 75.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "SILVER_TAG"
+  },
+  {
+    "productId": 12,
+    "basePrice" : 75.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "SILVER_TAG"
+  },
+  {
+    "productId": 13,
+    "basePrice" : 75.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "SILVER_TAG"
+  },
+  {
+    "productId": 14,
+    "basePrice" : 75.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "SILVER_TAG"
+  },
+  {
+    "productId": 15,
+    "basePrice" : 75.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "SILVER_TAG"
+  },
+  {
+    "productId": 16,
+    "basePrice" : 75.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "SILVER_TAG"
+  },
+  {
+    "productId": 17,
+    "basePrice" : 75.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "SILVER_TAG"
+  },
+  {
+    "productId": 18,
+    "basePrice" : 75.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "SILVER_TAG"
+  },
+  {
+    "productId": 19,
+    "basePrice" : 75.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "SILVER_TAG"
+  },
+  {
+    "productId": 20,
+    "basePrice" : 75.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "SILVER_TAG"
+  },
+  {
+    "productId": 21,
+    "basePrice" : 75.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "SILVER_TAG"
+  },
+  {
+    "productId": 22,
+    "basePrice" : 75.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "SILVER_TAG"
+  },
+  {
+    "productId": 23,
+    "basePrice" : 75.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "SILVER_TAG"
+  },
+  {
+    "productId": 24,
+    "basePrice" : 75.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "SILVER_TAG"
+  },
+  {
+    "productId": 25,
+    "basePrice" : 75.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "SILVER_TAG"
+  },
+  {
+    "productId": 26,
+    "basePrice" : 75.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "SILVER_TAG"
+  },
+  {
+    "productId": 27,
+    "basePrice" : 75.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "SILVER_TAG"
+  },
+  {
+    "productId": 28,
+    "basePrice" : 75.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "SILVER_TAG"
+  },
+  {
+    "productId": 29,
+    "basePrice" : 75.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "SILVER_TAG"
+  },
+  {
+    "productId": 30,
+    "basePrice" : 75.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "SILVER_TAG"
+  },
+  {
+    "productId": 31,
+    "basePrice" : 75.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "SILVER_TAG"
+  },
+  {
+    "productId": 32,
+    "basePrice" : 75.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "SILVER_TAG"
+  },
+  {
+    "productId": 33,
+    "basePrice" : 75.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "SILVER_TAG"
+  },
+  {
+    "productId": 34,
+    "basePrice" : 75.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "SILVER_TAG"
+  },
+  {
+    "productId": 35,
+    "basePrice" : 75.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "SILVER_TAG"
+  },
+  {
+    "productId": 36,
+    "basePrice" : 75.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "SILVER_TAG"
+  },
+  {
+    "productId": 37,
+    "basePrice" : 75.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "SILVER_TAG"
+  },
+  {
+    "productId": 38,
+    "basePrice" : 75.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "SILVER_TAG"
+  },
+  {
+    "productId": 39,
+    "basePrice" : 75.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "SILVER_TAG"
+  },
+  {
+    "productId": 40,
+    "basePrice" : 75.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "SILVER_TAG"
+  },
+  {
+    "productId": 41,
+    "basePrice" : 75.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "SILVER_TAG"
+  },
+  {
+    "productId": 42,
+    "basePrice" : 75.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "SILVER_TAG"
+  },
+  {
+    "productId": 1,
+    "basePrice" : 50.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "GOLD_TAG"
+  },
+  {
+    "productId": 2,
+    "basePrice" : 50.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "GOLD_TAG"
+  },
+  {
+    "productId": 3,
+    "basePrice" : 50.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "GOLD_TAG"
+  },
+  {
+    "productId": 4,
+    "basePrice" : 50.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "GOLD_TAG"
+  },
+  {
+    "productId": 5,
+    "basePrice" : 50.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "GOLD_TAG"
+  },
+  {
+    "productId": 6,
+    "basePrice" : 50.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "GOLD_TAG"
+  },
+  {
+    "productId": 7,
+    "basePrice" : 50.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "GOLD_TAG"
+  },
+  {
+    "productId": 8,
+    "basePrice" : 50.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "GOLD_TAG"
+  },
+  {
+    "productId": 9,
+    "basePrice" : 50.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "GOLD_TAG"
+  },
+  {
+    "productId": 10,
+    "basePrice" : 50.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "GOLD_TAG"
+  },
+  {
+    "productId": 11,
+    "basePrice" : 50.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "GOLD_TAG"
+  },
+  {
+    "productId": 12,
+    "basePrice" : 50.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "GOLD_TAG"
+  },
+  {
+    "productId": 13,
+    "basePrice" : 50.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "GOLD_TAG"
+  },
+  {
+    "productId": 14,
+    "basePrice" : 50.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "GOLD_TAG"
+  },
+  {
+    "productId": 15,
+    "basePrice" : 50.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "GOLD_TAG"
+  },
+  {
+    "productId": 16,
+    "basePrice" : 50.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "GOLD_TAG"
+  },
+  {
+    "productId": 17,
+    "basePrice" : 50.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "GOLD_TAG"
+  },
+  {
+    "productId": 18,
+    "basePrice" : 50.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "GOLD_TAG"
+  },
+  {
+    "productId": 19,
+    "basePrice" : 50.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "GOLD_TAG"
+  },
+  {
+    "productId": 20,
+    "basePrice" : 50.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "GOLD_TAG"
+  },
+  {
+    "productId": 21,
+    "basePrice" : 50.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "GOLD_TAG"
+  },
+  {
+    "productId": 22,
+    "basePrice" : 50.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "GOLD_TAG"
+  },
+  {
+    "productId": 23,
+    "basePrice" : 50.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "GOLD_TAG"
+  },
+  {
+    "productId": 24,
+    "basePrice" : 50.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "GOLD_TAG"
+  },
+  {
+    "productId": 25,
+    "basePrice" : 50.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "GOLD_TAG"
+  },
+  {
+    "productId": 26,
+    "basePrice" : 50.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "GOLD_TAG"
+  },
+  {
+    "productId": 27,
+    "basePrice" : 50.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "GOLD_TAG"
+  },
+  {
+    "productId": 28,
+    "basePrice" : 50.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "GOLD_TAG"
+  },
+  {
+    "productId": 29,
+    "basePrice" : 50.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "GOLD_TAG"
+  },
+  {
+    "productId": 30,
+    "basePrice" : 50.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "GOLD_TAG"
+  },
+  {
+    "productId": 31,
+    "basePrice" : 50.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "GOLD_TAG"
+  },
+  {
+    "productId": 32,
+    "basePrice" : 50.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "GOLD_TAG"
+  },
+  {
+    "productId": 33,
+    "basePrice" : 50.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "GOLD_TAG"
+  },
+  {
+    "productId": 34,
+    "basePrice" : 50.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "GOLD_TAG"
+  },
+  {
+    "productId": 35,
+    "basePrice" : 50.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "GOLD_TAG"
+  },
+  {
+    "productId": 36,
+    "basePrice" : 50.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "GOLD_TAG"
+  },
+  {
+    "productId": 37,
+    "basePrice" : 50.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "GOLD_TAG"
+  },
+  {
+    "productId": 38,
+    "basePrice" : 50.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "GOLD_TAG"
+  },
+  {
+    "productId": 39,
+    "basePrice" : 50.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "GOLD_TAG"
+  },
+  {
+    "productId": 40,
+    "basePrice" : 50.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "GOLD_TAG"
+  },
+  {
+    "productId": 41,
+    "basePrice" : 50.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "GOLD_TAG"
+  },
+  {
+    "productId": 42,
+    "basePrice" : 50.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "GOLD_TAG"
+  },
+  {
+    "productId": 1,
+    "basePrice" : 25.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "PLATINUM_TAG"
+  },
+  {
+    "productId": 2,
+    "basePrice" : 25.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "PLATINUM_TAG"
+  },
+  {
+    "productId": 3,
+    "basePrice" : 25.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "PLATINUM_TAG"
+  },
+  {
+    "productId": 4,
+    "basePrice" : 25.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "PLATINUM_TAG"
+  },
+  {
+    "productId": 5,
+    "basePrice" : 25.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "PLATINUM_TAG"
+  },
+  {
+    "productId": 6,
+    "basePrice" : 25.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "PLATINUM_TAG"
+  },
+  {
+    "productId": 7,
+    "basePrice" : 25.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "PLATINUM_TAG"
+  },
+  {
+    "productId": 8,
+    "basePrice" : 25.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "PLATINUM_TAG"
+  },
+  {
+    "productId": 9,
+    "basePrice" : 25.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "PLATINUM_TAG"
+  },
+  {
+    "productId": 10,
+    "basePrice" : 25.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "PLATINUM_TAG"
+  },
+  {
+    "productId": 11,
+    "basePrice" : 25.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "PLATINUM_TAG"
+  },
+  {
+    "productId": 12,
+    "basePrice" : 25.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "PLATINUM_TAG"
+  },
+  {
+    "productId": 13,
+    "basePrice" : 25.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "PLATINUM_TAG"
+  },
+  {
+    "productId": 14,
+    "basePrice" : 25.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "PLATINUM_TAG"
+  },
+  {
+    "productId": 15,
+    "basePrice" : 25.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "PLATINUM_TAG"
+  },
+  {
+    "productId": 16,
+    "basePrice" : 25.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "PLATINUM_TAG"
+  },
+  {
+    "productId": 17,
+    "basePrice" : 25.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "PLATINUM_TAG"
+  },
+  {
+    "productId": 18,
+    "basePrice" : 25.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "PLATINUM_TAG"
+  },
+  {
+    "productId": 19,
+    "basePrice" : 25.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "PLATINUM_TAG"
+  },
+  {
+    "productId": 20,
+    "basePrice" : 25.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "PLATINUM_TAG"
+  },
+  {
+    "productId": 21,
+    "basePrice" : 25.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "PLATINUM_TAG"
+  },
+  {
+    "productId": 22,
+    "basePrice" : 25.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "PLATINUM_TAG"
+  },
+  {
+    "productId": 23,
+    "basePrice" : 25.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "PLATINUM_TAG"
+  },
+  {
+    "productId": 24,
+    "basePrice" : 25.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "PLATINUM_TAG"
+  },
+  {
+    "productId": 25,
+    "basePrice" : 25.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "PLATINUM_TAG"
+  },
+  {
+    "productId": 26,
+    "basePrice" : 25.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "PLATINUM_TAG"
+  },
+  {
+    "productId": 27,
+    "basePrice" : 25.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "PLATINUM_TAG"
+  },
+  {
+    "productId": 28,
+    "basePrice" : 25.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "PLATINUM_TAG"
+  },
+  {
+    "productId": 29,
+    "basePrice" : 25.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "PLATINUM_TAG"
+  },
+  {
+    "productId": 30,
+    "basePrice" : 25.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "PLATINUM_TAG"
+  },
+  {
+    "productId": 31,
+    "basePrice" : 25.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "PLATINUM_TAG"
+  },
+  {
+    "productId": 32,
+    "basePrice" : 25.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "PLATINUM_TAG"
+  },
+  {
+    "productId": 33,
+    "basePrice" : 25.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "PLATINUM_TAG"
+  },
+  {
+    "productId": 34,
+    "basePrice" : 25.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "PLATINUM_TAG"
+  },
+  {
+    "productId": 35,
+    "basePrice" : 25.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "PLATINUM_TAG"
+  },
+  {
+    "productId": 36,
+    "basePrice" : 25.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "PLATINUM_TAG"
+  },
+  {
+    "productId": 37,
+    "basePrice" : 25.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "PLATINUM_TAG"
+  },
+  {
+    "productId": 38,
+    "basePrice" : 25.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "PLATINUM_TAG"
+  },
+  {
+    "productId": 39,
+    "basePrice" : 25.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "PLATINUM_TAG"
+  },
+  {
+    "productId": 40,
+    "basePrice" : 25.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "PLATINUM_TAG"
+  },
+  {
+    "productId": 41,
+    "basePrice" : 25.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "PLATINUM_TAG"
+  },
+  {
+    "productId": 42,
+    "basePrice" : 25.00,
+    "currency": "INR",
+    "taxPercentage": 7.00,
+    "tag": "PLATINUM_TAG"
+  }
+]
