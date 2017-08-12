@@ -47,7 +47,6 @@ public class AbstractTest {
 
   @Test
   public void loadContext() {
-    loadTestData.initData();
   }
 
   @Before
@@ -58,9 +57,8 @@ public class AbstractTest {
         .net(new Net("localhost", 12345, Network.localhostIsIPv6()))
         .build());
       _mongod = _mongodExe.start();
-
       _mongo = new MongoClient("localhost", 12345);
-
+      loadTestData.initData();
     } catch (IOException e) {
       e.printStackTrace();
     }

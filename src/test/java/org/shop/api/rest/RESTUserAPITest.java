@@ -39,11 +39,11 @@ public class RESTUserAPITest extends AbstractTest {
 
 
     @Test
-    @WithUserDetails(value = "venkatvp", userDetailsServiceBeanName = "profileService")
+    @WithUserDetails(value = "root", userDetailsServiceBeanName = "profileService")
     public void testUser() throws Exception {
         mockMvc.perform(get("/rest/user"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-                .andExpect(jsonPath("$.username").value("venkatvp"));
+                .andExpect(jsonPath("$.username").value("root"));
     }
 }
