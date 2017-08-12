@@ -20,6 +20,8 @@ The Tech Stack can be broadly grouped into 3 distinct areas of intrest.
 ## 1. Backend/Server
 This out and out uses Java based technologies like [Spring Boot] and [Java 8]. This is just a combination of Framworks/Technologies/Features that are listed below are used in this project.
 
+I am excited to let you know that we are currently on `Spring Boot 2.0.M3`
+
 1. [Java 8]
 2. [Spring]
 2. [Swagger]
