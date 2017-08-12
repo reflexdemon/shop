@@ -23,7 +23,7 @@ public class AsyncLoggingService {
 
   @JmsListener(destination = LOG_DESTINATION, containerFactory = "myFactory")
   public void receiveMessage(AppLogger appLogger) {
-    logger.info("Received <" + appLogger + ">");
+//    logger.info("Received <" + appLogger + ">");
     appLoggerRepository.save(appLogger);
   }
 }
