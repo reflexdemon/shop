@@ -68,8 +68,12 @@ public class AbstractTest {
 
   @After
   public void tearDown() {
-    _mongod.stop();
-    _mongodExe.stop();
+    if( null != _mongod) {
+      _mongod.stop();
+    }
+    if (null != _mongodExe) {
+      _mongodExe.stop();
+    }
   }
 
   @Bean
