@@ -14,6 +14,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.shop.main.ProductLoad;
+import org.shop.suite.LoadTestData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Bean;
@@ -41,14 +42,12 @@ public class AbstractTest {
   @Autowired
   private UserServices userServices;
 
+  @Autowired
+  private LoadTestData loadTestData;
+
   @Test
   public void loadContext() {
-    String[] args = new String[0];
-    try {
-      ProductLoad.main(args);
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
+    loadTestData.initData();
   }
 
   @Before

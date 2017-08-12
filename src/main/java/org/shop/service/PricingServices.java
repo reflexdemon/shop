@@ -21,24 +21,24 @@ public class PricingServices {
     private PricingRepository pricingDao;
 
     public double getBasePriceByProduct(Product product) {
-        return pricingDao.findByProductId(product.getId(), userServices.getAuthenticatedUser().getPricingTag()).getBasePrice();
+        return pricingDao.findByProductIdAndTag(product.getId(), userServices.getAuthenticatedUser().getPricingTag()).getBasePrice();
     }
 
     public double getBasePriceById(String productId) {
-        return pricingDao.findByProductId(productId, userServices.getAuthenticatedUser().getPricingTag()).getBasePrice();
+        return pricingDao.findByProductIdAndTag(productId, userServices.getAuthenticatedUser().getPricingTag()).getBasePrice();
     }
 
     public double getTaxByProduct(Product product) {
-        return pricingDao.findByProductId(product.getId(), userServices.getAuthenticatedUser().getPricingTag()).getTaxPercentage()
+        return pricingDao.findByProductIdAndTag(product.getId(), userServices.getAuthenticatedUser().getPricingTag()).getTaxPercentage()
                 * getBasePriceByProduct(product);
     }
 
     public PricingInfo getPricingInfo(Product product) {
-        return pricingDao.findByProductId(product.getId(), userServices.getAuthenticatedUser().getPricingTag());
+        return pricingDao.findByProductIdAndTag(product.getId(), userServices.getAuthenticatedUser().getPricingTag());
     }
 
     public double getTaxById(String productId) {
-        return pricingDao.findByProductId(productId, userServices.getAuthenticatedUser().getPricingTag()).getTaxPercentage()
+        return pricingDao.findByProductIdAndTag(productId, userServices.getAuthenticatedUser().getPricingTag()).getTaxPercentage()
                 * getBasePriceById(productId);
     }
 
@@ -78,10 +78,10 @@ public class PricingServices {
     }
 
     public PricingInfo getPricingForProduct(Product product) {
-        return pricingDao.findByProductId(product.getId(), userServices.getAuthenticatedUser().getPricingTag());
+        return pricingDao.findByProductIdAndTag(product.getId(), userServices.getAuthenticatedUser().getPricingTag());
     }
 
     public PricingInfo getPricingForProduct(String productId) {
-        return pricingDao.findByProductId(productId, userServices.getAuthenticatedUser().getPricingTag());
+        return pricingDao.findByProductIdAndTag(productId, userServices.getAuthenticatedUser().getPricingTag());
     }
 }

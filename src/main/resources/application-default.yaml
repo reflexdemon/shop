@@ -3,7 +3,7 @@ loader:
 logging:
     level:
         org:
-            springframework: ERROR
+            springframework:
 spring:
     aop:
         proxy-target-class: true
@@ -11,7 +11,7 @@ spring:
         mongodb:
             database: shop
             host: 127.0.0.1
-            port: 37017
+            port: 47017
             repositories:
                 enabled: true
     jpa:

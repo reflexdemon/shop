@@ -38,6 +38,8 @@ rm -rf $OPENSHIFT_REPO_DIR/node
 rm -rf $OPENSHIFT_REPO_DIR/node_modules
 
 
+export JAVA_OPTS=-Dspring.profiles.active=openshift
 
 cd $TOMCAT_DIR/bin
+echo starting tomcat with $JAVA_OPTS
 ./startup.sh
