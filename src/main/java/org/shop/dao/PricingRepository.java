@@ -23,7 +23,7 @@ public interface PricingRepository extends MongoRepository<PricingInfo, String> 
      * @param pricingTag the pricing tag
      * @return the pricing info
      */
-    PricingInfo findByProductId(String productId, PricingTag pricingTag);
+    PricingInfo findByProductIdAndTag(String productId, PricingTag tag);
 
     /**
      * Find by tag list.

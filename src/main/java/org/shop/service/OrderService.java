@@ -18,7 +18,7 @@ import java.util.List;
 @Service
 public class OrderService {
 
-    private static final String SEQUENCE_ID = "orderid";
+    public static final String SEQUENCE_ID = "orderid";
     @Autowired
     CartService cartService;
     @Autowired

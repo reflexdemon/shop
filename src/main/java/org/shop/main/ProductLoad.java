@@ -26,7 +26,6 @@ import java.util.List;
 public class ProductLoad {
     static final ObjectMapper mapper = new ObjectMapper(); // can reuse, share globally
     private static boolean verbose;
-
     public static void main(String[] args) throws IOException {
         ConfigurableApplicationContext context = SpringApplication.run(Application.class, args);
         String verboseStr = context.getEnvironment().getProperty("loader.verbose");

@@ -1,0 +1,20 @@
+loader:
+    verbose: true
+logging:
+    level:
+        org:
+            springframework:
+spring:
+    aop:
+        proxy-target-class: true
+    data:
+        mongodb:
+            database: shop
+            host: 127.0.0.1
+            port: 47017
+            repositories:
+                enabled: true
+    jpa:
+        properties:
+            hibernate:
+                show_sql: true

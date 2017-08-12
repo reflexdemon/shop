@@ -2,8 +2,10 @@ package org.shop.api.rest;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.shop.model.Order;
 import org.shop.service.AbstractTest;
 import org.shop.service.CartService;
+import org.shop.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockHttpServletRequest;
@@ -29,6 +31,9 @@ public class RESTOrderAPITest extends AbstractTest {
   MockHttpServletRequest request;
   @Autowired
   CartService cartService;
+
+  @Autowired
+  OrderService orderService;
   @Autowired
   private WebApplicationContext webApplicationContext;
   private MockMvc mockMvc;
@@ -88,8 +93,10 @@ public class RESTOrderAPITest extends AbstractTest {
   @Test
   @WithUserDetails(value = "venkatvp", userDetailsServiceBeanName = "profileService")
   public void testUpdateOrderStatus() throws Exception {
-    String id = "1";
-    String status = "OPEN";
+    cartService.addItemToCart("1", 20);
+    Order order = orderService.placeOrder();
+    String id = order.getId();
+    String status = order.getStatus().toString();
     mockMvc.perform(put("/rest/order/" + id + "/" + status))
       .andExpect(status().isOk())
       .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE));
