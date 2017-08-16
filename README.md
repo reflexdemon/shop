@@ -1,5 +1,7 @@
 # Shop API
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/reflexdemon/shop.svg)](https://greenkeeper.io/)
+
 [![Build Status][travis-image]][travis-url]
 
 This is a carlessly written simple API that is implemented using [Spring Boot] and some of its associated project. The running application has been hosted on the [Open Shift(r) RedHat(r) Cloud][open shift]. [Spring Boot] is a nice little handy framework that I have workd with and it is giving us the freedom to build rapid and robust applications. This project was mainly created to learn the following concepts in around [Spring Boot] and [Angular 2].
