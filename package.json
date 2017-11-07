@@ -16,12 +16,12 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^4.0.3",
+    "@angular/animations": "^5.0.0",
     "@angular/common": "^4.0.3",
-    "@angular/compiler": "^4.0.3",
+    "@angular/compiler": "^5.0.0",
     "@angular/core": "^4.0.3",
-    "@angular/forms": "^4.0.3",
     "@angular/http": "^5.0.0",
+    "@angular/forms": "^5.0.0",
     "@angular/material": "^2.0.0-beta.3",
     "@angular/platform-browser": "^4.0.3",
     "@angular/platform-browser-dynamic": "^4.0.3",
@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "@angular/cli": "1.4.4",
-    "@angular/compiler-cli": "^4.0.3",
+    "@angular/compiler-cli": "^5.0.0",
     "@types/hammerjs": "^2.0.34",
     "@types/jasmine": "^2.5.47",
     "@types/node": "^8.0.22",
@@ -46,9 +46,9 @@
     "karma-cli": "^1.0.1",
     "karma-jasmine": "^1.1.0",
     "karma-remap-istanbul": "^0.6.0",
-    "protractor": "~5.1.1",
+    "protractor": "~5.2.0",
     "ts-node": "^3.0.2",
     "tslint": "^5.0.0",
-    "typescript": "~2.5.2"
+    "typescript": "~2.6.1"
   }
 }
