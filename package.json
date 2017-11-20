@@ -32,7 +32,7 @@
     "zone.js": "^0.8.5"
   },
   "devDependencies": {
-    "@angular/cli": "1.5.1",
+    "@angular/cli": "1.5.3",
     "@angular/compiler-cli": "^5.0.0",
     "@types/hammerjs": "^2.0.34",
     "@types/jasmine": "^2.5.47",
