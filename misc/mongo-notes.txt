@@ -3,14 +3,14 @@ Auto Increment inside Mongo:
 http://www.tutorialspoint.com/mongodb/mongodb_autoincrement_sequence.htm
 
 //create a counters collection
->db.createCollection("counters")
+db.createCollection("counters")
 
 //insert sequence document in the counters collection
->db.counters.insert({_id:"productid",sequence_value:0})
+db.counters.insert({_id:"productid",sequence_value:0})
 
 //create a function getNextSequenceValue which will take the sequence name as its input,
 // increment the sequence number by 1 and return the updated sequence number
->function getNextSequenceValue(sequenceName){
+function getNextSequenceValue(sequenceName){
 
    var sequenceDocument = db.counters.findAndModify({
       query:{_id: sequenceName },

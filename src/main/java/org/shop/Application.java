@@ -1,6 +1,8 @@
 package org.shop;
 
 import com.google.common.base.Predicate;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,8 +18,6 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
-import java.util.Arrays;
-
 import static com.google.common.base.Predicates.or;
 import static springfox.documentation.builders.PathSelectors.regex;
 
@@ -30,6 +30,7 @@ import static springfox.documentation.builders.PathSelectors.regex;
 @ComponentScan
 @EnableSwagger2
 public class Application extends SpringBootServletInitializer {
+  private static final Log logger = LogFactory.getLog(Application.class);
     private static Class<Application> applicationClass = Application.class;
 
     /**
@@ -46,13 +47,18 @@ public class Application extends SpringBootServletInitializer {
         if (null == ctx) {
             return;
         }
-        System.out.println("Let's inspect the beans provided by Spring Boot:");
+      logger.debug("spring.data.mongodb.host:" + ctx.getEnvironment().getProperty("spring.data.mongodb.host"));
+      logger.debug("spring.data.mongodb.port:" + ctx.getEnvironment().getProperty("spring.data.mongodb.port"));
+      logger.debug("spring.data.mongodb.database:" + ctx.getEnvironment().getProperty("spring.data.mongodb.database"));
 
-        String[] beanNames = ctx.getBeanDefinitionNames();
-        Arrays.sort(beanNames);
-        for (String beanName : beanNames) {
-            System.out.println(beanName);
-        }
+
+//        System.out.println("Let's inspect the beans provided by Spring Boot:");
+//
+//        String[] beanNames = ctx.getBeanDefinitionNames();
+//        Arrays.sort(beanNames);
+//        for (String beanName : beanNames) {
+//            System.out.println(beanName);
+//        }
     }
 
   //    @Override
