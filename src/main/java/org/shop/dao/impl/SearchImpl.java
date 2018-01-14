@@ -28,7 +28,7 @@ import static java.util.stream.Collectors.toList;
 @Component
 public class SearchImpl implements Search {
     private static final Log logger = LogFactory.getLog(SearchImpl.class);
-    private static final String COLLECTION = "inventory";
+    private static final String COLLECTION = "catalog";
     @Autowired
     private MongoTemplate mongoTemplate;
 

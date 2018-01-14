@@ -9,9 +9,12 @@ spring:
         proxy-target-class: true
     data:
         mongodb:
+#            authentication-database: reflex
             database: shop
-            host: 127.0.0.1
-            port: 27017
+            host: ds255787.mlab.com
+            username: shopadmin
+            password: testing123
+            port: 55787
             repositories:
                 enabled: true
     jpa:

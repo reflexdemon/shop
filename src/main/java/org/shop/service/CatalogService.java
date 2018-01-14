@@ -29,7 +29,7 @@ public class CatalogService {
     private Search search;
 
     @Autowired
-    @Qualifier("inventoryRepository")
+    @Qualifier("catalogRepository")
     private ProductRepository productDao;
 
     @Autowired
@@ -83,9 +83,9 @@ public class CatalogService {
             page = 1;
         }
 
-        int limit = PAGE_SIZE;
+//        int limit = PAGE_SIZE;
         int offset = (PAGE_SIZE * page) - PAGE_SIZE;
-        SearchResponse response = search.search(keyword, limit, offset);
+        SearchResponse response = search.search(keyword, PAGE_SIZE, offset);
         response.setPage(page);
         return response;
     }

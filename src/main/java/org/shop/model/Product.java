@@ -9,7 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * Created by vprasanna on 5/15/2016.
  * The type Product.
  */
-@Document(collection = "inventory")
+@Document(collection = "catalog")
 public class Product {
     @Id
     @Indexed
