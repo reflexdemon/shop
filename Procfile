@@ -1,1 +1,1 @@
-web: java -jar target/shop-1.0.jar
+web: java -Dspring.profiles.active=mlab -jar target/shop-api-0.0.1-SNAPSHOT.jar
