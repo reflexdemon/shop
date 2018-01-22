@@ -11,9 +11,9 @@ spring:
         mongodb:
 #            authentication-database: reflex
             database: shop
-            host: ds255787.mlab.com
-            username: shopadmin
-            password: testing123
+            host: ${DB_HOST}
+            username: ${DB_USER}
+            password: ${DB_PASSWORD}
             port: 55787
             repositories:
                 enabled: true
