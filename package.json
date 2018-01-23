@@ -33,13 +33,13 @@
     "zone.js": "^0.8.5"
   },
   "devDependencies": {
-    "@angular/cli": "1.6.4",
+    "@angular/cli": "1.6.5",
     "@angular/compiler-cli": "^5.0.0",
     "@types/hammerjs": "^2.0.34",
     "@types/jasmine": "^2.5.47",
     "@types/node": "^9.3.0",
     "codelyzer": "~4.1.0",
-    "jasmine-core": "2.9.0",
+    "jasmine-core": "2.9.1",
     "jasmine-spec-reporter": "4.2.1",
     "karma": "2.0.0",
     "karma-chrome-launcher": "^2.0.0",
