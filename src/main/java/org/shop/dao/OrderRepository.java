@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Created by vprasanna on 5/22/2016.
  */
-@Repository("orderRepository")
+@Repository("OrderRepository")
 public interface OrderRepository extends MongoRepository<Order, String> {
 
     List<Order> findByUsername(String username);

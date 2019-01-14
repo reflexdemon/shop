@@ -21,12 +21,15 @@ public class OrderService {
     public static final String SEQUENCE_ID = "orderid";
     @Autowired
     CartService cartService;
-    @Autowired
-    private Sequence sequence;
+
     @Autowired
     private OrderRepository orderRepository;
     @Autowired
     private UserServices userServices;
+
+    @Autowired
+    private SequenceService sequenceService;
+
 
     public List<Order> findByUsername() {
         User user = userServices.getAuthenticatedUser();
@@ -77,7 +80,7 @@ public class OrderService {
         order.setSummary(cart.getSummary());
         order.setStatus(OrderStatus.NEW);
         order.setUsername(user.getUsername());
-        order.setId(Long.toString(sequence.getNextSequenceId(SEQUENCE_ID)));
+        order.setId(Long.toString(sequenceService.getSequenceForOrderNumber(SEQUENCE_ID)));
         orderRepository.save(order);
         cartService.getBlankCart();
         return order;
