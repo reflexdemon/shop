@@ -4,6 +4,9 @@
 
 [![Build Status][travis-image]][travis-url]
 
+
+[![HitCount](http://hits.dwyl.io/reflexdemon/shop.svg)](http://hits.dwyl.io/reflexdemon/shop)
+
 This is a carlessly written simple API that is implemented using [Spring Boot] and some of its associated project. The running application has been hosted on the [Open Shift(r) RedHat(r) Cloud][open shift]. [Spring Boot] is a nice little handy framework that I have workd with and it is giving us the freedom to build rapid and robust applications. This project was mainly created to learn the following concepts in around [Spring Boot] and [Angular 2].
 
 Please note this was built in the intentions of learning new stuff and not to code for production. At the same time there was utmost care teken to keep this up-to-date with the latest and greatest and acts as a reference implementation to club all pollible things that has been learnt.
